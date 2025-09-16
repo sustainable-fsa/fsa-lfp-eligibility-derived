@@ -1,0 +1,668 @@
+---
+output: 
+  github_document:
+    html_preview: false
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# lfp-eligibility-reanalysis
+
+```{r setup}
+
+library(magrittr)
+library(tidyverse)
+
+```
+
+```{r usdm-get-dates}
+usdm_get_dates <-
+  function(as_of = lubridate::today()){
+    as_of %<>%
+      lubridate::as_date()
+    
+    usdm_dates <-
+      seq(lubridate::as_date("20000104"), lubridate::today(), "1 week")
+    
+    usdm_dates <- usdm_dates[(as_of - usdm_dates) >= 2]
+    
+    return(usdm_dates)
+  }
+
+usdm_dates <- usdm_get_dates()
+```
+
+```{r read-normal-grazing-periods}
+fsa_normal_grazing_period <-
+  readr::read_csv(
+    "https://sustainable-fsa.github.io/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+  ) |>
+  dplyr::select(`Program Year`, 
+                `FSA Code`,
+                `Pasture Type`,
+                `Normal Grazing Period Start Date`,
+                `Normal Grazing Period End Date`) %>%
+  dplyr::rowwise() %>%
+  dplyr::mutate(
+    date = 
+      list(
+        tibble::tibble(
+          date = usdm_dates[usdm_dates >= `Normal Grazing Period Start Date` & 
+                              usdm_dates <= `Normal Grazing Period End Date`])
+      )
+  ) |>
+  tidyr::unnest(date)
+```
+
+```{r read-fsa-lfp-eligibility}
+fsa_lfp_eligibility <-
+  readr::read_csv(
+    "https:///sustainable-fsa.github.io/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
+  ) |>
+  dplyr::filter(`Disaster Type` == "Drought") |>
+  dplyr::select(`Program Year`, `FSA Code`, `State Name`, `County Name`, `Pasture Type`, 
+                `Disaster Start Date`, `Qualifying Drought Event`, 
+                `Official Payments` = `Payment Type`) |>
+  dplyr::mutate(`Official Payments` = 
+                  `Official Payments` |>
+                  stringr::str_remove(" Month") |>
+                  as.integer()) |>
+  dplyr::arrange(`FSA Code`, `Program Year`, `Pasture Type`, dplyr::desc(`Official Payments`)) |>
+  dplyr::group_by(`FSA Code`, `Program Year`, `Pasture Type`) |>
+  dplyr::filter(`Official Payments` == max(`Official Payments`))
+
+```
+
+```{r read-usdm-counties}
+
+usdm_counties <-
+  jsonlite::fromJSON(
+    "https:///sustainable-fsa.github.io/usdm-counties/manifest.json"
+  ) |>
+  dplyr::select(path) |>
+  dplyr::filter(stringr::str_detect(path, "USDM_")) |>
+  dplyr::mutate(
+    date =
+      path |>
+      stringr::str_extract("\\d{4}-\\d{2}-\\d{2}") |>
+      lubridate::as_date()
+  ) |>
+  # magrittr::extract(1:10,) |>
+  dplyr::rowwise() |>
+  dplyr::mutate(
+    data = 
+      path %>%
+      file.path("https:///sustainable-fsa.github.io","usdm-counties", .) |>
+      arrow::read_parquet() |>
+      list()
+  ) |>
+  dplyr::ungroup() |>
+  tidyr::unnest(data) |>
+  dplyr::select(date, STATEFP, COUNTYFP, usdm_class) |>
+  dplyr::group_by(date, STATEFP, COUNTYFP) |>
+  dplyr::filter(usdm_class == max(usdm_class)) |>
+  dplyr::ungroup() |>
+  tidyr::unite(col = "FSA Code",
+               STATEFP, COUNTYFP,
+               sep = "") |>
+  dplyr::arrange(`FSA Code`, date)
+
+```
+
+```{r read-lfp-payments}
+lfp_payments <-
+  arrow::s3_bucket("/sustainable-fsa/fsa-payment-files",
+                   anonymous = TRUE) %>%
+  arrow::open_dataset() |>
+  dplyr::filter(`Accounting Program Year` >= 2012,
+                `Accounting Program Description` %in% 
+                  c(
+                    "LIVESTOCK FORAGE PROGRAM",
+                    "LIVESTOCK FORAGE DISASTER PROGRAM"
+                  )) |>
+  dplyr::group_by(`Program Year` = `Accounting Program Year`, `FSA Code`) |>
+  dplyr::summarise(
+    `Disbursement Amount` = sum(`Disbursement Amount`, na.rm = TRUE)
+  ) |>
+  dplyr::collect() |>
+  dplyr::mutate(`FSA Code` = as.character(`FSA Code`)) |>
+  dplyr::rename(`LFP Payments` = `Disbursement Amount`)
+
+```
+
+### 2008 Farm Bill
+
+Producers who suffer grazing losses on grazing lands located in a county due to drought will receive the lesser of either the monthly feed cost for all covered livestock or the drought monthly payment which is:
+
+- 1 months payment: when the county is rated as having a D2 (severe) intensity for at least eight consecutive weeks during the grazing season;
+- 2 months payment: when the county is rated a D3 (extreme) intensity at anytime during the grazing season;
+- 3 months payment: when the county is rated a D3 for at least four weeks or D4 (exceptional) intensity at any time during the grazing season;
+
+### 2014 Farm Bill (effective October 1, 2011, or Program Year 2012)
+
+An eligible livestock producer that owns or leases grazing land or pastureland physically located in a county rated by the U.S. Drought Monitor as having a:
+
+- 1 months payment: D2 (severe drought) intensity in any area of the county for at least eight consecutive weeks during the normal grazing period is eligible to receive assistance in an amount equal to one monthly payment;
+- 3 months payment: D3 (extreme drought) intensity in any area of the county at any time during the normal grazing period is eligible to receive assistance in an amount equal to three monthly payments;
+- 4 months payment: D3 (extreme drought) intensity in any area of the county for at least four weeks during the normal grazing period **or** is rated a D4 (exceptional drought) intensity at any time during the normal grazing period is eligible to receive assistance in an amount equal to four monthly payments;
+- 5 months payment: D4 (exceptional drought) in a county for four weeks (not necessarily four consecutive weeks) during the normal grazing period is eligible to receive assistance in an amount equal to five monthly payments.
+
+
+```{r eligibility}
+
+calc_lfp_payments <-
+  function(x, year){
+    x <-
+      x |>
+      tidyr::replace_na("None") |>
+      rle() %$%
+      magrittr::set_names(lengths, values)
+    
+    if(year >= 2012)
+      return(
+        dplyr::case_when(
+          sum(x[names(x) == "D4"]) >= 4 ~ 5L,
+          sum(x[names(x) == "D3"]) >= 4 | sum(x[names(x) == "D4"]) > 0 ~ 4L,
+          sum(x[names(x) == "D3"]) > 0 ~ 3L,
+          any(x[names(x) == "D2"] >= 8) ~ 1L,
+          .default = 0L
+        )
+      )
+    
+    return(
+      dplyr::case_when(
+        sum(x[names(x) == "D3"]) >= 4 | sum(x[names(x) == "D4"]) > 0 ~ 3L,
+        sum(x[names(x) == "D3"]) > 0 ~ 2L,
+        any(x[names(x) == "D2"] >= 8) ~ 1L,
+        .default = 0L
+      )
+    )
+  }
+
+eligibility <-
+  fsa_normal_grazing_period |>
+  dplyr::left_join(usdm_counties) |>
+  dplyr::group_by(`Program Year`, `FSA Code`, `Pasture Type`, 
+                  `Normal Grazing Period Start Date`, 
+                  `Normal Grazing Period End Date`) |>
+  tidyr::nest(usdm = c(date, usdm_class)) |>
+  dplyr::rowwise() |>
+  dplyr::mutate(
+    `Calculated Payments` = 
+      calc_lfp_payments(
+        x = usdm$usdm_class, 
+        year = `Program Year`
+      )
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::filter(`Calculated Payments` > 0) |>
+  dplyr::full_join(fsa_lfp_eligibility)
+
+eligibility_errors <-
+  eligibility %>%
+  dplyr::filter(`Calculated Payments` != `Official Payments`,
+                `Program Year` >= 2012) %>%
+  dplyr::arrange(`FSA Code`, `Pasture Type`, `Program Year`) %>%
+  dplyr::select(
+    `Program Year`, `FSA Code`,
+    `State Name`, `County Name`,
+    `Pasture Type`, `Normal Grazing Period Start Date`, `Normal Grazing Period End Date`,
+    `FSA Disaster Start Date` = `Disaster Start Date`, 
+    `FSA Qualifying Drought Event` = `Qualifying Drought Event`,
+    `FSA Payments` = `Official Payments`,
+    `Calculated Payments`,
+    `Calculated USDM Record` = usdm
+  )
+
+
+
+payment_errors <-
+  eligibility_errors %>%
+  dplyr::mutate(`Difference Payments` = `Calculated Payments` - `FSA Payments`,
+                `Proportion Payments` = `Calculated Payments` / `FSA Payments`) |>
+  dplyr::group_by(`Program Year`, `FSA Code`, `State Name`, `County Name`) |>
+  dplyr::summarise(
+    `Mean Proportion Payments` = mean(`Proportion Payments`),
+    .groups = "drop"
+  ) |>
+  dplyr::left_join(lfp_payments) |> 
+  dplyr::mutate(`Calculated LFP Payments` = `LFP Payments` * `Mean Proportion Payments`,
+                `Difference LFP Payments` = `Calculated LFP Payments` - `LFP Payments`)
+
+payment_errors |>
+  dplyr::group_by(`Program Year`) |>
+  dplyr::summarise(`Difference LFP Payments` = sum(`Difference LFP Payments`, na.rm = TRUE),
+                   `LFP Payments` = sum(`LFP Payments`, na.rm = TRUE)) %>%
+  ggplot(aes(x = `Program Year`,
+             y = `Difference LFP Payments`/`LFP Payments`)) +
+  geom_line() +
+  ggplot2::ylim(0,2)
+
+
+sum(payment_errors$`Difference LFP Payments`, na.rm = TRUE) |>
+  scales::label_currency()()
+# $4,499,515,989
+
+print(payment_errors, n = 200)
+
+```
+
+```{r hawaii}
+
+source("R/usdm_layout.R")
+
+usdm <-
+  sf::read_sf("../usdm/usdm/data/parquet/USDM_2025-06-03.parquet") |>
+  dplyr::mutate(
+    usdm_class = factor(usdm_class, 
+                        levels = paste0("D", 0:4), 
+                        ordered = TRUE)) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::group_by(date, usdm_class) %>%
+  dplyr::summarise() |>
+  dplyr::mutate(usdm_class = 
+                  forcats::fct_drop(usdm_class, only = "None") %>%
+                  forcats::fct_recode("Abnormally Dry: D0" = "D0",
+                                      "Moderate Drought: D1" = "D1",
+                                      "Severe Drought: D2" = "D2",
+                                      "Extreme Drought: D3" = "D3",
+                                      "Exceptional Drought: D4" = "D4"))
+
+
+
+
+oconus_buffer <- 
+  tigris::states(cb = TRUE,
+                 resolution = "5m",
+                 year = 2020) %>%
+  dplyr::filter(!(STUSPS %in% c("AS", "GU", "MP", "VI"))) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::summarise() %>%
+  sf::st_buffer(200000)
+
+census2020 <-
+  tigris::counties(cb = TRUE,
+                   year = 2020) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::group_by(STATEFP, COUNTYFP) %>%
+  dplyr::summarise() %>%
+  sf::st_intersection(oconus_buffer)
+
+census_2020_states <-
+  census2020 %>%
+  dplyr::group_by(STATEFP) %>%
+  dplyr::summarise()
+
+
+census_2020_oconus <-
+  census_2020_states %>%
+  dplyr::summarise()
+
+
+
+
+
+p <-
+  ggplot(census_2020_oconus) +
+  geom_sf(data = census2020_oconus,
+          fill = "gray80",
+          color = NA,
+          show.legend = FALSE) +
+  geom_sf(aes(fill = usdm_class),
+          data = usdm,
+          color = "white",
+          linewidth = NA,
+          show.legend = T) +
+  geom_sf(data = census2020_states %>%
+            rmapshaper::ms_innerlines() %>%
+            sf::st_cast("MULTILINESTRING"),
+          color = "white",
+          # alpha = 0,
+          show.legend = FALSE,
+          linewidth = 0.2) +
+  scale_fill_manual(
+    values = c("#ffff00",
+               "#fcd37f",
+               "#ffaa00",
+               "#e60000",
+               "#730000"),
+    drop = FALSE,
+    name = paste0("US Drought Monitor\n",
+                  format(lubridate::as_date("2025-06-03"), "%B %e, %Y") %>% 
+                    stringr::str_squish()),
+    guide = guide_legend(direction = "vertical",
+                         title.position = "top",
+                         override.aes = list(linewidth = 0.5)) 
+  ) +
+  usdm_layout()
+
+gt <- ggplot_gtable(ggplot_build(p))
+gt$layout$clip[gt$layout$name == "panel"] <- "off"
+
+grid::grid.draw(gt) %>%
+  ggsave(plot = .,
+         filename = "usdm_2025-06-03.pdf",
+         device = cairo_pdf,
+         width = 10,
+         height = 5.14,
+         # height = 6.86,
+         bg = "white",
+         dpi = 600)
+
+
+usdm <-
+  curl::multi_download(urls =  "https://droughtcenter.unl.edu/USDMweeklydata/usdm20250603.zip",
+                       resume = TRUE
+  ) %$%
+  destfile %>%
+  fs::path_rel() %>%
+  file.path("/vsizip", ., tools::file_path_sans_ext(.)) %>%
+  {
+    purrr::map_dfr(paste0("Drought_Areas_US_D",0:4),
+                   \(x){
+                     sf::read_sf(., layer = x) %>%
+                       sf::st_cast("MULTIPOLYGON") %>%
+                       sf::st_cast("POLYGON", warn = FALSE, do_split = TRUE) %>%
+                       sf::st_make_valid() %T>%
+                       {suppressMessages(sf::sf_use_s2(FALSE))} %>%
+                       sf::st_make_valid() %T>%
+                       {suppressMessages(sf::sf_use_s2(TRUE))} %>%
+                       # Group by class and generate multipolygons
+                       dplyr::group_by(DM) %>%
+                       dplyr::summarise(.groups = "drop",
+                                        is_coverage = TRUE) %>%
+                       sf::st_cast("MULTIPOLYGON", warn = FALSE) %>%
+                       sf::st_transform("EPSG:4326")
+                   }
+    )
+  } %>%
+  dplyr::transmute(usdm_class = factor(DM, levels = 0:4, labels = paste0("D",0:4), ordered = TRUE)) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON", warn = FALSE, do_split = TRUE) %>%
+  tigris::shift_geometry() %>%
+  dplyr::group_by(usdm_class) %>%
+  dplyr::summarise(.groups = "drop",
+                   is_coverage = TRUE) %>%
+  sf::st_cast("MULTIPOLYGON") |>
+  dplyr::mutate(usdm_class = 
+                  forcats::fct_drop(usdm_class, only = "None") %>%
+                  forcats::fct_recode("Abnormally Dry: D0" = "D0",
+                                      "Moderate Drought: D1" = "D1",
+                                      "Severe Drought: D2" = "D2",
+                                      "Extreme Drought: D3" = "D3",
+                                      "Exceptional Drought: D4" = "D4"))
+
+
+p <-
+  ggplot(census_2020_oconus) +
+  geom_sf(data = census2020_oconus,
+          fill = "gray80",
+          color = NA,
+          show.legend = FALSE) +
+  geom_sf(aes(fill = usdm_class),
+          data = usdm,
+          color = "white",
+          linewidth = NA,
+          show.legend = T) +
+  geom_sf(data = census2020_states,
+          color = "white",
+          fill = NA,
+          # alpha = 0,
+          show.legend = FALSE,
+          linewidth = 0.2) +
+  scale_fill_manual(
+    values = c("#ffff00",
+               "#fcd37f",
+               "#ffaa00",
+               "#e60000",
+               "#730000"),
+    drop = FALSE,
+    name = paste0("US Drought Monitor\n",
+                  format(lubridate::as_date("2025-06-03"), "%B %e, %Y") %>% 
+                    stringr::str_squish()),
+    guide = guide_legend(direction = "vertical",
+                         title.position = "top",
+                         override.aes = list(linewidth = 0.5)) 
+  ) +
+  usdm_layout()
+
+gt <- ggplot_gtable(ggplot_build(p))
+gt$layout$clip[gt$layout$name == "panel"] <- "off"
+
+grid::grid.draw(gt) %>%
+  ggsave(plot = .,
+         filename = "usdm_2025-06-03_preclipped.pdf",
+         device = cairo_pdf,
+         width = 10,
+         height = 5.14,
+         # height = 6.86,
+         bg = "white",
+         dpi = 600)
+
+
+
+
+"../fsa-lfp-eligibility/foia/2025-FSA-04690-F Bocinsky/LFP_Pasture_Grazing_Report.xlsx" %>%
+  readxl::read_excel() %>%
+  dplyr::filter(program_year == 2024,
+                state_fsa_code == 16) %>%
+  dplyr::arrange(county_name) %>%
+  print(n = 40)
+
+sf::read_sf("data-raw/counties/FSA_Counties_dd17.gdb.zip") %>%
+  dplyr::filter(FSA_STCOU == "16009") %>%
+  print(n = 50)
+
+
+```
+
+
+```{r missoula}
+
+source("R/usdm_layout.R")
+
+usdm <-
+  sf::read_sf("../usdm/usdm/data/parquet/USDM_2021-10-05.parquet") |>
+  dplyr::mutate(
+    usdm_class = factor(usdm_class, 
+                        levels = paste0("D", 0:4), 
+                        ordered = TRUE)) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::group_by(date, usdm_class) %>%
+  dplyr::summarise() |>
+  dplyr::mutate(usdm_class = 
+                  forcats::fct_drop(usdm_class, only = "None") %>%
+                  forcats::fct_recode("Abnormally Dry: D0" = "D0",
+                                      "Moderate Drought: D1" = "D1",
+                                      "Severe Drought: D2" = "D2",
+                                      "Extreme Drought: D3" = "D3",
+                                      "Exceptional Drought: D4" = "D4"))
+
+
+
+
+oconus_buffer <- 
+  tigris::states(cb = TRUE,
+                 resolution = "5m",
+                 year = 2020) %>%
+  dplyr::filter(!(STUSPS %in% c("AS", "GU", "MP", "VI"))) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::summarise() %>%
+  sf::st_buffer(200000)
+
+census2020 <-
+  tigris::counties(cb = TRUE,
+                   year = 2020) %>%
+  sf::st_cast("MULTIPOLYGON") %>%
+  sf::st_cast("POLYGON") %>%
+  tigris::shift_geometry() %>%
+  dplyr::group_by(STATEFP, COUNTYFP) %>%
+  dplyr::summarise() %>%
+  sf::st_intersection(oconus_buffer)
+
+
+
+
+counties <-
+  list.files("data-derived/counties", 
+             full.names = TRUE, 
+             recursive = FALSE) %>%
+  magrittr::set_names(., tools::file_path_sans_ext(basename(.))) %>%
+  purrr::map_dfr(\(x){
+    sf::read_sf(x) %>%
+      dplyr::filter(County_FIPS == "30063")
+  },
+  .id = "County File")
+
+mapview::mapview(usdm, 
+                 zcol = "usdm_class",
+                 layer.name = "USDM 2021-10-05",
+                 col.regions = c(D0 = "#FFFF00",
+                                 D1 = "#FCD37F",
+                                 D2 = "#FFAA00",
+                                 D3 = "#E60000",
+                                 D4 = "#730000")) +
+  mapview::mapview(
+    counties %>%
+      dplyr::filter(`County File` %in% 
+                      c(
+                        "Census 2010",
+                        "Census 2020",
+                        "FSA dd17",
+                        "NDMC Albers"
+                      )) %>%
+      dplyr::select(`County File`), 
+    zcol = "County File",
+    color = c("#66c2a5",
+              "#8da0cb",
+              "#e78ac3",
+              "#a6d854",
+    ),
+    lwd = 10,
+    burst = TRUE, 
+    
+    alpha.regions = 0,
+    layer.name = "County Definition") 
+
+
+
+p <-
+  ggplot(counties) +
+  # geom_sf(data = census2020_oconus,
+  #         fill = "gray80",
+  #         color = NA,
+  #         show.legend = FALSE) +
+  geom_sf(aes(fill = usdm_class),
+          data = usdm,
+          color = "white",
+          linewidth = NA,
+          show.legend = T) +
+  # geom_sf(data = census2020_states %>%
+  #           rmapshaper::ms_innerlines() %>%
+  #           sf::st_cast("MULTILINESTRING"),
+  #         color = "white",
+  #         # alpha = 0,
+  #         show.legend = FALSE,
+  #         linewidth = 0.2) +
+  geom_sf(aes(color = `County File`),
+          data = counties %>%
+            dplyr::filter(`County File` %in% 
+                            c(
+                              "Census 2010",
+                              "Census 2020",
+                              "FSA dd17",
+                              "NDMC Albers"
+                            )),
+          fill = "transparent",
+          # alpha = 0,
+          show.legend = FALSE,
+          linewidth = 0.5) +
+  scale_fill_manual(
+    values = c("#ffff00",
+               "#fcd37f",
+               "#ffaa00",
+               "#e60000",
+               "#730000"),
+    drop = FALSE,
+    name = paste0("US Drought Monitor\n",
+                  format(lubridate::as_date("2021-10-05"), "%B %e, %Y") %>% 
+                    stringr::str_squish()),
+    guide = guide_legend(direction = "vertical",
+                         title.position = "top",
+                         override.aes = list(linewidth = 0.5)) 
+  ) +
+  scale_color_manual(
+    values = c("#66c2a5",
+               "#8da0cb",
+               "#e78ac3",
+               "#000000"),
+    drop = FALSE,
+    name = "County Boundary",
+    guide = guide_legend(direction = "vertical",
+                         title.position = "top",
+                         override.aes = 
+                           list(linewidth = 0.5, 
+                                alpha = 1,
+                                fill =  c("#66c2a5",
+                                          "#8da0cb",
+                                          "#e78ac3",
+                                          "#000000"))
+    )) +
+  xlim(-113.30665,-113.30056) +
+  ylim(46.83140, 46.83484) +
+  ggspatial::annotation_scale(unit_category = "imperial")
+
+gt <- ggplot_gtable(ggplot_build(p))
+# gt$layout$clip[gt$layout$name == "panel"] <- "off"
+
+grid::grid.draw(gt) %>%
+  ggsave(plot = .,
+         filename = "usdm_2021-10-05_missoula.pdf",
+         device = cairo_pdf,
+         width = 10,
+         height = 5.14,
+         # height = 6.86,
+         bg = "white",
+         dpi = 600)
+
+
+
+
+
+
+
+
+
+```
+
+
+## NOTES
+
+- In 2015, Shannon County (FIPS 46113) was renamed to Oglala Lakota County (FIPS 46102), but the official FSA LFP eligibility records use 
+Shannon County (FIPS 46113) through 2024, suggesting pre-2015 county definitions in use. Census 2015 uses Oglala Lakota County (FIPS 46102).
+
+- Broomfield County, CO (FIPS code=08014) was created in 2001, and was eligible for LFP payments in Program Years 2012 and 2020, so eligibility in those years did not use Census 2000 counties.
+
+- LaSalle Parish, LA (FIPS 22059) was officially renamed from La Salle Parish (removing the space) in 2011. That change is effective Census 2012, suggesting pre-2012 county definitions in use. USDM Albers has the space.
+
+
+
