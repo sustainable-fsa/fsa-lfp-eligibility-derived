@@ -44,7 +44,7 @@ usdm_dates <- usdm_get_dates()
 ```{r read-normal-grazing-periods}
 fsa_normal_grazing_period <-
   readr::read_csv(
-    "https://sustainable-fsa.github.io/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+    "https://sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
   ) |>
   dplyr::select(`Program Year`, 
                 `FSA Code`,
@@ -66,7 +66,7 @@ fsa_normal_grazing_period <-
 ```{r read-fsa-lfp-eligibility}
 fsa_lfp_eligibility <-
   readr::read_csv(
-    "https:///sustainable-fsa.github.io/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
+    "https:///sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
   ) |>
   dplyr::filter(`Disaster Type` == "Drought") |>
   dplyr::select(`Program Year`, `FSA Code`, `State Name`, `County Name`, `Pasture Type`, 
@@ -86,7 +86,7 @@ fsa_lfp_eligibility <-
 
 usdm_counties <-
   jsonlite::fromJSON(
-    "https:///sustainable-fsa.github.io/usdm-counties/manifest.json"
+    "https:///sustainable-fsa.com/usdm-counties/manifest.json"
   ) |>
   dplyr::select(path) |>
   dplyr::filter(stringr::str_detect(path, "USDM_")) |>
@@ -101,7 +101,7 @@ usdm_counties <-
   dplyr::mutate(
     data = 
       path %>%
-      file.path("https:///sustainable-fsa.github.io","usdm-counties", .) |>
+      file.path("https:///sustainable-fsa.com","usdm-counties", .) |>
       arrow::read_parquet() |>
       list()
   ) |>

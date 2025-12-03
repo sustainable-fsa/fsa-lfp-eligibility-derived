@@ -9,6 +9,7 @@ editor_options:
 ## Introduction
 
 ```{r}
+#| label: setup
 #| echo: false
 
 # update.packages(repos = "https://cran.rstudio.com/",
@@ -29,7 +30,11 @@ editor_options:
 #     "curl",
 #     "tidyverse",
 #     "tigris",
-#     "rmapshaper"
+#     "rmapshaper",
+#     "furrr",
+#     "future.mirai",
+#     "dtplyr",
+#     "ggspatial"
 #   )
 # )
 
@@ -40,7 +45,6 @@ library(arrow)
 library(furrr)
 library(future.mirai)
 library(dtplyr)
-library(data.table)
 
 sf::sf_use_s2(TRUE)
 
@@ -64,14 +68,19 @@ dir.create(
   recursive = TRUE
 )
 
-usdm_get_dates <-
+```
+
+```{r}
+#| label: get-usdm-dates
+
+get_usdm_dates <-
   function(as_of = lubridate::today()){
     as_of %<>%
       lubridate::as_date()
     
     usdm_dates <-
-      seq(lubridate::as_date("20000104"), 
-          lubridate::today(), 
+      seq(lubridate::as_date("20000104"),
+          lubridate::today(),
           "1 week")
     
     usdm_dates <- usdm_dates[(as_of - usdm_dates) >= 2]
@@ -79,32 +88,211 @@ usdm_get_dates <-
     return(usdm_dates)
   }
 
-# test_interval_1 <- lubridate::interval(start = lubridate::as_datetime("20000104"), 
-#                     end = lubridate::as_datetime("20000111"))
-# 
-# test_interval_2 <- lubridate::interval(start = lubridate::as_datetime("20000111"), 
-#                     end = lubridate::as_datetime("20000118"))
-# 
-# int_aligns(test_interval_1, test_interval_2)
-# int_overlaps(test_interval_1, test_interval_2)
-# 
-# int_start(test_interval_1)
-# int_end(test_interval_1)
-# int_length(test_interval_1)
-# 
-# lubridate::as_datetime("20000104") %within% test_interval_1
-# lubridate::as_datetime("20000111") %within% test_interval_1
-# 
-# lubridate::as_datetime("20000104") + lubridate::days(7)
-
-usdm_dates <- 
-  usdm_get_dates() %>%
-  tibble::tibble(`USDM Date` = .) %>%
-  dplyr::mutate(`USDM Interval` = lubridate::interval(start = `USDM Date`, end = `USDM Date` + lubridate::days(7)))
+usdm_dates <-
+  get_usdm_dates()
 
 ```
 
-## LFP Payment Files
+### Summary Recommendations
+
+#### For FSA
+
+- Review agency interpretation of eligible payments. Ensure regulation regarding capping payments by length of normal grazing period conforms with regulatory and legislative language, and is well documented.
+- Use authoritative county boundaries from the US Census, updated annually, and ensuring consistency during the LFP program year.
+- Assess the current FSA interpretation of "any part of a county" regulatory and legislative language. Ensure that procedures align with agency interpretation and are documented.
+- 
+
+#### For USDM
+
+- Do not clip USDM polygons to boundaries, or do so with a buffer outside the land area.
+- Ensure USDM data and metadata are archived in FGDC-compliant formats in a Federal repository.
+- Ensure USDM data are spatially valid, and refine data preparation protocols to ensure validity.
+
+#### For County Aggregation
+
+
+
+
+## Data
+
+### FSA Normal Grazing Periods
+
+```{r}
+fsa_normal_grazing_period <-
+  readr::read_csv(
+    "https://sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+  ) |>
+  dplyr::transmute(
+    `Program Year` = as.integer(`Program Year`), 
+    FIPS = `FSA Code`,
+    `Pasture Type`,
+    `Normal Grazing Period Start Date`,
+    `Normal Grazing Period End Date`,
+    `Normal Grazing Period` = 
+      lubridate::interval(
+        start = `Normal Grazing Period Start Date`,
+        end = `Normal Grazing Period End Date`
+      )) |>
+  dplyr::arrange(FIPS, `Program Year`, `Pasture Type`)
+```
+
+
+### USDM County Aggregations
+
+```{r}
+#| label: usdm-county-aggregations
+
+usdm_county_aggregations <-
+  list(
+    usdm_reported = 
+      file.path("https://sustainable-fsa.com/usdm-counties-reported",
+                "usdm-counties-reported.parquet"),
+    fsa_lfp = 
+      file.path("https://sustainable-fsa.com/usdm-counties-fsa-lfp",
+                "usdm-counties-fsa-lfp.parquet"),
+    census = 
+      file.path("https://sustainable-fsa.com/usdm-counties",
+                "usdm-counties.parquet")
+  ) |>
+  purrr::map(arrow::read_parquet)
+
+```
+
+
+```{r}
+#| label: process-usdm-county-max-class
+
+process_usdm_county_max_class <-
+  function(x){
+    x %>%
+      dtplyr::lazy_dt() %>%
+      dplyr::group_by(
+        FIPS = paste0(STATEFP, COUNTYFP),
+        date = usdm_date
+      ) %>%
+      dplyr::summarise(
+        usdm_class = max(usdm_class),
+        .groups = "drop"
+      ) %>%
+      dplyr::arrange(
+        FIPS, 
+        date
+      ) %>%
+      dplyr::collect()
+  }
+
+usdm_county_max_class <-
+  usdm_county_aggregations %>%
+  purrr::map(process_usdm_county_max_class)
+
+
+good_fips <-
+  usdm_county_aggregations$usdm_reported %>%
+  dplyr::select(STATEFP, COUNTYFP, State, County) %>%
+  dplyr::distinct()
+
+usdm_county_aggregations %>%
+  # magrittr::extract(c("usdm_reported", "fsa_lfp")) %>%
+  dplyr::bind_rows(.id = "source") %>%
+    dplyr::select(STATEFP, COUNTYFP, source, usdm_date, usdm_class, usdm_percent) %>%
+  dplyr::right_join(good_fips) %>%
+  dplyr::mutate(usdm_percent = round(100 * usdm_percent, 3)) %>%
+  tidyr::pivot_wider(names_from = source,
+                     values_from = usdm_percent) %>%
+  dplyr::filter(
+    is.na(usdm_reported),
+    # usdm_date != "2015-10-06"
+  ) %>%
+  dplyr::arrange(dplyr::desc(fsa_lfp)) %>%
+  print(n = 100)
+
+test <-
+  usdm_county_max_class %>%
+  dplyr::bind_rows(.id = "source") %>%
+  dtplyr::lazy_dt() %>%
+  dplyr::group_by(FIPS, date) %>%
+  dplyr::filter(length(unique(usdm_class)) != 1L) %>%
+  dplyr::collect() %>%
+  tidyr::pivot_wider(names_from = source,
+                     values_from = usdm_class) %>%
+  na.omit()
+
+test %>%
+  dplyr::filter(date >= "2012-01-01",
+                usdm_reported >= "D2" | fsa_lfp >= "D2") %>%
+  print(n = 100)
+
+usdm_county_aggregations$usdm_reported %>%
+  dplyr::filter(STATEFP == "05",
+                COUNTYFP == "039",
+                usdm_date == "2015-10-06")
+
+usdm_county_aggregations$fsa_lfp %>%
+  dplyr::filter(STATEFP == "05",
+                COUNTYFP == "039",
+                usdm_date == "2015-10-06")
+
+map_county_diff <-
+  function(state = "05",
+                county = "039",
+                usdm_date = "2015-10-06"){
+    paste0("https://sustainable-fsa.com/usdm/usdm/data/parquet/USDM_",usdm_date,".parquet") %>%
+    sf::read_sf() %>%
+  mapview::mapview(zcol = "usdm_class",
+                   burst = TRUE) +
+  mapview::mapview(
+    sf::read_sf("https://sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet") %>%
+      dplyr::filter(STATEFP == state,
+                    COUNTYFP == county)
+  )
+  }
+
+
+map_county_diff(state = "01",
+                county = "001",
+                usdm_date = "2022-12-06")
+
+
+```
+
+#### USDM-reported Aggregations
+```{r}
+#| label: usdm-reported-county-aggregations
+
+usdm_reported_county_aggregations <-
+  file.path("https://sustainable-fsa.com/usdm-counties-reported",
+            "usdm-counties-reported.parquet") |>
+  arrow::read_parquet()
+
+```
+
+#### US Census Aggregations
+
+```{r}
+#| label: usdm-census-county-aggregations
+
+usdm_census_county_aggregations <-
+  file.path("https://sustainable-fsa.com/usdm-counties",
+            "usdm-counties.parquet") |>
+  arrow::read_parquet()
+
+```
+
+
+#### FSA LFP County Aggregations
+
+```{r}
+#| label: usdm-fsa-lfp-county-aggregations
+
+usdm_fsa_lfp_county_aggregations <-
+  file.path("https://sustainable-fsa.com/usdm-counties-fsa-lfp",
+            "usdm-counties-fsa-lfp.parquet") %>%
+  arrow::read_parquet()
+
+```
+
+
+### LFP Payment Files
 
 ```{r}
 
@@ -129,50 +317,156 @@ lfp_payments <-
 
 ```
 
-## FSA Normal Grazing Periods
 
-```{r}
-fsa_normal_grazing_period <-
-  readr::read_csv(
-    "https://sustainable-fsa.github.io/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
-  ) |>
-  dplyr::select(`Program Year`, 
-                County = `FSA Code`,
-                `Pasture Type`,
-                `Normal Grazing Period Start Date`,
-                `Normal Grazing Period End Date`) %>%
-  dplyr::mutate(
-    `Normal Grazing Period` = 
-      lubridate::interval(
-        start = `Normal Grazing Period Start Date`,
-        end = `Normal Grazing Period End Date`
-      )) %>%
-  dplyr::arrange(`Program Year`, County, `Pasture Type`)
-```
-
-## Official LFP Eligibility Records
+### Official LFP Eligibility Records
 
 ```{r}
 fsa_lfp_eligibility <-
   readr::read_csv(
-    "https://sustainable-fsa.github.io/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
+    "https://sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
   ) |>
   dplyr::filter(`Disaster Type` == "Drought",
                 !is.na(`County Name`)) |>
   dplyr::transmute(`Program Year` =  as.integer(`Program Year`), 
-                County = paste0(State, County), 
-                `State Name`, 
-                `County Name`, 
-                `Pasture Type`,
-                `Drought Factor` = as.integer(`Drought Factor`),
-                `Maximum Eligible Payment Months` = as.integer(`Maximum Eligible Payment Months`),
-                `Payment Factor` = as.integer(`Payment Factor`)) |>
+                   County = paste0(State, County), 
+                   `State Name`, 
+                   `County Name`, 
+                   `Pasture Type`,
+                   `Drought Factor` = as.integer(`Drought Factor`),
+                   `Maximum Eligible Payment Months` = as.integer(`Maximum Eligible Payment Months`),
+                   `Payment Factor` = as.integer(`Payment Factor`)) |>
   dplyr::arrange(County, `Program Year`, `Pasture Type`, dplyr::desc(`Payment Factor`)) |>
   dplyr::group_by(County, `Program Year`, `Pasture Type`) |>
   dplyr::filter(n() > 1) %>%
   dplyr::arrange(County, `Program Year`, `Pasture Type`, dplyr::desc(`Payment Factor`))
-  dplyr::filter(`Payment Factor` == max(`Payment Factor`))
+dplyr::filter(`Payment Factor` == max(`Payment Factor`))
 
+```
+
+```{r}
+#| label: calc-lfp-eligibility
+
+calc_lfp_eligibility <-
+  function(counties){
+    usdm_counties_rle <-
+      counties %>%
+      # Implement a version of run-length encoding
+      lazy_dt() %>%
+      dplyr::group_by(FIPS) %>%
+      # Add a column for end date (`USDM End`) of the week's USDM map (inclusive) and 
+      # create an index (`group`) of changes in the county status
+      dplyr::mutate(`USDM End` = date + 6,
+                    group = cumsum(c(0, diff(usdm_class)) != 0)) %>%
+      dplyr::group_by(FIPS, usdm_class, group) %>%
+      # By group, calculate the start and end date (inclusive) of the county USDM status, and 
+      # the number of weeks in that status.
+      dplyr::summarise(
+        `USDM Start` = min(date),
+        `USDM End` = max(`USDM End`),
+        `USDM Weeks` = n(),
+        .groups = "drop") %>%
+      as_tibble() %>%
+      dplyr::mutate(`USDM Interval` = lubridate::interval(start = `USDM Start`,
+                                                          end = `USDM End`)) %>%
+      dplyr::select(FIPS,  
+                    `USDM Start`, `USDM End`, 
+                    `USDM Interval`, `USDM Weeks`,
+                    USDM = usdm_class) %>%
+      dplyr::arrange(FIPS, `USDM Start`)
+    
+    # First, find runs of USDM categories that overlap with normal grazing periods,
+    # and calculate their overlaps. Date intervals in `lubridate` are inclusive of 
+    # start and end dates.
+    lfp_usdm_calculated <-
+      fsa_normal_grazing_period |>
+      dplyr::full_join(usdm_counties_rle,
+                       by = "FIPS",
+                       relationship = "many-to-many") %>%
+      # First, filter out rows where the NGP and USDM intervals do not overlap
+      # Also, filter periods that are not D2, D3, or D4. They don't matter for LFP.
+      dplyr::filter(lubridate::int_overlaps(`Normal Grazing Period`, `USDM Interval`),
+                    USDM >= "D2") %>%
+      # Then, calculate the intersecting intervals
+      dplyr::mutate(
+        `LFP Interval` = lubridate::intersect(`Normal Grazing Period`, 
+                                              `USDM Interval`)
+      ) %>%
+      dplyr::select(FIPS, 
+                    `Program Year`, `Pasture Type`, `Normal Grazing Period`, 
+                    `USDM Interval`, `LFP Interval`, USDM, `USDM Weeks`) %>%
+      dplyr::mutate(`LFP Weeks` = (lubridate::time_length(`LFP Interval`, unit = "days") + 1) / 7) %>%
+      dplyr::select(FIPS, 
+                    `Program Year`, `Pasture Type`, 
+                    `LFP Interval`, USDM, `USDM Weeks`, `LFP Weeks`) %>%
+      dplyr::arrange(FIPS, `Program Year`, `Pasture Type`) %>%
+      dplyr::mutate(
+        `Disaster Start Date` = 
+          dplyr::case_when(
+            USDM == "D2" & `LFP Weeks` >= 8 ~
+              as.character(lubridate::int_start(`LFP Interval`) + lubridate::weeks(8)),
+            USDM == "D3" ~
+              as.character(lubridate::int_start(`LFP Interval`)),
+            USDM == "D4" ~
+              as.character(lubridate::int_start(`LFP Interval`)),
+            .default = as.character(NA)
+          ) %>%
+          lubridate::as_date()
+      )
+    
+    lfp_payments_calculated <-
+      lfp_usdm_calculated %>%
+      dplyr::group_by(FIPS, `Program Year`, `Pasture Type`) %>%
+      dplyr::filter(!all(is.na(`Disaster Start Date`))) %>%
+      dplyr::summarise(
+        `Calculated Qualifying Drought Event` = 
+          case_when(
+            # Rules for program years 2012--2024
+            sum(`LFP Weeks`[USDM == "D4"]) >= 4 ~ "D4b",
+            sum(`LFP Weeks`[USDM == "D3"]) >= 4 & 
+              sum(`LFP Weeks`[USDM == "D4"]) > 0 ~ "D3b & D4a",
+            sum(`LFP Weeks`[USDM == "D3"]) >= 4 ~ "D3b",
+            sum(`LFP Weeks`[USDM == "D4"]) > 0 ~ "D4a",
+            sum(`LFP Weeks`[USDM == "D3"]) > 0 ~ "D3a",
+            any(`LFP Weeks`[USDM == "D2"] >= 8) ~ "D2",
+            .default = NA
+          ),
+        `Calculated Disaster Start Date` = 
+          min(`Disaster Start Date`, 
+              na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      dplyr::mutate(
+        `Calculated Payments` = 
+          dplyr::case_when(
+            `Program Year` < 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D4b", "D3b & D4a", "D3b", "D4a") ~ 3L,
+            `Program Year` < 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D3a") ~ 2L,
+            `Program Year` < 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D2") ~ 1L,
+            
+            # Calculated payments switched in Program Year 2012
+            `Program Year` >= 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D4b") ~ 5L,
+            `Program Year` >= 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D3b & D4a", "D3b", "D4a") ~ 4L,
+            `Program Year` >= 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D3a") ~ 3L,
+            `Program Year` >= 2012 & 
+              `Calculated Qualifying Drought Event` %in%
+              c("D2") ~ 1L,
+            .default = 0L
+          )
+      )
+    
+    return(lfp_payments_calculated)
+  }
 ```
 
 ## County Definitions
@@ -249,7 +543,7 @@ FIPS <-
     readr::read_delim("https://www2.census.gov/geo/docs/reference/codes2020/national_state2020.txt"),
     readr::read_delim("https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt")
   )
-  
+
 
 census_counties <-
   c(
@@ -386,15 +680,15 @@ counties <-
     # NDMC Albers
     curl::multi_download(
       urls = 
-        "https://sustainable-fsa.github.io/ndmc-counties-albers/Albers.gdb.zip",
+        "https://sustainable-fsa.com/ndmc-counties-albers/Albers.gdb.zip",
       destfiles = file.path("data-raw", "counties", "Albers.gdb.zip"),
       resume = TRUE) %$%
       destfile %>% 
       fs::path_rel() %>%
       sf::read_sf(layer = "counties_detailed_all_2021") %>%
-       dplyr::filter(stringr::str_detect(CountyName, "Kootenai")) %>%
-  print(n = 400)
-      dplyr::select(County_FIPS = CountyFIPS) %>%
+      dplyr::filter(stringr::str_detect(CountyName, "Kootenai")) %>%
+      print(n = 400)
+    dplyr::select(County_FIPS = CountyFIPS) %>%
       sf::st_transform("EPSG:4326") %>%
       dplyr::arrange(County_FIPS) %>%
       list(`NDMC Albers` = .) %>%
@@ -423,17 +717,17 @@ counties <-
     # FSA dd17
     curl::multi_download(
       urls = 
-        "https://sustainable-fsa.github.io/fsa-counties-dd17/FSA_Counties_dd17.gdb.zip",
+        "https://sustainable-fsa.com/fsa-counties-dd17/FSA_Counties_dd17.gdb.zip",
       destfiles = file.path("data-raw", "counties", "FSA_Counties_dd17.gdb.zip"),
       resume = TRUE) %$%
       destfile %>% 
       fs::path_rel() %>%
       sf::read_sf() %>%
       # dplyr::filter(FSA_STCOU != FIPS_C) %>%
-            dplyr::filter(FSA_STCOU == "72113") %>%
+      dplyr::filter(FSA_STCOU == "72113") %>%
       dplyr::arrange(FSA_STCOU, FIPS_C) %>%
       print(n = 200)
-      dplyr::select(County_FIPS = state_county_fips_code) %>% 
+    dplyr::select(County_FIPS = state_county_fips_code) %>% 
       
       {
         # Round-trip to geojson to get rid of strange geometry
@@ -496,11 +790,11 @@ dir.create(
 
 ## USDM Archive
 jsonlite::fromJSON(
-  "https://sustainable-fsa.github.io/usdm/usdm-manifest.json"
+  "https://sustainable-fsa.com/usdm/usdm-manifest.json"
 ) %>%
   dplyr::filter(stringr::str_detect(path, "parquet")) %$%
   path %>%
-  file.path("https://sustainable-fsa.github.io", "usdm", .) %>%
+  file.path("https://sustainable-fsa.com", "usdm", .) %>%
   curl::multi_download(urls = .,
                        destfiles = file.path("data-raw", "usdm", basename(.)),
                        resume = TRUE)
