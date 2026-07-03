@@ -1,0 +1,19 @@
+# Citation metadata for this repository (Citation File Format 1.2.0).
+# Standardized across the sustainable-fsa organization; the same
+# citation appears in human-readable form in README.md.
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using these metadata."
+type: dataset
+title: "Livestock Forage Disaster Program Eligibility, 2012–2024: A Reanalysis across Authoritative County Boundary Datasets"
+authors:
+  - family-names: Bocinsky
+    given-names: R. Kyle
+    affiliation: "Montana Climate Office, University of Montana"
+date-released: 2026-07-02
+repository-code: "https://github.com/sustainable-fsa/fsa-lfp-eligibility-reanalysis"
+url: "https://github.com/sustainable-fsa/fsa-lfp-eligibility-reanalysis"
+keywords:
+  - USDA
+  - FSA
+  - drought
+  - Livestock Forage Disaster Program
