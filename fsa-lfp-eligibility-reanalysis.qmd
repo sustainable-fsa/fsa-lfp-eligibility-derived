@@ -120,7 +120,7 @@ usdm_dates <-
 ```{r}
 fsa_normal_grazing_period <-
   readr::read_csv(
-    "https://sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+    "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
   ) |>
   dplyr::transmute(
     `Program Year` = as.integer(`Program Year`), 
@@ -145,13 +145,13 @@ fsa_normal_grazing_period <-
 usdm_county_aggregations <-
   list(
     usdm_reported = 
-      file.path("https://sustainable-fsa.com/usdm-counties-reported",
+      file.path("https://data.sustainable-fsa.com/usdm-counties-reported",
                 "usdm-counties-reported.parquet"),
     fsa_lfp = 
-      file.path("https://sustainable-fsa.com/usdm-counties-fsa-lfp",
+      file.path("https://data.sustainable-fsa.com/usdm-counties-fsa-lfp",
                 "usdm-counties-fsa-lfp.parquet"),
     census = 
-      file.path("https://sustainable-fsa.com/usdm-counties",
+      file.path("https://data.sustainable-fsa.com/usdm-counties",
                 "usdm-counties.parquet")
   ) |>
   purrr::map(arrow::read_parquet)
@@ -236,12 +236,12 @@ map_county_diff <-
   function(state = "05",
                 county = "039",
                 usdm_date = "2015-10-06"){
-    paste0("https://sustainable-fsa.com/usdm/usdm/data/parquet/USDM_",usdm_date,".parquet") %>%
+    paste0("https://data.sustainable-fsa.com/usdm/data/parquet/USDM_",usdm_date,".parquet") %>%
     sf::read_sf() %>%
   mapview::mapview(zcol = "usdm_class",
                    burst = TRUE) +
   mapview::mapview(
-    sf::read_sf("https://sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet") %>%
+    sf::read_sf("https://data.sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet") %>%
       dplyr::filter(STATEFP == state,
                     COUNTYFP == county)
   )
@@ -260,7 +260,7 @@ map_county_diff(state = "01",
 #| label: usdm-reported-county-aggregations
 
 usdm_reported_county_aggregations <-
-  file.path("https://sustainable-fsa.com/usdm-counties-reported",
+  file.path("https://data.sustainable-fsa.com/usdm-counties-reported",
             "usdm-counties-reported.parquet") |>
   arrow::read_parquet()
 
@@ -272,7 +272,7 @@ usdm_reported_county_aggregations <-
 #| label: usdm-census-county-aggregations
 
 usdm_census_county_aggregations <-
-  file.path("https://sustainable-fsa.com/usdm-counties",
+  file.path("https://data.sustainable-fsa.com/usdm-counties",
             "usdm-counties.parquet") |>
   arrow::read_parquet()
 
@@ -285,7 +285,7 @@ usdm_census_county_aggregations <-
 #| label: usdm-fsa-lfp-county-aggregations
 
 usdm_fsa_lfp_county_aggregations <-
-  file.path("https://sustainable-fsa.com/usdm-counties-fsa-lfp",
+  file.path("https://data.sustainable-fsa.com/usdm-counties-fsa-lfp",
             "usdm-counties-fsa-lfp.parquet") %>%
   arrow::read_parquet()
 
@@ -323,7 +323,7 @@ lfp_payments <-
 ```{r}
 fsa_lfp_eligibility <-
   readr::read_csv(
-    "https://sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
+    "https://data.sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
   ) |>
   dplyr::filter(`Disaster Type` == "Drought",
                 !is.na(`County Name`)) |>
@@ -680,7 +680,7 @@ counties <-
     # NDMC Albers
     curl::multi_download(
       urls = 
-        "https://sustainable-fsa.com/ndmc-counties-albers/Albers.gdb.zip",
+        "https://data.sustainable-fsa.com/ndmc-counties-albers/Albers.gdb.zip",
       destfiles = file.path("data-raw", "counties", "Albers.gdb.zip"),
       resume = TRUE) %$%
       destfile %>% 
@@ -717,7 +717,7 @@ counties <-
     # FSA dd17
     curl::multi_download(
       urls = 
-        "https://sustainable-fsa.com/fsa-counties-dd17/FSA_Counties_dd17.gdb.zip",
+        "https://data.sustainable-fsa.com/fsa-counties-dd17/FSA_Counties_dd17.gdb.zip",
       destfiles = file.path("data-raw", "counties", "FSA_Counties_dd17.gdb.zip"),
       resume = TRUE) %$%
       destfile %>% 
@@ -790,11 +790,11 @@ dir.create(
 
 ## USDM Archive
 jsonlite::fromJSON(
-  "https://sustainable-fsa.com/usdm/usdm-manifest.json"
+  "https://data.sustainable-fsa.com/usdm/usdm-manifest.json"
 ) %>%
   dplyr::filter(stringr::str_detect(path, "parquet")) %$%
   path %>%
-  file.path("https://sustainable-fsa.com", "usdm", .) %>%
+  file.path("https://data.sustainable-fsa.com", "usdm", .) %>%
   curl::multi_download(urls = .,
                        destfiles = file.path("data-raw", "usdm", basename(.)),
                        resume = TRUE)

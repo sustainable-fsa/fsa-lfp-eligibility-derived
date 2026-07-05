@@ -44,7 +44,7 @@ library(future.mirai)
 library(dtplyr)
 
 usdm_get_dates <-
-  function(as_of = lubridate::today()){
+  function(as_of = lubridate::today("America/Denver")){
     as_of %<>%
       lubridate::as_date()
     
@@ -58,7 +58,7 @@ usdm_get_dates <-
 
 fsa_lfp_counties_dates <-
   sf::read_sf(
-    "https://sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet"
+    "https://data.sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet"
   ) %>%
   sf::st_drop_geometry() %>%
   dplyr::transmute(FIPS = paste0(STATEFP, COUNTYFP)) %>%
@@ -69,7 +69,7 @@ fsa_lfp_counties_dates <-
 
 fsa_lfp_counties <-
   sf::read_sf(
-    "https://sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet"
+    "https://data.sustainable-fsa.com/usdm-counties-fsa-lfp/data/fsa-lfp-counties.parquet"
   ) %>%
   dplyr::transmute(FIPS = paste0(STATEFP, COUNTYFP)) %>%
   dplyr::distinct() %>%
@@ -89,7 +89,7 @@ dplyr::anti_join(
 
 fsa_normal_grazing_period <-
   readr::read_csv(
-    "https://sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+    "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
   ) |>
   dplyr::select(`Program Year`,
                 FIPS = `FSA Code`,
@@ -106,7 +106,7 @@ fsa_normal_grazing_period <-
 
 fsa_lfp_eligibility <-
   readr::read_csv(
-    "https://sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
+    "https://data.sustainable-fsa.com/fsa-lfp-eligibility/fsa-lfp-eligibility.csv"
   ) |>
   dplyr::filter(`Disaster Type` == "Drought") %>%
   dplyr::mutate(FIPS = paste0(`FIPS State Code`, `FIPS County Code`)) %>%
@@ -131,7 +131,7 @@ fsa_lfp_eligibility <-
 
 usdm_counties <-
   jsonlite::fromJSON(
-    "https://sustainable-fsa.com/usdm-counties/manifest.json"
+    "https://data.sustainable-fsa.com/usdm-counties/manifest.json"
   )$path |>
   stringr::str_subset("parquet") %>%
   stringr::str_subset("usdm") %>%
@@ -180,7 +180,7 @@ usdm_counties <-
                 !stringr::str_starts(FIPS, "78"))
 
 usdm_counties_fsa_lfp <-
-  file.path("https://sustainable-fsa.com/usdm-counties-fsa-lfp",
+  file.path("https://data.sustainable-fsa.com/usdm-counties-fsa-lfp",
             "usdm-counties-fsa-lfp.parquet") %>%
   arrow::read_parquet() %>%
   dtplyr::lazy_dt() %>%
@@ -357,16 +357,16 @@ payment_diffs %>%
   dplyr::count()
 
 fsa_counties <-
-  sf::read_sf("https://sustainable-fsa.com/fsa-lfp-counties/fsa-lfp-counties.parquet") %>%
+  sf::read_sf("https://data.sustainable-fsa.com/fsa-lfp-counties/fsa-lfp-counties.parquet") %>%
   dplyr::transmute(STATEFP = StateFIPS, COUNTYFP = stringr::str_sub(CountyFIPS, start = 3L, end = 5L))
 
 census_counties_2000 <- 
-  sf::read_sf("https://sustainable-fsa.com/usdm-counties/data/census/parquet/2010-counties.parquet") %>%
+  sf::read_sf("https://data.sustainable-fsa.com/usdm-counties/data/census/parquet/2010-counties.parquet") %>%
   dplyr::select(STATEFP, COUNTYFP) %>%
   sf::st_transform(sf::st_crs(fsa_counties))
 
 census_counties_2024 <- 
-  sf::read_sf("https://sustainable-fsa.com/usdm-counties/data/census/parquet/2024-counties.parquet") %>%
+  sf::read_sf("https://data.sustainable-fsa.com/usdm-counties/data/census/parquet/2024-counties.parquet") %>%
   dplyr::select(STATEFP, COUNTYFP) %>%
   sf::st_transform(sf::st_crs(fsa_counties))
 
@@ -435,7 +435,7 @@ mapview_usdm_county_week <-
     drought <-
       date %>%
       lubridate::as_date() %>%
-      paste0("https://sustainable-fsa.com/usdm/usdm/data/parquet/USDM_",.,".parquet") %>%
+      paste0("https://data.sustainable-fsa.com/usdm/data/parquet/USDM_",.,".parquet") %>%
       sf::read_sf()
     
     mapview::mapview(list(counties, drought))
