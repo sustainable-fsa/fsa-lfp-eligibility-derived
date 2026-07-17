@@ -6,3 +6,11 @@
 .httr-oauth
 .DS_Store
 .quarto
+
+# S3-hosted data (archive of record:
+# https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+data
+fsa-lfp-eligibility-reanalysis.parquet
+usdm.parquet
+manifest.json
+manifest.html
