@@ -91,6 +91,39 @@ get_usdm_dates <-
 usdm_dates <-
   get_usdm_dates()
 
+
+# Generate counties from the Normal Grazing Periods dataset
+counties <-
+  readr::read_csv(
+    "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+  ) |>
+  dplyr::transmute(
+    FIPS = stringr::str_c(`FIPS State Code`, `FIPS County Code`),
+    State = `FIPS State Name`,
+    County = `FIPS County Name`) |>
+  dplyr::arrange(FIPS) %>%
+  dplyr::mutate(County = ifelse(County == "Cata\xf1o", NA, County)) %>%
+  dplyr::filter(!is.na(County)) %>%
+  dplyr::distinct()
+
+
+arrow::read_parquet("data/lfp.parquet") %>%
+  dplyr::group_by(FIPS,
+                  source,
+                  `Program Year`,
+                  `Pasture Type`) %>%
+  dplyr::filter(Payments == max(Payments)) %>%
+  # dplyr::group_by(FIPS,
+  #                 `Program Year`,
+  #                 `Pasture Type`) %>%
+  # dplyr::filter(!all(Payments == Payments[1])) %>%
+  dplyr::ungroup() %>%
+  dplyr::select(!c(`Qualifying Drought Event`, `Qualifying Date`)) %>%
+  tidyr::pivot_wider(names_from = source,
+                     values_from = Payments) %>%
+  dplyr::left_join(counties)
+
+
 ```
 
 ### Summary Recommendations
@@ -124,14 +157,14 @@ fsa_normal_grazing_period <-
   ) |>
   dplyr::transmute(
     `Program Year` = as.integer(`Program Year`), 
-    FIPS = `FSA Code`,
+    FIPS = stringr::str_c(`FIPS State Code`, `FIPS County Code`),
     `Pasture Type`,
-    `Normal Grazing Period Start Date`,
-    `Normal Grazing Period End Date`,
+    `Grazing Period Start Date`,
+    `Grazing Period End Date`,
     `Normal Grazing Period` = 
       lubridate::interval(
-        start = `Normal Grazing Period Start Date`,
-        end = `Normal Grazing Period End Date`
+        start = `Grazing Period Start Date`,
+        end = `Grazing Period End Date`
       )) |>
   dplyr::arrange(FIPS, `Program Year`, `Pasture Type`)
 ```
@@ -190,21 +223,6 @@ good_fips <-
   usdm_county_aggregations$usdm_reported %>%
   dplyr::select(STATEFP, COUNTYFP, State, County) %>%
   dplyr::distinct()
-
-usdm_county_aggregations %>%
-  # magrittr::extract(c("usdm_reported", "fsa_lfp")) %>%
-  dplyr::bind_rows(.id = "source") %>%
-    dplyr::select(STATEFP, COUNTYFP, source, usdm_date, usdm_class, usdm_percent) %>%
-  dplyr::right_join(good_fips) %>%
-  dplyr::mutate(usdm_percent = round(100 * usdm_percent, 3)) %>%
-  tidyr::pivot_wider(names_from = source,
-                     values_from = usdm_percent) %>%
-  dplyr::filter(
-    is.na(usdm_reported),
-    # usdm_date != "2015-10-06"
-  ) %>%
-  dplyr::arrange(dplyr::desc(fsa_lfp)) %>%
-  print(n = 100)
 
 test <-
   usdm_county_max_class %>%
