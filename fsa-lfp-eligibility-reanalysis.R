@@ -224,11 +224,15 @@ lfp_usdm_calculated <-
                 `Program Year`, `Pasture Type`, `Normal Grazing Period`, 
                 `USDM Interval`, `LFP Interval`, USDM, `USDM Weeks`) %>%
   dplyr::mutate(`LFP Weeks` = (lubridate::time_length(`LFP Interval`, unit = "days") + 1) / 7) %>%
-  dplyr::select(FIPS, 
+  dplyr::select(FIPS,
                 source,
-                `Program Year`, `Pasture Type`, 
+                `Program Year`, `Pasture Type`,
                 `LFP Interval`, USDM, `LFP Weeks`) %>%
-  dplyr::arrange(FIPS, source, `Program Year`, `Pasture Type`)
+  # `tier_date()` and the D2 sandwich pattern both require runs to be in
+  # chronological order within each group, so sort on the run start explicitly
+  # rather than inheriting the order from the upstream arrange().
+  dplyr::arrange(FIPS, source, `Program Year`, `Pasture Type`,
+                 lubridate::int_start(`LFP Interval`))
 
 # A general pattern identifier
 find_pattern <- function(x, pattern) {
@@ -250,6 +254,31 @@ int_start_num <- function(iv) as.numeric(iv@start)         # int_start() in secs
 int_end_num   <- function(iv) as.numeric(iv@start) + iv@.Data  # int_end() in secs-since-epoch
 secs_to_date  <- function(s)  as.Date(.POSIXct(s, tz = "UTC")) # UTC Date coercion
 
+# Qualifying date for a duration-based drought tier.
+#
+# Convention (applies to every duration tier): the qualifying date is the LAST DAY
+# of the window in which `required` weeks at `class` accumulate. `interval_end` is
+# the inclusive last day of each clipped run (runs are built with
+# `USDM End = usdm_date + 6`), so subtracting the overshoot lands on the last day
+# of the required window rather than the day after it.
+#
+#   consecutive = TRUE  -> weeks must accrue within a single run (the D2 family;
+#                          7 CFR 1416.110(a)(1) requires "8 consecutive weeks")
+#   consecutive = FALSE -> weeks accrue across runs (D3b, D4b; the regulation says
+#                          "at least 4 weeks", with no consecutiveness requirement)
+#
+# Expects runs to be in chronological order within the group. Returns
+# seconds-since-epoch, NA everywhere except the run that satisfies the test.
+tier_date <- function(usdm, class, weeks, interval_end, required, consecutive) {
+  out <- rep(NA_real_, length(usdm))
+  idx <- which(usdm == class)
+  if (!length(idx)) return(out)
+  acc <- if (consecutive) weeks[idx] else cumsum(weeks[idx])
+  k   <- which(acc >= required)[1]
+  if (!is.na(k)) out[idx[k]] <- interval_end[idx[k]] - (acc[k] - required) * WEEK
+  out
+}
+
 lfp_payments_calculated <-
   lfp_usdm_calculated %>%
   dplyr::mutate(
@@ -266,46 +295,21 @@ lfp_payments_calculated <-
       `[<-`(
         rep(NA_real_, length(USDM)),
         .,
-        value = `LFP Interval Start`[.] + (7 - `LFP Weeks`[. - 2]) * WEEK
+        # Last day of the 7-week window, accrued across the two D2 runs.
+        # `.` indexes the second D2 run, `. - 2` the first.
+        value = `LFP Interval End`[.] -
+          ((`LFP Weeks`[. - 2] + `LFP Weeks`[.]) - 7) * WEEK
       ),
-    D3b = {
-      idx <- which(USDM == "D3")
-      cs  <- cumsum(`LFP Weeks`[idx])
-      k   <- which(cs >= 4)[1]
-      out <- rep(NA_real_, length(USDM))
-      if (!is.na(k))
-        out[idx[k]] <- `LFP Interval End`[idx[k]] + (4 - cs[k]) * WEEK
-      out
-    },
-    D4b = {
-      idx <- which(USDM == "D4")
-      cs  <- cumsum(`LFP Weeks`[idx])
-      k   <- which(cs >= 4)[1]
-      out <- rep(NA_real_, length(USDM))
-      if (!is.na(k))
-        out[idx[k]] <- `LFP Interval End`[idx[k]] + (4 - cs[k]) * WEEK
-      out
-    }
+    D2       = tier_date(USDM, "D2", `LFP Weeks`, `LFP Interval End`, 8, TRUE),
+    D2a_2026 = tier_date(USDM, "D2", `LFP Weeks`, `LFP Interval End`, 4, TRUE),
+    D2b_2026 = tier_date(USDM, "D2", `LFP Weeks`, `LFP Interval End`, 7, TRUE),
+    D3b      = tier_date(USDM, "D3", `LFP Weeks`, `LFP Interval End`, 4, FALSE),
+    D4b      = tier_date(USDM, "D4", `LFP Weeks`, `LFP Interval End`, 4, FALSE)
   ) %>%
   dplyr::ungroup() %>%
   dplyr::mutate(
-    dplyr::across(c(D2_Sandwich, D3b, D4b), secs_to_date),
-    D2a_2026 = ifelse(USDM == "D2" & `LFP Weeks` >= 4, 
-                      lubridate::int_start(`LFP Interval`) + dweeks(4), 
-                      as.Date(NA)) |>
-      lubridate::as_datetime() |>
-      lubridate::as_date(),
-    D2b_2026 = ifelse(USDM == "D2" & `LFP Weeks` >= 7, 
-                      lubridate::int_start(`LFP Interval`) + dweeks(7), 
-                      as.Date(NA)) |>
-      lubridate::as_datetime() |>
-      lubridate::as_date(),
-    D2 = ifelse(USDM == "D2" & `LFP Weeks` >= 8, 
-                lubridate::int_start(`LFP Interval`) + dweeks(8), 
-                as.Date(NA)) |>
-      lubridate::as_datetime() |>
-      lubridate::as_date(),
-    D3a = ifelse(USDM == "D3", 
+    dplyr::across(c(D2_Sandwich, D2, D2a_2026, D2b_2026, D3b, D4b), secs_to_date),
+    D3a = ifelse(USDM == "D3",
                  lubridate::int_start(`LFP Interval`), 
                  as.Date(NA)) |>
       lubridate::as_datetime() |>
@@ -317,7 +321,11 @@ lfp_payments_calculated <-
       lubridate::as_date()
   ) %>%
   dplyr::select(!c(`LFP Interval Start`, `LFP Interval End`)) %>%
-  tidyr::pivot_longer(D2_Sandwich:D4a,
+  # Named explicitly rather than positionally (`D2_Sandwich:D4a`), which silently
+  # depended on column creation order. The order below is the original creation
+  # order and must be preserved: where two tiers award the same `Payments` on the
+  # same date, it is what breaks the tie in the distinct() below.
+  tidyr::pivot_longer(c(D2_Sandwich, D3b, D4b, D2a_2026, D2b_2026, D2, D3a, D4a),
                       names_to = "Qualifying Drought Event",
                       values_to = "Qualifying Date") %>%
   dplyr::filter(!is.na(`Qualifying Date`)) %>%
