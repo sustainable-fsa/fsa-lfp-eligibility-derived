@@ -135,24 +135,69 @@ usdm_counties_max %>%
 ## For each USDM date and sequence of maximum county USDM categories,
 ## calculate the LFP Payment history across Pasture Types
 
+# The FSA county -> Census county (FIPS) crosswalk.
+#
+# The Normal Grazing Period archive is published at FSA county grain, and FSA
+# counties do not nest inside Census counties. An FSA county may span several
+# Census counties (Alaska, Puerto Rico), and FSA also splits some Census counties
+# across two or three administrative counties (East/West Pottawattamie IA, the
+# three Aroostook ME offices). The USDM aggregations are FIPS-keyed, so the NGP
+# must be mapped onto FIPS before it can be joined.
+#
+# dd22 is used for every program year rather than vintage-matched against dd17:
+# it resolves all 3,095 FSA counties for 2008-2026, whereas dd17 does not carry
+# Shoshone County, ID (16079) from 2015 on, and against FSA's own published LFP
+# determinations dd22 agrees at least as often as dd17 in every era.
+fsa_county_crosswalk <-
+  arrow::read_parquet(
+    "https://data.sustainable-fsa.com/fsa-counties-dd22/fsa-counties-dd22.parquet",
+    col_select = c("FSA_STCOU", "FIPS_C")
+  ) |>
+  dplyr::transmute(`FSA County` = FSA_STCOU, FIPS = FIPS_C) |>
+  dplyr::distinct()
+
 # First, Download the Normal Grazing Period history
 fsa_normal_grazing_period <-
-  readr::read_csv(
-    "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.csv"
+  arrow::read_parquet(
+    "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.parquet"
   ) |>
   dplyr::transmute(
-    `Program Year` = as.integer(`Program Year`), 
-    FIPS = stringr::str_c(`FIPS State Code`, `FIPS County Code`),
+    `Program Year` = as.integer(`Program Year`),
+    `FSA County` = stringr::str_c(`State FSA Code`, `County FSA Code`),
     `Pasture Type`,
     `Grazing Period Start Date`,
-    `Grazing Period End Date`,
-    `Normal Grazing Period` = 
+    `Grazing Period End Date`
+  ) |>
+  dplyr::inner_join(fsa_county_crosswalk,
+                    by = "FSA County",
+                    relationship = "many-to-many") |>
+  # Where FSA splits one Census county across several administrative counties,
+  # take the envelope of their grazing periods so the key stays unique at FIPS
+  # grain. 182 of 251,111 (program year, FIPS, pasture type) keys are affected
+  # (0.07%); on the rest the constituent periods agree exactly. The upstream
+  # archive enforces one record per FSA county key; this restores the same
+  # invariant after the crosswalk.
+  dplyr::group_by(`Program Year`, FIPS, `Pasture Type`) |>
+  dplyr::summarise(
+    `Grazing Period Start Date` = min(`Grazing Period Start Date`),
+    `Grazing Period End Date`   = max(`Grazing Period End Date`),
+    .groups = "drop"
+  ) |>
+  dplyr::mutate(
+    `Normal Grazing Period` =
       lubridate::interval(
         start = `Grazing Period Start Date`,
         end = `Grazing Period End Date`
       )) |>
-  dplyr::arrange(FIPS, `Program Year`, `Pasture Type`) %>%
-  dplyr::distinct()
+  dplyr::arrange(FIPS, `Program Year`, `Pasture Type`)
+
+# One record per (program year, FIPS county, pasture type), mirroring the
+# invariant the upstream archive enforces at FSA county grain.
+stopifnot(
+  !anyDuplicated(
+    fsa_normal_grazing_period[c("Program Year", "FIPS", "Pasture Type")]
+  )
+)
 
 # The county level max USDM classes, from above
 # Recode classes less that D2, which don't qualify for LFP
