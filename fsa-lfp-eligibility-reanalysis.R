@@ -27,8 +27,8 @@ s3_prefix      <- Sys.getenv("S3_PREFIX", unset = "fsa-lfp-eligibility-reanalysi
 ## Pull prior archive state so incremental guards see existing outputs
 s3_pull(s3_bucket_name, paste0(s3_prefix, "/data"), "data")
 
-## WEEKLY USDM COUNTY COMPARISON
-## For each USDM date, get data for each county aggregation data source, 
+## ---- Weekly USDM county comparison -----------------------------------
+## For each USDM date, get data for each county aggregation data source,
 ## and find the maximum designation in each county.
 
 dir.create(
@@ -118,7 +118,9 @@ usdm_updates |>
 
 plan(sequential)
 
-## Create a single parquet output, for simplicity
+## ---- Combined weekly USDM archive ------------------------------------
+## One row per Census county and USDM week, with a column per county
+## aggregation carrying that week's worst class in the county.
 usdm_counties_max <-
   arrow::open_dataset("data/usdm") %>%
   dplyr::collect() %>%
@@ -131,18 +133,41 @@ usdm_counties_max %>%
                        compression_level = 13,
                        use_dictionary = TRUE)
 
-## WEEKLY LFP PAYMENT CALCULATION
+## ---- Weekly LFP drought factor calculation ---------------------------
 ## For each USDM date and sequence of maximum county USDM categories,
-## calculate the LFP Payment history across Pasture Types
+## calculate the LFP drought factor history across Pasture Types
 
-# The FSA county -> Census county (FIPS) crosswalk.
-#
-# The Normal Grazing Period archive is published at FSA county grain, and FSA
-# counties do not nest inside Census counties. An FSA county may span several
-# Census counties (Alaska, Puerto Rico), and FSA also splits some Census counties
-# across two or three administrative counties (East/West Pottawattamie IA, the
-# three Aroostook ME offices). The USDM aggregations are FIPS-keyed, so the NGP
-# must be mapped onto FIPS before it can be joined.
+## ---------------------------------------------------------------------------
+## Two county keys, and why the archive carries both
+##
+## An LFP determination is defined by two counties at once, and they are not the
+## same county. The Normal Grazing Period is established per *administrative*
+## (FSA) county — the County Office and STC set it through NAP and the NCT
+## (1-LFP Amend. 7, par. 27). Eligibility then triggers on drought "in any area
+## of the county" as a *geographic* unit, and the USDM county aggregations are
+## FIPS-keyed (par. 23). So the grazing window comes from the FSA county and the
+## drought record comes from the Census county, and neither key alone describes
+## a determination.
+##
+## The two do not nest. An FSA county may span several Census counties: 33 do
+## here, from the Virginia county-plus-independent-city pairs up to Caguas, PR
+## (72025), which spans 23 municipios, and Palmer, AK (02005), which spans 7.
+## Several FSA counties may also fall inside one Census county, because FSA
+## splits some counties administratively and each office sets its own grazing
+## period: 9 do here, including the three Aroostook, ME offices and East/West
+## Pottawattamie, IA.
+##
+## This script therefore computes one determination per (FIPS, FSA County) pair
+## and **does not reduce** — an earlier version took the envelope of the grazing
+## periods within a FIPS, which silently invented a window no FSA office ever
+## published. Collapsing to either grain is the consumer's call, and it is a real
+## call: of the 996 determination cells spanning several Census counties, 204
+## disagree by 1-3 months, and 4 of the 400 cells covered by several FSA counties
+## disagree by 3. qa-report.txt enumerates every one of them.
+## ---------------------------------------------------------------------------
+
+# The FSA county -> Census county (FIPS) crosswalk. The pair it produces is
+# carried through to the published archive rather than collapsed; see above.
 #
 # dd22 is used for every program year rather than vintage-matched against dd17:
 # it resolves all 3,095 FSA counties for 2008-2026, whereas dd17 does not carry
@@ -156,8 +181,8 @@ fsa_county_crosswalk <-
   dplyr::transmute(`FSA County` = FSA_STCOU, FIPS = FIPS_C) |>
   dplyr::distinct()
 
-# First, Download the Normal Grazing Period history
-fsa_normal_grazing_period <-
+# The Normal Grazing Period history, at the FSA county grain FSA publishes.
+fsa_normal_grazing_period_raw <-
   arrow::read_parquet(
     "https://data.sustainable-fsa.com/fsa-normal-grazing-period/fsa-normal-grazing-period.parquet"
   ) |>
@@ -167,36 +192,53 @@ fsa_normal_grazing_period <-
     `Pasture Type`,
     `Grazing Period Start Date`,
     `Grazing Period End Date`
-  ) |>
+  )
+
+# Mapped onto Census counties. `relationship` is explicit because the join
+# genuinely is many-to-many; leaving it implicit hides the fan-out.
+fsa_normal_grazing_period <-
+  fsa_normal_grazing_period_raw |>
   dplyr::inner_join(fsa_county_crosswalk,
                     by = "FSA County",
                     relationship = "many-to-many") |>
-  # Where FSA splits one Census county across several administrative counties,
-  # take the envelope of their grazing periods so the key stays unique at FIPS
-  # grain. 182 of 251,111 (program year, FIPS, pasture type) keys are affected
-  # (0.07%); on the rest the constituent periods agree exactly. The upstream
-  # archive enforces one record per FSA county key; this restores the same
-  # invariant after the crosswalk.
-  dplyr::group_by(`Program Year`, FIPS, `Pasture Type`) |>
-  dplyr::summarise(
-    `Grazing Period Start Date` = min(`Grazing Period Start Date`),
-    `Grazing Period End Date`   = max(`Grazing Period End Date`),
-    .groups = "drop"
-  ) |>
   dplyr::mutate(
     `Normal Grazing Period` =
       lubridate::interval(
         start = `Grazing Period Start Date`,
         end = `Grazing Period End Date`
       )) |>
-  dplyr::arrange(FIPS, `Program Year`, `Pasture Type`)
+  dplyr::select(FIPS, `FSA County`, `Program Year`, `Pasture Type`, dplyr::everything()) |>
+  dplyr::arrange(FIPS, `FSA County`, `Program Year`, `Pasture Type`)
 
-# One record per (program year, FIPS county, pasture type), mirroring the
-# invariant the upstream archive enforces at FSA county grain.
-stopifnot(
-  !anyDuplicated(
-    fsa_normal_grazing_period[c("Program Year", "FIPS", "Pasture Type")]
-  )
+# Fail with the count and a sample, so a CI log alone identifies the cause.
+assert_empty <- function(offenders, what) {
+  if (nrow(offenders) == 0L) {
+    return(invisible(NULL))
+  }
+  stop("Validation failed — ", what, ": ", nrow(offenders), " record(s).\n",
+       paste(
+         utils::capture.output(print(utils::head(offenders, 10L), width = 200)),
+         collapse = "\n"
+       ),
+       call. = FALSE)
+}
+
+# Input invariants, checked here rather than in the validation block below: the
+# USDM join is the expensive step, and a bad grazing period should not pay for it.
+assert_empty(
+  fsa_normal_grazing_period %>%
+    dplyr::count(`Program Year`, FIPS, `FSA County`, `Pasture Type`) %>%
+    dplyr::filter(n > 1L),
+  "duplicate (Program Year, FIPS, FSA county, Pasture Type) keys"
+)
+
+# An FSA county the NGP names but dd22 does not define cannot be placed on the
+# USDM, and the inner_join above would drop it without saying so.
+assert_empty(
+  fsa_normal_grazing_period_raw %>%
+    dplyr::distinct(`FSA County`) %>%
+    dplyr::anti_join(fsa_county_crosswalk, by = "FSA County"),
+  "FSA counties in the Normal Grazing Period archive absent from dd22"
 )
 
 # The county level max USDM classes, from above
@@ -251,9 +293,11 @@ usdm_counties_rle <-
 # start and end dates.
 lfp_usdm_calculated <-
   fsa_normal_grazing_period |>
-  dplyr::full_join(usdm_counties_rle,
-                   by = "FIPS",
-                   relationship = "many-to-many") %>%
+  # Inner, not full: a full join's unmatched rows carry NA county keys, and only
+  # the int_overlaps() filter below keeps them out of the output.
+  dplyr::inner_join(usdm_counties_rle,
+                    by = "FIPS",
+                    relationship = "many-to-many") %>%
   # First, filter out rows where the NGP and USDM intervals do not overlap
   # Also, filter periods that are not D2, D3, or D4. They don't matter for LFP.
   dplyr::filter(
@@ -264,19 +308,21 @@ lfp_usdm_calculated <-
     `LFP Interval` = lubridate::intersect(`Normal Grazing Period`, 
                                           `USDM Interval`)
   ) %>%
-  dplyr::select(FIPS, 
+  dplyr::select(FIPS,
+                `FSA County`,
                 source,
                 `Program Year`, `Pasture Type`, `Normal Grazing Period`, 
                 `USDM Interval`, `LFP Interval`, USDM, `USDM Weeks`) %>%
   dplyr::mutate(`LFP Weeks` = (lubridate::time_length(`LFP Interval`, unit = "days") + 1) / 7) %>%
   dplyr::select(FIPS,
+                `FSA County`,
                 source,
                 `Program Year`, `Pasture Type`,
                 `LFP Interval`, USDM, `LFP Weeks`) %>%
   # `tier_date()` and the D2 sandwich pattern both require runs to be in
   # chronological order within each group, so sort on the run start explicitly
   # rather than inheriting the order from the upstream arrange().
-  dplyr::arrange(FIPS, source, `Program Year`, `Pasture Type`,
+  dplyr::arrange(FIPS, `FSA County`, source, `Program Year`, `Pasture Type`,
                  lubridate::int_start(`LFP Interval`))
 
 # A general pattern identifier
@@ -324,13 +370,13 @@ tier_date <- function(usdm, class, weeks, interval_end, required, consecutive) {
   out
 }
 
-lfp_payments_calculated <-
+lfp_eligibility_calculated <-
   lfp_usdm_calculated %>%
   dplyr::mutate(
     `LFP Interval Start` = int_start_num(`LFP Interval`),
     `LFP Interval End` = int_end_num(`LFP Interval`)
   ) %>%
-  dplyr::group_by(FIPS, source, `Program Year`, `Pasture Type`) %>%
+  dplyr::group_by(FIPS, `FSA County`, source, `Program Year`, `Pasture Type`) %>%
   dplyr::mutate(
     `D2_Sandwich` =
       find_pattern(USDM, c("D2", "< D2", "D2")) %>%
@@ -368,23 +414,28 @@ lfp_payments_calculated <-
   dplyr::select(!c(`LFP Interval Start`, `LFP Interval End`)) %>%
   # Named explicitly rather than positionally (`D2_Sandwich:D4a`), which silently
   # depended on column creation order. The order below is the original creation
-  # order and must be preserved: where two tiers award the same `Payments` on the
-  # same date, it is what breaks the tie in the distinct() below.
+  # order and must be preserved: where two tiers award the same `Drought Factor`
+  # on the same date, it is what breaks the tie in the distinct() below.
   tidyr::pivot_longer(c(D2_Sandwich, D3b, D4b, D2a_2026, D2b_2026, D2, D3a, D4a),
                       names_to = "Qualifying Drought Event",
                       values_to = "Qualifying Date") %>%
   dplyr::filter(!is.na(`Qualifying Date`)) %>%
-  dplyr::arrange(FIPS, source, `Program Year`, `Pasture Type`, `Qualifying Date`) %>%
+  dplyr::arrange(FIPS, `FSA County`, source, `Program Year`, `Pasture Type`, `Qualifying Date`) %>%
   dplyr::mutate(
     `Qualifying Drought Event` = 
       ifelse(`Qualifying Drought Event` == "D2_Sandwich", 
              "D2b_2026", 
              `Qualifying Drought Event`)
   ) %>%
+  # The tier the qualifying event earns, in monthly payments. This is FSA's
+  # `Drought Factor`, not its `Payment Factor`: FSA caps the award at the
+  # Maximum Eligible Payment Months implied by the length of the grazing period,
+  # so the payable figure is min(`Drought Factor`, MEPM). The cap needs only the
+  # grazing dates, which this archive does not carry — see README.
   dplyr::mutate(
-    `Payments` = 
+    `Drought Factor` =
       dplyr::case_when(
-        `Program Year` %in% 2008:2011 & 
+        `Program Year` %in% 2008:2011 &
           `Qualifying Drought Event` %in%
           c("D4b", "D3b & D4a", "D3b", "D4a") ~ 3L,
         `Program Year` %in% 2008:2011 & 
@@ -394,7 +445,7 @@ lfp_payments_calculated <-
           `Qualifying Drought Event` %in%
           c("D2") ~ 1L,
         
-        # payments switched in Program Year 2012
+        # the ladder switched in Program Year 2012
         `Program Year` %in% 2012:2025 & 
           `Qualifying Drought Event` %in%
           c("D4b") ~ 5L,
@@ -408,7 +459,7 @@ lfp_payments_calculated <-
           `Qualifying Drought Event` %in%
           c("D2") ~ 1L,
         
-        # payments switched again in Program Year 2026
+        # the ladder switched again in Program Year 2026
         `Program Year` >= 2026 & 
           `Qualifying Drought Event` %in%
           c("D4b") ~ 5L,
@@ -427,24 +478,214 @@ lfp_payments_calculated <-
         .default = 0L
       )
   ) %>%
-  dplyr::filter(`Payments` > 0L) %>%
-  dplyr::group_by(FIPS, source, `Program Year`, `Pasture Type`) %>%
-  dplyr::distinct(`Payments`, .keep_all = TRUE) %>%
-  dplyr::filter(`Payments` == cummax(`Payments`)) %>%
+  dplyr::filter(`Drought Factor` > 0L) %>%
+  dplyr::group_by(FIPS, `FSA County`, source, `Program Year`, `Pasture Type`) %>%
+  dplyr::distinct(`Drought Factor`, .keep_all = TRUE) %>%
+  dplyr::filter(`Drought Factor` == cummax(`Drought Factor`)) %>%
   dplyr::ungroup() %>%
   dplyr::select(!c(`LFP Interval`, USDM, `LFP Weeks`)) %>%
   dplyr::mutate(source = factor(source),
                 `Pasture Type` = factor(`Pasture Type`),
                 `Qualifying Drought Event` = factor(`Qualifying Drought Event`))
 
-arrow::write_parquet(lfp_payments_calculated,
+## ---------------------------------------------------------------------------
+## Validation
+##
+## Invariants abort before write_csv(), so a bad archive reaches neither git nor
+## S3. The FSA-county-to-Census-county fan-out is reported instead: it
+## is a property of FSA's own administrative geography, not a defect, and the
+## consumer decides how to resolve it.
+## ---------------------------------------------------------------------------
+
+assert_empty(
+  lfp_eligibility_calculated %>%
+    dplyr::filter(dplyr::if_any(dplyr::everything(), is.na)),
+  "records with a missing value"
+)
+
+# The ladder of monthly payments each era's rules allow. 2008-2011 tops out at
+# 3, the 2014 Farm Bill raised the ceiling to 5 and dropped the 2-payment tier,
+# and 2026 reinstates one by splitting D2.
+assert_empty(
+  lfp_eligibility_calculated %>%
+    dplyr::filter(
+      dplyr::case_when(
+        `Program Year` <= 2011L ~ !(`Drought Factor` %in% 1:3),
+        `Program Year` <= 2025L ~ !(`Drought Factor` %in% c(1L, 3L, 4L, 5L)),
+        .default = !(`Drought Factor` %in% 1:5)
+      )
+    ),
+  "drought factors outside the ladder in force for their program year"
+)
+
+# A qualifying date outside the grazing period would mean the tier was satisfied
+# by drought FSA does not count — the failure mode the last-day-of-window
+# convention in tier_date() exists to prevent.
+assert_empty(
+  lfp_eligibility_calculated %>%
+    dplyr::inner_join(
+      fsa_normal_grazing_period %>%
+        dplyr::select(FIPS, `FSA County`, `Program Year`, `Pasture Type`,
+                      `Grazing Period Start Date`, `Grazing Period End Date`),
+      by = c("FIPS", "FSA County", "Program Year", "Pasture Type"),
+      relationship = "many-to-one"
+    ) %>%
+    dplyr::filter(`Qualifying Date` < `Grazing Period Start Date` |
+                    `Qualifying Date` > `Grazing Period End Date`),
+  "qualifying dates outside their normal grazing period"
+)
+
+## ---- The FSA county / Census county fan-out --------------------------
+## Reported, never enforced. Each table below names records a consumer must
+## decide how to combine before reducing to a single county grain.
+
+county_pairs <-
+  lfp_eligibility_calculated %>%
+  dplyr::distinct(FIPS, `FSA County`)
+
+# FSA counties covering several Census counties. Joining on FIPS replicates the
+# FSA county's grazing period across every Census county it covers.
+qa_fsa_spanning <-
+  county_pairs %>%
+  dplyr::count(`FSA County`, name = "Census Counties") %>%
+  dplyr::filter(`Census Counties` > 1L) %>%
+  dplyr::arrange(dplyr::desc(`Census Counties`), `FSA County`)
+
+# Census counties administered as several FSA offices, each setting its own
+# grazing period. A join on FIPS returns several rows for these.
+qa_fips_split <-
+  county_pairs %>%
+  dplyr::count(FIPS, name = "FSA Counties") %>%
+  dplyr::filter(`FSA Counties` > 1L) %>%
+  dplyr::arrange(dplyr::desc(`FSA Counties`), FIPS)
+
+# Where the fan-out actually changes the answer. A "cell" is one determination:
+# a source, program year, pasture type, and county key.
+qa_cells <-
+  lfp_eligibility_calculated %>%
+  dplyr::group_by(source, `Program Year`, `Pasture Type`, FIPS, `FSA County`) %>%
+  dplyr::summarise(`Drought Factor` = max(`Drought Factor`), .groups = "drop")
+
+qa_fsa_disagree <-
+  qa_cells %>%
+  dplyr::filter(`FSA County` %in% qa_fsa_spanning$`FSA County`) %>%
+  dplyr::group_by(source, `Program Year`, `Pasture Type`, `FSA County`) %>%
+  dplyr::summarise(Lowest = min(`Drought Factor`),
+                   Highest = max(`Drought Factor`),
+                   .groups = "drop") %>%
+  dplyr::filter(Highest > Lowest)
+
+qa_fips_disagree <-
+  qa_cells %>%
+  dplyr::filter(FIPS %in% qa_fips_split$FIPS) %>%
+  dplyr::group_by(source, `Program Year`, `Pasture Type`, FIPS) %>%
+  dplyr::summarise(Lowest = min(`Drought Factor`),
+                   Highest = max(`Drought Factor`),
+                   .groups = "drop") %>%
+  dplyr::filter(Highest > Lowest)
+
+qa_cells_spanning <-
+  qa_cells %>%
+  dplyr::filter(`FSA County` %in% qa_fsa_spanning$`FSA County`) %>%
+  dplyr::distinct(source, `Program Year`, `Pasture Type`, `FSA County`) %>%
+  nrow()
+
+qa_cells_split <-
+  qa_cells %>%
+  dplyr::filter(FIPS %in% qa_fips_split$FIPS) %>%
+  dplyr::distinct(source, `Program Year`, `Pasture Type`, FIPS) %>%
+  nrow()
+
+# Detail tables as indented CSV; a tibble's print wraps wide frames across
+# several blocks.
+qa_detail <- function(x) {
+  if (nrow(x) == 0L) {
+    return(character(0))
+  }
+  paste0("  ", strsplit(readr::format_csv(x), "\n", fixed = TRUE)[[1]])
+}
+
+qa_report <- c(
+  "FSA LFP eligibility reanalysis — QA report",
+  "",
+  "Grain: one record per Census county (FIPS), FSA county, USDM county",
+  "aggregation, program year, pasture type, and qualifying drought event. Both",
+  "county keys are carried because an LFP determination needs both: FSA sets the",
+  "normal grazing period per FSA county, and the USDM is aggregated per Census",
+  "county. Neither key is reduced away — see \"Resolving the fan-out\" below.",
+  "",
+  paste0("Records published: ", nrow(lfp_eligibility_calculated)),
+  paste0("County pairs: ", nrow(county_pairs)),
+  paste0("Census counties: ",
+         dplyr::n_distinct(lfp_eligibility_calculated$FIPS)),
+  paste0("FSA counties: ",
+         dplyr::n_distinct(lfp_eligibility_calculated$`FSA County`)),
+  paste0("Program years: ",
+         paste(range(lfp_eligibility_calculated$`Program Year`),
+               collapse = "-")),
+  paste0("Pasture types: ",
+         dplyr::n_distinct(lfp_eligibility_calculated$`Pasture Type`)),
+  paste0("USDM county aggregations: ",
+         dplyr::n_distinct(lfp_eligibility_calculated$source)),
+  "",
+  "Invariants enforced (the run aborts on any violation):",
+  "  * exactly one grazing period per (program year, Census county, FSA county,",
+  "    pasture type)",
+  "  * every FSA county resolves against FSA's published county definitions",
+  "  * no missing values in any published field",
+  "  * every drought factor within the ladder in force for its program year",
+  "  * every qualifying date inside its normal grazing period",
+  "",
+  "Resolving the fan-out",
+  "",
+  "  FSA counties and Census counties do not nest, in either direction. This",
+  "  archive reports every (Census county, FSA county) pair and combines none of",
+  "  them. Reducing to a single county grain is the consumer's decision, and the",
+  "  tables below are the records that decision touches. There is no default:",
+  "  taking the highest drought factor, taking the FSA county whose code matches",
+  "  the FIPS code, and keeping both keys are all defensible, and they disagree",
+  "  on the records listed here.",
+  "",
+  paste0("FSA counties covering several Census counties: ",
+         nrow(qa_fsa_spanning)),
+  "  Joining on FIPS replicates one reported grazing period across every Census",
+  "  county the FSA office covers.",
+  qa_detail(qa_fsa_spanning),
+  "",
+  paste0("Census counties administered as several FSA counties: ",
+         nrow(qa_fips_split)),
+  "  Each FSA office sets its own grazing period, so a join on FIPS returns",
+  "  several determinations for these.",
+  qa_detail(qa_fips_split),
+  "",
+  paste0("Determinations where the Census counties disagree: ",
+         nrow(qa_fsa_disagree), " of ", qa_cells_spanning),
+  "  Collapsing to FSA county grain changes the drought factor for these.",
+  qa_detail(qa_fsa_disagree),
+  "",
+  paste0("Determinations where the FSA counties disagree: ",
+         nrow(qa_fips_disagree), " of ", qa_cells_split),
+  "  Collapsing to Census county grain changes the drought factor for these.",
+  qa_detail(qa_fips_disagree),
+  ""
+)
+
+writeLines(qa_report, "qa-report.txt")
+
+message(paste(qa_report, collapse = "\n"))
+
+# Mirrored CSV and Parquet, identical records. CSV carries no types, so codes like
+# "01" read back as 1; Parquet keeps them character and dates as dates.
+readr::write_csv(lfp_eligibility_calculated,
+                 "fsa-lfp-eligibility-reanalysis.csv")
+arrow::write_parquet(lfp_eligibility_calculated,
                      sink = "fsa-lfp-eligibility-reanalysis.parquet",
                      version = "latest",
                      compression = "zstd",
                      compression_level = 13,
                      use_dictionary = TRUE)
 
-## Create directory listing infrastructure
+## ---- Directory listing infrastructure --------------------------------
 generate_tree_flat <- function(
     data_dir = "data",
     output_file = file.path("manifest.json")) {
@@ -479,6 +720,10 @@ generate_tree_flat()
 
 ## ---- Publish to S3 ---------------------------------------------------
 s3_push(s3_bucket_name, paste0(s3_prefix, "/data"), "data", delete = TRUE)
+s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-reanalysis.csv"),
+       "fsa-lfp-eligibility-reanalysis.csv",
+       content_type = "text/csv",
+       cache_control = "max-age=3600")
 s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-reanalysis.parquet"),
        "fsa-lfp-eligibility-reanalysis.parquet",
        content_type = "application/vnd.apache.parquet",
@@ -487,20 +732,27 @@ s3_put(s3_bucket_name, paste0(s3_prefix, "/usdm.parquet"),
        "usdm.parquet",
        content_type = "application/vnd.apache.parquet",
        cache_control = "max-age=3600")
+s3_put(s3_bucket_name, paste0(s3_prefix, "/qa-report.txt"), "qa-report.txt",
+       content_type = "text/plain",
+       cache_control = "max-age=3600")
 s3_put(s3_bucket_name, paste0(s3_prefix, "/manifest.json"), "manifest.json",
        content_type = "application/json",
        cache_control = "max-age=3600")
 s3_verify(s3_bucket_name, paste0(s3_prefix, "/data"), "data",
           allow_extra = character(0))
 s3_write_manifest(s3_bucket_name, s3_prefix)
-cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.parquet"),
+cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.csv"),
+                paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.parquet"),
                 paste0("/", s3_prefix, "/usdm.parquet"),
+                paste0("/", s3_prefix, "/qa-report.txt"),
                 paste0("/", s3_prefix, "/manifest.json"),
                 paste0("/", s3_prefix, "/_manifest.txt")))
 
-# TODO: when README.Rmd is ready, render it here from the freshly updated
-# archive and add the commit-back step to the workflow:
-#   cf_wait_manifest("https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/manifest.json",
-#                    "manifest.json")
-#   rmarkdown::render("README.Rmd")
-# (see sustainable-fsa/usdm-counties for the pattern)
+## ---- Render the README -----------------------------------------------
+# Regenerates README.md and the example map from the freshly updated archive;
+# the workflow commits these (and only these) back to git.
+cf_wait_manifest(
+  "https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/manifest.json",
+  "manifest.json"
+)
+rmarkdown::render("README.Rmd")

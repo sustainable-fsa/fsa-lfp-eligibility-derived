@@ -8,9 +8,10 @@
 .quarto
 
 # S3-hosted data (archive of record:
-# https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+# https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/).
+# The reanalysis itself is mirrored in git as CSV and Parquet; the weekly USDM
+# inputs it is built from are far larger and live on S3 only.
 data
-fsa-lfp-eligibility-reanalysis.parquet
 usdm.parquet
 manifest.json
 manifest.html
