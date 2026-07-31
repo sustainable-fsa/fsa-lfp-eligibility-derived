@@ -1,6 +1,6 @@
 # Canonical archive-update workflow (sustainable-fsa S3 migration).
 name: update
-run-name: Update the fsa-lfp-eligibility-reanalysis archive → S3
+run-name: Update the fsa-lfp-eligibility-derived archive → S3
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 350
     env:
       S3_BUCKET: sustainable-fsa
-      S3_PREFIX: fsa-lfp-eligibility-reanalysis
+      S3_PREFIX: fsa-lfp-eligibility-derived
       AWS_REGION: us-west-2
       CLOUDFRONT_DISTRIBUTION_ID: E1BNL6ONVN84RI
       CLOUDFRONT_BASE: https://data.sustainable-fsa.com
@@ -51,7 +51,7 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Update archive
-        run: Rscript fsa-lfp-eligibility-reanalysis.R
+        run: Rscript fsa-lfp-eligibility-derived.R
 
       # Commit the reanalysis, the QA report and the rendered README back to git;
       # the CSV and Parquet are mirrored here as well as on S3. The gate reads
@@ -60,14 +60,14 @@ jobs:
       # triggers a commit either.
       - name: Commit refreshed archive
         run: |
-          if git diff --quiet -- fsa-lfp-eligibility-reanalysis.csv README.md qa-report.txt; then
+          if git diff --quiet -- fsa-lfp-eligibility-derived.csv README.md qa-report.txt; then
             echo "Reanalysis, QA report and README unchanged; skipping commit."
             exit 0
           fi
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add fsa-lfp-eligibility-reanalysis.csv \
-                  fsa-lfp-eligibility-reanalysis.parquet \
+          git add fsa-lfp-eligibility-derived.csv \
+                  fsa-lfp-eligibility-derived.parquet \
                   qa-report.txt README.md example-1.png
           git commit -m 'Update archive'
           if ! git pull --rebase --autostash origin main; then

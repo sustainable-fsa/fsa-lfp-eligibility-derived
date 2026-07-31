@@ -2,13 +2,13 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Static
-Badge](https://img.shields.io/badge/Repo-sustainable--fsa%2Ffsa--lfp--eligibility--reanalysis-magenta?style=flat)](https://github.com/sustainable-fsa/fsa-lfp-eligibility-reanalysis/)
+Badge](https://img.shields.io/badge/Repo-sustainable--fsa%2Ffsa--lfp--eligibility--reanalysis-magenta?style=flat)](https://github.com/sustainable-fsa/fsa-lfp-eligibility-derived/)
 ![Last
-Update](https://img.shields.io/github/last-commit/sustainable-fsa/fsa-lfp-eligibility-reanalysis?style=flat)
+Update](https://img.shields.io/github/last-commit/sustainable-fsa/fsa-lfp-eligibility-derived?style=flat)
 ![Repo
-Size](https://img.shields.io/github/repo-size/sustainable-fsa/fsa-lfp-eligibility-reanalysis?style=flat)
+Size](https://img.shields.io/github/repo-size/sustainable-fsa/fsa-lfp-eligibility-derived?style=flat)
 
-# FSA Livestock Forage Disaster Program Eligibility Reanalysis
+# FSA Livestock Forage Disaster Program Eligibility, Derived
 
 This repository recomputes eligibility for the USDA [Livestock Forage
 Disaster Program
@@ -24,10 +24,10 @@ statute and FSA does not publish it. This archive reports what the rule
 yields under each convention, so the sensitivity of eligibility to that
 choice can be measured.
 
-<a href="https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/" target="_blank">📂
+<a href="https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/" target="_blank">📂
 View the LFP eligibility reanalysis archive listing here.</a>
 
-> **Note**: This archive is a **reanalysis**, not a record of USDA’s
+> **Note**: This archive is **derived**, not a record of USDA’s
 > determinations. For FSA’s own published eligibility determinations,
 > see
 > [sustainable-fsa/fsa-lfp-eligibility](https://sustainable-fsa.com/fsa-lfp-eligibility/).
@@ -38,22 +38,22 @@ View the LFP eligibility reanalysis archive listing here.</a>
 
 ## 🗂️ Contents
 
-- [`fsa-lfp-eligibility-reanalysis.csv`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/fsa-lfp-eligibility-reanalysis.csv)
-  — the reanalysis: every qualifying drought event, its date, and the
-  drought factor it earns
-- [`fsa-lfp-eligibility-reanalysis.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/fsa-lfp-eligibility-reanalysis.parquet)
+- [`fsa-lfp-eligibility-derived.csv`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.csv)
+  — every qualifying drought event, its date, and the drought factor it
+  earns
+- [`fsa-lfp-eligibility-derived.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.parquet)
   — the same records as Parquet
-- [`usdm.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/usdm.parquet)
-  — the weekly county USDM record the reanalysis reads, all four
+- [`usdm.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/usdm.parquet)
+  — the weekly county USDM record this archive reads, all four
   aggregations side by side
-- [`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
+- [`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/qa-report.txt)
   — validation summary, and the enumerated list of every record affected
   by the FSA-county/Census-county fan-out
-- [`data/usdm/`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+- [`data/usdm/`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/)
   — the same weekly record as immutable per-week files
-- [`fsa-lfp-eligibility-reanalysis.R`](./fsa-lfp-eligibility-reanalysis.R)
-  — processing script
-- [`_manifest.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/_manifest.txt)
+- [`fsa-lfp-eligibility-derived.R`](./fsa-lfp-eligibility-derived.R) —
+  processing script
+- [`_manifest.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/_manifest.txt)
   — flat index of every file in the S3-hosted mirror
 
 ------------------------------------------------------------------------
@@ -62,24 +62,24 @@ View the LFP eligibility reanalysis archive listing here.</a>
 
 The combined outputs, the QA report, and the weekly files under
 `data/usdm/` are mirrored to S3 and served via CloudFront at
-<https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/>
-(browse the [archive
-listing](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+<https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/> (browse
+the [archive
+listing](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/)
 or
-[`_manifest.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/_manifest.txt)
+[`_manifest.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/_manifest.txt)
 for a flat index).
 
-The reanalysis itself is mirrored in **both** places: the CSV and
-Parquet are committed to this repository as well as published to S3, so
-the archive is readable from a git checkout alone and its history is
+The derived records are mirrored in **both** places: the CSV and Parquet
+are committed to this repository as well as published to S3, so the
+archive is readable from a git checkout alone and its history is
 inspectable commit by commit. The weekly USDM inputs under `data/usdm/`
 and the combined `usdm.parquet` are far larger and live on S3 only.
 
 Publishing is handled by
-[`fsa-lfp-eligibility-reanalysis.R`](./fsa-lfp-eligibility-reanalysis.R)
-via the shared [`R/s3-archive.R`](R/s3-archive.R) helpers, and runs
+[`fsa-lfp-eligibility-derived.R`](./fsa-lfp-eligibility-derived.R) via
+the shared [`R/s3-archive.R`](R/s3-archive.R) helpers, and runs
 automatically in GitHub Actions
-([`.github/workflows/fsa-lfp-eligibility-reanalysis.yaml`](.github/workflows/fsa-lfp-eligibility-reanalysis.yaml)).
+([`.github/workflows/fsa-lfp-eligibility-derived.yaml`](.github/workflows/fsa-lfp-eligibility-derived.yaml)).
 It is dispatched each Thursday once the upstream USDM county
 aggregations have published, with a cron fallback. The workflow
 authenticates to AWS via GitHub OIDC (no long-lived credentials stored
@@ -102,7 +102,7 @@ is recomputed here.
 
 Four archives, each aggregating the same weekly USDM polygons to
 counties under a different boundary convention. For every county and
-week, the reanalysis takes the **worst drought class** touching the
+week, this archive takes the **worst drought class** touching the
 county, which is the standard the statute sets — 7 U.S.C. § 1531(d)(3)
 triggers on drought “in any area of the county”.
 
@@ -137,7 +137,7 @@ aggregations.
 ## 🧹 Processing Workflow
 
 The processing script
-[`fsa-lfp-eligibility-reanalysis.R`](./fsa-lfp-eligibility-reanalysis.R):
+[`fsa-lfp-eligibility-derived.R`](./fsa-lfp-eligibility-derived.R):
 
 1.  **Downloads** each newly published week from all four USDM county
     aggregations, takes the worst class per county, and writes one
@@ -159,12 +159,12 @@ The processing script
     factor above everything that came before it, so the archive reads as
     the eligibility history actually accrued over the grazing season.
 8.  **Validates** the result and writes a QA report.
-9.  **Exports** `fsa-lfp-eligibility-reanalysis.csv` and
-    `fsa-lfp-eligibility-reanalysis.parquet`, and publishes to S3.
+9.  **Exports** `fsa-lfp-eligibility-derived.csv` and
+    `fsa-lfp-eligibility-derived.parquet`, and publishes to S3.
 
 ## 📤 Output Data
 
-### `fsa-lfp-eligibility-reanalysis.csv` and `.parquet`
+### `fsa-lfp-eligibility-derived.csv` and `.parquet`
 
 Identical records in both formats. One record per **Census county, FSA
 county, USDM county aggregation, program year, pasture type, and
@@ -181,7 +181,7 @@ explicitly:
 
 ``` r
 readr::read_csv(
-  "https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/fsa-lfp-eligibility-reanalysis.csv",
+  "https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.csv",
   col_types = readr::cols(FIPS = "c", `FSA County` = "c")
 )
 ```
@@ -208,7 +208,7 @@ and apply whatever cap your analysis calls for.
 
 ### `usdm.parquet`
 
-The weekly county USDM record the reanalysis reads. One row per Census
+The weekly county USDM record this archive reads. One row per Census
 county and USDM week, with one column per aggregation carrying that
 week’s worst drought class in that county.
 
@@ -306,7 +306,7 @@ if any of them fails, so a defect cannot reach the published archive:
 The FSA-county/Census-county fan-out is *reported* rather than treated
 as fatal, since it is a property of FSA’s administrative geography
 rather than a defect. See
-[`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
+[`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/qa-report.txt)
 for the enumerated records.
 
 ------------------------------------------------------------------------
@@ -357,7 +357,7 @@ monthly payments. Nye County, NV (`32023`) is the widest case: for
 Native Pasture in 2012, under all four aggregations, Northwest Nye earns
 four monthly payments where Southeast Nye earns one, from grazing
 periods the two offices set differently over the same drought.
-[`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
+[`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/qa-report.txt)
 lists every affected record.
 
 ``` r
@@ -376,7 +376,7 @@ lfp |>
 This README is rendered by the weekly build, so the example reads the
 Parquet file that build just produced. To run it yourself, substitute
 the published URL
-<https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/fsa-lfp-eligibility-reanalysis.parquet>
+<https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.parquet>
 — `arrow::read_parquet()` takes it directly.
 
 ``` r
@@ -385,8 +385,8 @@ library(sf)
 library(ggplot2) # For plotting
 library(rmapshaper) # For innerlines function
 
-## Get the reanalysis data
-lfp <- arrow::read_parquet("fsa-lfp-eligibility-reanalysis.parquet")
+## Get the derived eligibility data
+lfp <- arrow::read_parquet("fsa-lfp-eligibility-derived.parquet")
 
 ## FSA county boundaries, already simplified and with Alaska and Hawaii inset
 counties <-
@@ -456,15 +456,15 @@ with the same event codes, so they can be compared directly:
 - [fsa-lfp-eligibility-web](https://sustainable-fsa.com/fsa-lfp-eligibility-web/)
   — FSA’s determinations as published weekly on its maps page,
   2008–present, including every superseded weekly version
-- [fsa-lfp-eligibility-reanalysis](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+- [fsa-lfp-eligibility-derived](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/)
   — eligibility recomputed from the US Drought Monitor under four county
   aggregations
 
 The FOIA archive is the richer record for closed program years: it
 includes fire eligibility and payment factors the web tables omit. The
 web archive covers the current program year and, for 2008–2011, carries
-per-tier dates the FOIA response omitted. The reanalysis is not a record
-of FSA’s determinations.
+per-tier dates the FOIA response omitted. The derived archive is not a
+record of FSA’s determinations.
 
 ------------------------------------------------------------------------
 
@@ -473,18 +473,18 @@ of FSA’s determinations.
 If you use this data in published work, please cite:
 
 > Bocinsky, R. Kyle. *Livestock Forage Disaster Program Eligibility,
-> 2008–present: A Reanalysis across Authoritative County Boundary
+> 2008–present: Eligibility Derived across Authoritative County Boundary
 > Datasets*. Montana Climate Office, University of Montana. Sustainable
 > FSA project. Accessed YYYY-MM-DD.
-> <https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/>
+> <https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/>
 
 Machine-readable metadata are in [`CITATION.cff`](CITATION.cff);
 GitHub’s **Cite this repository** button (top right of the repo page)
 renders it as APA or BibTeX.
 
-The underlying data this reanalysis reads should be cited separately —
-the Normal Grazing Periods and the USDM county aggregations each have
-their own archive and citation.
+The underlying data this archive reads should be cited separately — the
+Normal Grazing Periods and the USDM county aggregations each have their
+own archive and citation.
 
 **Acknowledgment**: This work is part of the [*Enhancing Sustainable
 Disaster Relief in FSA
@@ -505,11 +505,10 @@ Energy and Environmental Policy, and the USDA Climate Hubs.
 ## ⚠️ Disclaimer
 
 This dataset is archived for research and educational use only. It is a
-reanalysis, not a record of USDA’s determinations, and it is not
-evidence of any producer’s eligibility for any program. It may not
-reflect current USDA administrative boundaries or official LFP policy.
-Always consult your **local FSA office** for the latest program
-guidance.
+derived, not a record of USDA’s determinations, and it is not evidence
+of any producer’s eligibility for any program. It may not reflect
+current USDA administrative boundaries or official LFP policy. Always
+consult your **local FSA office** for the latest program guidance.
 
 To locate your nearest USDA Farm Service Agency office, use the USDA
 Service Center Locator:

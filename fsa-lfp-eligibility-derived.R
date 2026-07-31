@@ -11,7 +11,7 @@ library(dtplyr)
 source("R/s3-archive.R")
 s3_preflight()
 s3_bucket_name <- Sys.getenv("S3_BUCKET", unset = "sustainable-fsa")
-s3_prefix      <- Sys.getenv("S3_PREFIX", unset = "fsa-lfp-eligibility-reanalysis")
+s3_prefix      <- Sys.getenv("S3_PREFIX", unset = "fsa-lfp-eligibility-derived")
 ## Pull prior archive state so incremental guards see existing outputs
 s3_pull(s3_bucket_name, paste0(s3_prefix, "/data"), "data")
 
@@ -630,9 +630,9 @@ message(paste(qa_report, collapse = "\n"))
 # Mirrored CSV and Parquet, identical records. CSV carries no types, so codes like
 # "01" read back as 1; Parquet keeps them character and dates as dates.
 readr::write_csv(lfp_eligibility_calculated,
-                 "fsa-lfp-eligibility-reanalysis.csv")
+                 "fsa-lfp-eligibility-derived.csv")
 arrow::write_parquet(lfp_eligibility_calculated,
-                     sink = "fsa-lfp-eligibility-reanalysis.parquet",
+                     sink = "fsa-lfp-eligibility-derived.parquet",
                      version = "latest",
                      compression = "zstd",
                      compression_level = 13,
@@ -673,12 +673,12 @@ generate_tree_flat()
 
 ## ---- Publish to S3 ---------------------------------------------------
 s3_push(s3_bucket_name, paste0(s3_prefix, "/data"), "data", delete = TRUE)
-s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-reanalysis.csv"),
-       "fsa-lfp-eligibility-reanalysis.csv",
+s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-derived.csv"),
+       "fsa-lfp-eligibility-derived.csv",
        content_type = "text/csv",
        cache_control = "max-age=3600")
-s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-reanalysis.parquet"),
-       "fsa-lfp-eligibility-reanalysis.parquet",
+s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-derived.parquet"),
+       "fsa-lfp-eligibility-derived.parquet",
        content_type = "application/vnd.apache.parquet",
        cache_control = "max-age=3600")
 s3_put(s3_bucket_name, paste0(s3_prefix, "/usdm.parquet"),
@@ -694,8 +694,8 @@ s3_put(s3_bucket_name, paste0(s3_prefix, "/manifest.json"), "manifest.json",
 s3_verify(s3_bucket_name, paste0(s3_prefix, "/data"), "data",
           allow_extra = character(0))
 s3_write_manifest(s3_bucket_name, s3_prefix)
-cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.csv"),
-                paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.parquet"),
+cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-derived.csv"),
+                paste0("/", s3_prefix, "/fsa-lfp-eligibility-derived.parquet"),
                 paste0("/", s3_prefix, "/usdm.parquet"),
                 paste0("/", s3_prefix, "/qa-report.txt"),
                 paste0("/", s3_prefix, "/manifest.json"),
@@ -705,7 +705,7 @@ cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-reanalysis.csv"),
 # Regenerates README.md and the example map from the freshly updated archive;
 # the workflow commits these (and only these) back to git.
 cf_wait_manifest(
-  "https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/manifest.json",
+  "https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/manifest.json",
   "manifest.json"
 )
 rmarkdown::render("README.Rmd")
