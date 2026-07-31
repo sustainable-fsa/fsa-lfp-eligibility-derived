@@ -15,22 +15,15 @@ editor_options:
 
 This repository recomputes eligibility for the USDA [Livestock Forage Disaster
 Program (LFP)](https://www.fsa.usda.gov/resources/programs/livestock-forage-disaster-program-lfp)
-from first principles, for every program year from 2008 to the present, under
-**four different conventions for aggregating the US Drought Monitor to
-counties**.
+from the US Drought Monitor and FSA's published Normal Grazing Periods, for program
+years 2008 onward, under four different conventions for aggregating the drought
+monitor to counties.
 
-LFP pays livestock producers for grazing losses when the US Drought Monitor
-(USDM) rates their county at a qualifying drought intensity during the county's
-normal grazing period. The rule is mechanical — a drought class, a duration, and
-a date window — but its outcome depends entirely on a choice nobody legislated:
-*which polygon is "the county"*. The USDM is drawn without regard to political
-boundaries, so it must be cut to county shapes before the rule can be applied,
-and the county boundary dataset used for that cut is neither specified in
-statute nor published by FSA.
-
-This archive holds the answer the rule gives under each convention, so the
-sensitivity of a producer's eligibility to that unlegislated choice can be
-measured directly.
+The US Drought Monitor is drawn without regard to political boundaries, so it must
+be cut to county shapes before the eligibility rule can be applied. The boundary
+dataset used for that cut is not specified in statute and FSA does not publish it.
+This archive reports what the rule yields under each convention, so the sensitivity
+of eligibility to that choice can be measured.
 
 <a href="https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/" target="_blank">📂 View the LFP eligibility reanalysis archive listing here.</a>
 
@@ -128,12 +121,11 @@ drought counts.
 [`fsa-counties-dd22`](https://sustainable-fsa.com/fsa-counties-dd22/) — the FSA
 county to Census county (FIPS) crosswalk.
 
-The dd22 vintage is used for **every** program year, rather than vintage-matching
-dd17 to earlier years as that archive's own guidance suggests. Two reasons: dd22
-resolves all 3,095 FSA counties across 2008–2026 while dd17 drops Shoshone
-County, ID (`16079`) from 2015 on; and holding one crosswalk fixed avoids
-introducing a year-dependent confound into the very comparison this archive
-exists to make.
+The dd22 vintage is used for every program year rather than vintage-matched against
+dd17. It resolves every FSA county the Normal Grazing Period archive names, where
+dd17 drops Shoshone County, ID (`16079`) from 2015 on, and holding one crosswalk
+fixed keeps the vintage from becoming a year-dependent confound in the comparison
+across aggregations.
 
 ---
 
@@ -163,68 +155,6 @@ The processing script
 8.  **Validates** the result and writes a QA report.
 9.  **Exports** `fsa-lfp-eligibility-reanalysis.csv` and
     `fsa-lfp-eligibility-reanalysis.parquet`, and publishes to S3.
-
-### LFP drought eligibility rules
-
-The tiers, and the monthly payments they earn, have changed twice. All three
-ladders are implemented; the program year selects between them.
-
-**2008 Farm Bill (program years 2008–2011)**
-
-| Monthly payments | Qualifying drought event |
-|---|---|
-| 1 | D2 for at least 8 consecutive weeks |
-| 2 | D3 at any time |
-| 3 | D3 for at least 4 weeks, or D4 at any time |
-
-**2014 Farm Bill (program years 2012–2025)**
-
-| Monthly payments | Qualifying drought event |
-|---|---|
-| 1 | D2 for at least 8 consecutive weeks |
-| 3 | D3 at any time |
-| 4 | D3 for at least 4 weeks, or D4 at any time |
-| 5 | D4 for at least 4 weeks |
-
-**Program year 2026 onward**
-
-| Monthly payments | Qualifying drought event |
-|---|---|
-| 1 | D2 for at least 4 consecutive weeks |
-| 2 | D2 for at least 7 consecutive weeks |
-| 3 | D3 at any time |
-| 4 | D3 for at least 4 weeks, or D4 at any time |
-| 5 | D4 for at least 4 weeks |
-
-Two conventions are applied consistently across every tier, and are worth
-stating because FSA's own practice is not consistent about them:
-
-- **The qualifying date is the last day of the window** in which the required
-  weeks accumulate — the standard 1-LFP Amend. 7, par. 24 states for the D2
-  tier, applied here to every duration-based tier.
-- **Consecutiveness follows the regulation.** The D2 tiers require *consecutive*
-  weeks (7 CFR 1416.110(a)(1) says "8 consecutive weeks"); the 4-week D3 and D4
-  tiers accumulate across separate spells, because the regulation says only "at
-  least 4 weeks".
-
-### ✅ Validation
-
-The script enforces five invariants and aborts before writing anything if any of
-them fails, so a defect cannot reach the published archive:
-
-- exactly one grazing period per program year, Census county, FSA county, and
-  pasture type;
-- every FSA county resolves against FSA's published county definitions;
-- no missing values in any published field;
-- every drought factor within the ladder in force for its program year;
-- every qualifying date inside its normal grazing period.
-
-The FSA-county/Census-county fan-out is *reported* rather than treated as fatal,
-since it is a property of FSA's administrative geography rather than a defect.
-See [`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
-for the enumerated records.
-
----
 
 ## 📤 Output Data
 
@@ -288,52 +218,112 @@ Drought classes are ordered factors: `None` < `D0` < `D1` < `D2` < `D3` < `D4`.
 
 ---
 
-## 🗺️ Two county keys, and the rule you must choose
+## 🌵 Drought tiers and payment ladders
 
-Every record carries **both** a Census county and an FSA county, and the archive
-never combines them. This is the single thing to understand before using these
-data.
+LFP pays for grazing losses when the US Drought Monitor rates a county at a
+qualifying intensity during the normal grazing period for that pasture type. The
+tiers, and the monthly payments they earn, have changed twice.
 
-**An LFP determination needs two different counties at once.** The normal
-grazing period is established per *administrative* county — the FSA County
-Office and State Committee set it through NAP and the National Crop Table
-(1-LFP Amend. 7, par. 27). Eligibility then triggers on drought "in any area of
-the county" as a *geographic* unit, and the USDM is aggregated to Census
-counties (par. 23). The grazing window comes from one county and the drought
-record from the other, so neither key alone describes a determination.
+**2008 Farm Bill — program years 2008–2011**
 
-**The two do not nest, in either direction.** So the pair is the grain, and any
-reduction to a single county is a decision with consequences.
-
-*One FSA county may cover several Census counties* — 33 do in this archive.
-Virginia contributes 18 of them, since FSA administers a county and its
-independent cities as one office (`51161` covers Roanoke County, Roanoke City
-and Salem City). The widest are in Puerto Rico and Alaska: FSA `72025` (Caguas)
-spans 23 municipios and `02005` (Palmer) spans 7 census areas. All of them report
-a *single* grazing period, which the crosswalk then replicates across every
-Census county — and each of those Census counties has its own USDM record, so
-they can and do reach different tiers.
-
-*Several FSA counties may fall inside one Census county* — 9 do here, because
-FSA splits some counties administratively and each office sets its own grazing
-period:
-
-| Census county | FSA counties |
+| Monthly payments | Qualifying drought event |
 |---|---|
-| Aroostook, ME (`23003`) | Aroostook · Fort Kent · Houlton |
-| Custer, ID (`16037`) | Lemhi, North Custer · South Custer |
-| Pottawattamie, IA (`19155`) | East Pottawattamie · West Pottawattamie |
-| Otter Tail, MN (`27111`) | East Otter Tail · West Otter Tail |
-| Polk, MN (`27119`) | East Polk · West Polk |
-| St. Louis, MN (`27137`) | North St. Louis · South St. Louis |
-| Nye, NV (`32023`) | Northwest Nye · Southeast Nye |
-| Lucas, OH (`39095`) | East Lucas · West Lucas |
-| Galax, VA (`51640`) | Carroll, East Galax City · Grayson, West Galax City |
+| 1 | D2 for at least 8 consecutive weeks |
+| 2 | D3 at any time |
+| 3 | D3 for at least 4 weeks, or D4 at any time |
+
+**2014 Farm Bill — program years 2012–2025**
+
+| Monthly payments | Qualifying drought event |
+|---|---|
+| 1 | D2 for at least 8 consecutive weeks |
+| 3 | D3 at any time |
+| 4 | D3 for at least 4 weeks, or D4 at any time |
+| 5 | D4 for at least 4 weeks |
+
+**P.L. 119-21 — program years 2026 onward**
+
+| Monthly payments | Qualifying drought event |
+|---|---|
+| 1 | D2 for at least 4 consecutive weeks |
+| 2 | D2 for at least 7 of the previous 8 consecutive weeks |
+| 3 | D3 at any time |
+| 4 | D3 for at least 4 weeks, or D4 at any time |
+| 5 | D4 for at least 4 weeks |
+
+Section 10401(b) of P.L. 119-21 (July 4, 2025) split the D2 tier, amending
+7 U.S.C. 9081(c)(3)(D)(ii)(I). The 4-week and 4-consecutive-week distinctions are
+as written: the D2 tiers require consecutive weeks, the D3 and D4 4-week tiers do
+not.
+
+The event codes used across these archives are `D2`, `D3a`, `D3b`, `D4a` and
+`D4b`, and from 2026 `D2a_2026` and `D2b_2026` in place of `D2`. The `a` tiers
+trigger at any time; the `b` tiers require a duration.
+
+### Which date qualifies a tier
+
+`D2`, `D2A`, `D2B`, `D3B` and `D4B` require a duration, and are satisfied on the
+last day of the qualifying window — their `END`. `D3A` and `D4A` trigger at any
+time, carry no `END` value, and are satisfied on their `START`.
+
+| Event | Source column |
+|---|---|
+| `D2` | `D2 END` |
+| `D2a_2026` | `D2A END` |
+| `D2b_2026` | `D2B END` |
+| `D3a` | `D3A START DATE` |
+| `D3b` | `D3B END` |
+| `D4a` | `D4A START DATE` |
+| `D4b` | `D4B END` |
+
+FSA reports each B-tier `START` as a copy of its A-tier counterpart, so a
+START-keyed reshape of the wide table double-counts D3 and D4.
+
+Both conventions are applied consistently across every tier.
+
+### ✅ Validation
+
+The script enforces five invariants and aborts before writing anything if any of
+them fails, so a defect cannot reach the published archive:
+
+- exactly one grazing period per program year, Census county, FSA county, and
+  pasture type;
+- every FSA county resolves against FSA's published county definitions;
+- no missing values in any published field;
+- every drought factor within the ladder in force for its program year;
+- every qualifying date inside its normal grazing period.
+
+The FSA-county/Census-county fan-out is *reported* rather than treated as fatal,
+since it is a property of FSA's administrative geography rather than a defect.
+See [`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
+for the enumerated records.
+
+---
+
+## 🗺️ Two county keys
+
+An LFP determination needs two counties. The normal grazing period is set per
+**FSA county** — the administrative unit, established through NAP and the National
+Crop Table (1-LFP Amend. 7, par. 27). Eligibility then triggers on drought "in any
+area of the county" as a **Census county**, the unit the US Drought Monitor is
+aggregated to (par. 23).
+
+The two do not nest, in either direction. One FSA county may cover several Census
+counties, most widely in Puerto Rico and Alaska, and in the Virginia
+county-plus-independent-city pairs. Several FSA counties may fall inside one Census
+county, where FSA splits a county administratively and each office sets its own
+grazing period: Aroostook ME, Custer ID, Pottawattamie IA, Otter Tail MN, Polk MN,
+St. Louis MN, Nye NV, Lucas OH and Galax VA.
+
+Records are therefore keyed on both counties and never combined. Reducing to a
+single county grain is the consumer's choice; `qa-report.txt` lists the records it
+affects. The FSA-to-Census crosswalk is published in
+[fsa-counties-dd17](https://sustainable-fsa.com/fsa-counties-dd17/) and
+[fsa-counties-dd22](https://sustainable-fsa.com/fsa-counties-dd22/).
 
 ### Choosing a rule
 
-**This archive does not choose for you, and there is no default that is right
-for every question.** Three defensible rules:
+Three defensible rules, none of them a default:
 
 - **Keep both keys.** Correct if you are studying the program as administered.
   Nothing to decide, but your unit of analysis is a county *pair*, not a county.
@@ -342,20 +332,17 @@ for every question.** Three defensible rules:
   wherever one constituent county was drier than the office as a whole.
 - **Take the principal county** — the Census county whose FIPS code equals the
   FSA county code. Defensible where the FSA office is named for one dominant
-  county, but it is *not* universal: it resolves 29 of the 33 multi-county FSA
-  offices and fails for Fairbanks AK, Palmer AK, Dade FL (`12025`, a FIPS code
-  retired in 1997), and Mayaguez PR.
+  county, but not universal: it fails where the office is not named for any of the
+  counties it covers, including Fairbanks AK, Palmer AK, Dade FL (`12025`, a FIPS
+  code retired in 1997) and Mayaguez PR.
 
-The choice is narrow but real. Of the 996 determinations spanning several Census
-counties, **204 disagree** by 1–3 monthly payments; of the 400 covered by
-several FSA counties, **4 disagree** by 3. Those four are all Nye County, NV
-(`32023`) for Native Pasture in 2012, under every one of the four USDM
-aggregations: Northwest Nye earns four monthly payments and Southeast Nye one,
-from grazing periods the two offices set differently over the same drought. A
-Census-county analysis has to pick one of those answers, and the difference is
-three months of payments.
+The choice affects a minority of determinations, but by up to three monthly
+payments. Nye County, NV (`32023`) is the widest case: for Native Pasture in 2012,
+under all four aggregations, Northwest Nye earns four monthly payments where
+Southeast Nye earns one, from grazing periods the two offices set differently over
+the same drought.
 [`qa-report.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/qa-report.txt)
-lists every affected record, so you can see exactly which ones your rule moves.
+lists every affected record.
 
 ```r
 # Reducing to FSA county grain by taking the highest drought factor. `max()`
@@ -440,21 +427,24 @@ ggplot(counties) +
 
 ---
 
-## 🧭 About FSA County Codes
+## 🧭 Related archives
 
-The USDA FSA uses custom county definitions that differ from the standard
-ANSI/FIPS codes used by the U.S. Census. FSA administers some Census counties as
-two or three separate service areas, and elsewhere administers many Census
-counties from a single one — so an FSA county is not a Census county, even where
-the two share a code.
+Three archives cover LFP county eligibility, at the same event grain and with the
+same event codes, so they can be compared directly:
 
-The authoritative FSA county definitions, including the FIPS crosswalk, are
-archived in the companion repositories:
+- [fsa-lfp-eligibility](https://sustainable-fsa.com/fsa-lfp-eligibility/) — FSA's
+  determinations as obtained by FOIA, program years 2008–2025
+- [fsa-lfp-eligibility-web](https://sustainable-fsa.com/fsa-lfp-eligibility-web/) —
+  FSA's determinations as published weekly on its maps page, 2008–present,
+  including every superseded weekly version
+- [fsa-lfp-eligibility-reanalysis](https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/)
+  — eligibility recomputed from the US Drought Monitor under four county
+  aggregations
 
-🔗 [**sustainable-fsa/fsa-counties-dd17**](https://sustainable-fsa.com/fsa-counties-dd17/) — FSA county definitions, dd17 vintage
-🔗 [**sustainable-fsa/fsa-counties-dd22**](https://sustainable-fsa.com/fsa-counties-dd22/) — FSA county definitions, dd22 vintage
-
-FSA county codes are documented in [FSA Handbook 1-CM, Exhibit 101](https://www.fsa.usda.gov/Internet/FSA_File/1-cm_r03_a80.pdf).
+The FOIA archive is the richer record for closed program years: it includes fire
+eligibility and payment factors the web tables omit. The web archive covers the
+current program year and, for 2008–2011, carries per-tier dates the FOIA response
+omitted. The reanalysis is not a record of FSA's determinations.
 
 ---
 
@@ -462,10 +452,10 @@ FSA county codes are documented in [FSA Handbook 1-CM, Exhibit 101](https://www.
 
 If you use this data in published work, please cite:
 
-> Bocinsky, R. Kyle. *Livestock Forage Disaster Program Eligibility, 2008–2026:
+> Bocinsky, R. Kyle. *Livestock Forage Disaster Program Eligibility, 2008–present:
 > A Reanalysis across Authoritative County Boundary Datasets*. Montana Climate
 > Office, University of Montana. Sustainable FSA project. Accessed YYYY-MM-DD.
-> <https://sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/>
+> <https://data.sustainable-fsa.com/fsa-lfp-eligibility-reanalysis/>
 
 Machine-readable metadata are in [`CITATION.cff`](CITATION.cff); GitHub's
 **Cite this repository** button (top right of the repo page) renders it as APA

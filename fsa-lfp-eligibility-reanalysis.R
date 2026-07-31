@@ -1,17 +1,5 @@
 
-# pak::pak(
-#   c(
-#     "arrow?source",
-#     "curl",
-#     "tidyverse",
-#     "furrr",
-#     "future.mirai",
-#     "dtplyr",
-#     "fs",
-#     "jsonlite",
-#     "processx"
-#   )
-# )
+# Packages are provided by mt-climate-office/actions/setup-geospatial in CI.
 
 library(magrittr)
 library(tidyverse)
@@ -138,41 +126,17 @@ usdm_counties_max %>%
 ## calculate the LFP drought factor history across Pasture Types
 
 ## ---------------------------------------------------------------------------
-## Two county keys, and why the archive carries both
+## Two county keys
 ##
-## An LFP determination is defined by two counties at once, and they are not the
-## same county. The Normal Grazing Period is established per *administrative*
-## (FSA) county — the County Office and STC set it through NAP and the NCT
-## (1-LFP Amend. 7, par. 27). Eligibility then triggers on drought "in any area
-## of the county" as a *geographic* unit, and the USDM county aggregations are
-## FIPS-keyed (par. 23). So the grazing window comes from the FSA county and the
-## drought record comes from the Census county, and neither key alone describes
-## a determination.
-##
-## The two do not nest. An FSA county may span several Census counties: 33 do
-## here, from the Virginia county-plus-independent-city pairs up to Caguas, PR
-## (72025), which spans 23 municipios, and Palmer, AK (02005), which spans 7.
-## Several FSA counties may also fall inside one Census county, because FSA
-## splits some counties administratively and each office sets its own grazing
-## period: 9 do here, including the three Aroostook, ME offices and East/West
-## Pottawattamie, IA.
-##
-## This script therefore computes one determination per (FIPS, FSA County) pair
-## and **does not reduce** — an earlier version took the envelope of the grazing
-## periods within a FIPS, which silently invented a window no FSA office ever
-## published. Collapsing to either grain is the consumer's call, and it is a real
-## call: of the 996 determination cells spanning several Census counties, 204
-## disagree by 1-3 months, and 4 of the 400 cells covered by several FSA counties
-## disagree by 3. qa-report.txt enumerates every one of them.
+## The Normal Grazing Period is set per FSA county (1-LFP Amend. 7, par. 27); the
+## USDM county aggregations are keyed on Census county (par. 23). The two do not
+## nest in either direction, so a determination needs both keys and the archive
+## carries the pair unreduced. See README and qa-report.txt.
 ## ---------------------------------------------------------------------------
 
-# The FSA county -> Census county (FIPS) crosswalk. The pair it produces is
-# carried through to the published archive rather than collapsed; see above.
-#
-# dd22 is used for every program year rather than vintage-matched against dd17:
-# it resolves all 3,095 FSA counties for 2008-2026, whereas dd17 does not carry
-# Shoshone County, ID (16079) from 2015 on, and against FSA's own published LFP
-# determinations dd22 agrees at least as often as dd17 in every era.
+# The FSA county -> Census county (FIPS) crosswalk. dd22 is used for every
+# program year: it resolves every FSA county in the Normal Grazing Period
+# archive, and dd17 drops Shoshone County, ID (16079) from 2015 on.
 fsa_county_crosswalk <-
   arrow::read_parquet(
     "https://data.sustainable-fsa.com/fsa-counties-dd22/fsa-counties-dd22.parquet",
@@ -194,8 +158,7 @@ fsa_normal_grazing_period_raw <-
     `Grazing Period End Date`
   )
 
-# Mapped onto Census counties. `relationship` is explicit because the join
-# genuinely is many-to-many; leaving it implicit hides the fan-out.
+# Mapped onto Census counties. The join is many-to-many in both directions.
 fsa_normal_grazing_period <-
   fsa_normal_grazing_period_raw |>
   dplyr::inner_join(fsa_county_crosswalk,
@@ -223,8 +186,7 @@ assert_empty <- function(offenders, what) {
        call. = FALSE)
 }
 
-# Input invariants, checked here rather than in the validation block below: the
-# USDM join is the expensive step, and a bad grazing period should not pay for it.
+# Input invariants, checked before the expensive USDM join.
 assert_empty(
   fsa_normal_grazing_period %>%
     dplyr::count(`Program Year`, FIPS, `FSA County`, `Pasture Type`) %>%
@@ -241,8 +203,7 @@ assert_empty(
   "FSA counties in the Normal Grazing Period archive absent from dd22"
 )
 
-# The county level max USDM classes, from above
-# Recode classes less that D2, which don't qualify for LFP
+# Collapse everything below D2 into one class; nothing below D2 qualifies.
 usdm_counties <-
   usdm_counties_max %>%
   # Only include FIPS in the NGP data
@@ -293,13 +254,12 @@ usdm_counties_rle <-
 # start and end dates.
 lfp_usdm_calculated <-
   fsa_normal_grazing_period |>
-  # Inner, not full: a full join's unmatched rows carry NA county keys, and only
-  # the int_overlaps() filter below keeps them out of the output.
+  # Inner: unmatched rows would carry NA county keys.
   dplyr::inner_join(usdm_counties_rle,
                     by = "FIPS",
                     relationship = "many-to-many") %>%
   # First, filter out rows where the NGP and USDM intervals do not overlap
-  # Also, filter periods that are not D2, D3, or D4. They don't matter for LFP.
+  # Periods below D2 do not qualify.
   dplyr::filter(
     lubridate::int_overlaps(`Normal Grazing Period`, `USDM Interval`)
   ) %>%
@@ -412,10 +372,8 @@ lfp_eligibility_calculated <-
       lubridate::as_date()
   ) %>%
   dplyr::select(!c(`LFP Interval Start`, `LFP Interval End`)) %>%
-  # Named explicitly rather than positionally (`D2_Sandwich:D4a`), which silently
-  # depended on column creation order. The order below is the original creation
-  # order and must be preserved: where two tiers award the same `Drought Factor`
-  # on the same date, it is what breaks the tie in the distinct() below.
+  # Order matters: where two tiers award the same `Drought Factor` on the same
+  # date, it breaks the tie in the distinct() below.
   tidyr::pivot_longer(c(D2_Sandwich, D3b, D4b, D2a_2026, D2b_2026, D2, D3a, D4a),
                       names_to = "Qualifying Drought Event",
                       values_to = "Qualifying Date") %>%
@@ -427,11 +385,8 @@ lfp_eligibility_calculated <-
              "D2b_2026", 
              `Qualifying Drought Event`)
   ) %>%
-  # The tier the qualifying event earns, in monthly payments. This is FSA's
-  # `Drought Factor`, not its `Payment Factor`: FSA caps the award at the
-  # Maximum Eligible Payment Months implied by the length of the grazing period,
-  # so the payable figure is min(`Drought Factor`, MEPM). The cap needs only the
-  # grazing dates, which this archive does not carry — see README.
+  # Monthly payments the tier earns. FSA's payable figure is this capped by the
+  # Maximum Eligible Payment Months; this archive does not carry the cap.
   dplyr::mutate(
     `Drought Factor` =
       dplyr::case_when(
@@ -445,7 +400,7 @@ lfp_eligibility_calculated <-
           `Qualifying Drought Event` %in%
           c("D2") ~ 1L,
         
-        # the ladder switched in Program Year 2012
+        # 2014 Farm Bill, from Program Year 2012
         `Program Year` %in% 2012:2025 & 
           `Qualifying Drought Event` %in%
           c("D4b") ~ 5L,
@@ -459,7 +414,8 @@ lfp_eligibility_calculated <-
           `Qualifying Drought Event` %in%
           c("D2") ~ 1L,
         
-        # the ladder switched again in Program Year 2026
+        # P.L. 119-21, from Program Year 2026: D2 splits into a 4-consecutive-week
+        # tier and a 7-of-8-consecutive-week tier
         `Program Year` >= 2026 & 
           `Qualifying Drought Event` %in%
           c("D4b") ~ 5L,
@@ -475,6 +431,7 @@ lfp_eligibility_calculated <-
         `Program Year`  >= 2026 & 
           `Qualifying Drought Event` %in%
           c("D2a_2026") ~ 1L,
+        # Events outside the era's ladder score 0 and are filtered below.
         .default = 0L
       )
   ) %>%
@@ -503,9 +460,7 @@ assert_empty(
   "records with a missing value"
 )
 
-# The ladder of monthly payments each era's rules allow. 2008-2011 tops out at
-# 3, the 2014 Farm Bill raised the ceiling to 5 and dropped the 2-payment tier,
-# and 2026 reinstates one by splitting D2.
+# The ladder of monthly payments in force for each era; see README.
 assert_empty(
   lfp_eligibility_calculated %>%
     dplyr::filter(
@@ -519,8 +474,7 @@ assert_empty(
 )
 
 # A qualifying date outside the grazing period would mean the tier was satisfied
-# by drought FSA does not count — the failure mode the last-day-of-window
-# convention in tier_date() exists to prevent.
+# by drought outside the window FSA counts.
 assert_empty(
   lfp_eligibility_calculated %>%
     dplyr::inner_join(
@@ -536,8 +490,7 @@ assert_empty(
 )
 
 ## ---- The FSA county / Census county fan-out --------------------------
-## Reported, never enforced. Each table below names records a consumer must
-## decide how to combine before reducing to a single county grain.
+## Reported, never enforced.
 
 county_pairs <-
   lfp_eligibility_calculated %>%
