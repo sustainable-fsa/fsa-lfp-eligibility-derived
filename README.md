@@ -405,14 +405,15 @@ counties <-
   dplyr::summarise(.groups = "drop") |>
   sf::st_cast("MULTIPOLYGON")
 
-## The 2026 Native Pasture drought factor on Census 2020 boundaries, reduced to
-## Census county grain by taking the highest factor across the FSA offices that
-## share a county. That `max()` is one of the reduction rules described above.
+## The 2026 Native Pasture drought factor on Census counties, using the boundary
+## vintage current as of each USDM week. Reduced to Census county grain by taking
+## the highest factor across the FSA offices that share a county -- that `max()`
+## is one of the reduction rules described above.
 lfp_counties <-
   lfp |>
   dplyr::filter(`Pasture Type` == "Native Pasture",
                 `Program Year` == 2026,
-                source == "usdm-counties-census-2020") |>
+                source == "usdm-counties") |>
   dplyr::group_by(id = FIPS) |>
   dplyr::summarise(`Drought Factor` = max(`Drought Factor`),
                    .groups = "drop") |>
@@ -458,7 +459,7 @@ ggplot(counties) +
     drop = FALSE,
     name = "Drought\nFactor") +
   labs(title = "Derived LFP Drought Factor",
-       subtitle = "Native Pasture — 2026 — Census 2020 USDM county aggregation") +
+       subtitle = "Native Pasture — 2026 — vintage-matched Census county USDM aggregation") +
   theme_void()
 ```
 
