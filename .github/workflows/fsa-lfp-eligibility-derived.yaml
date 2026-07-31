@@ -35,10 +35,7 @@ jobs:
       CLOUDFRONT_DISTRIBUTION_ID: E1BNL6ONVN84RI
       CLOUDFRONT_BASE: https://data.sustainable-fsa.com
     steps:
-      # khroma is not in the base action; the README's example map needs it.
       - uses: mt-climate-office/actions/setup-geospatial@v1
-        with:
-          extra-r-packages: khroma
 
       - name: Configure AWS credentials (GitHub OIDC)
         uses: aws-actions/configure-aws-credentials@v6

@@ -383,37 +383,48 @@ the published URL
 # Load required libraries
 library(sf)
 library(ggplot2) # For plotting
+library(tigris)  # For county boundaries
 library(rmapshaper) # For innerlines function
 
 ## Get the derived eligibility data
 lfp <- arrow::read_parquet("fsa-lfp-eligibility-derived.parquet")
 
-## FSA county boundaries, already simplified and with Alaska and Hawaii inset
 counties <-
-  sf::read_sf(
-    "/vsicurl/https://data.sustainable-fsa.com/fsa-counties-dd22/fsa-counties-dd22.topojson",
-    layer = "counties"
+  tigris::counties(cb = TRUE,
+                   resolution = "5m",
+                   progress_bar = FALSE) |>
+  dplyr::filter(
+    !(STATE_NAME %in% c("Guam",
+                        "American Samoa",
+                        "United States Virgin Islands",
+                        "Commonwealth of the Northern Mariana Islands"))
   ) |>
-  sf::st_set_crs("EPSG:4326") |>
-  sf::st_transform("EPSG:5070")
+  sf::st_cast("POLYGON", warn = FALSE, do_split = TRUE) |>
+  tigris::shift_geometry() |>
+  dplyr::group_by(STATEFP, COUNTYFP) |>
+  dplyr::summarise(.groups = "drop") |>
+  sf::st_cast("MULTIPOLYGON")
 
-## The 2021 Native Pasture drought factor under the NDMC-reported aggregation,
-## reduced to FSA county grain by taking the highest factor across the Census
-## counties an FSA office covers. That `max()` is a choice — see above.
+## The 2026 Native Pasture drought factor on Census 2020 boundaries, reduced to
+## Census county grain by taking the highest factor across the FSA offices that
+## share a county. That `max()` is one of the reduction rules described above.
 lfp_counties <-
   lfp |>
   dplyr::filter(`Pasture Type` == "Native Pasture",
-                `Program Year` == 2021,
-                source == "usdm-counties-reported") |>
-  dplyr::group_by(id = `FSA County`) |>
+                `Program Year` == 2026,
+                source == "usdm-counties-census-2020") |>
+  dplyr::group_by(id = FIPS) |>
   dplyr::summarise(`Drought Factor` = max(`Drought Factor`),
                    .groups = "drop") |>
-  # An ordered factor, not an integer: the ladder skips 2 in this era, so a
-  # continuous scale would imply a tier that does not exist.
   dplyr::mutate(
-    `Drought Factor` = factor(`Drought Factor`, ordered = TRUE)
+    `Drought Factor` = factor(`Drought Factor`,
+                              levels = 1:5,
+                              ordered = TRUE)
   ) |>
-  dplyr::left_join(counties) |>
+  dplyr::left_join(
+    counties |>
+      dplyr::transmute(id = paste0(STATEFP, COUNTYFP))
+    ) |>
   sf::st_as_sf()
 
 # Plot the map
@@ -423,22 +434,31 @@ ggplot(counties) +
           color = NA) +
   geom_sf(data = lfp_counties,
           aes(fill = `Drought Factor`),
-          color = NA) +
+          color = NA,
+          show.legend = TRUE) +
   geom_sf(data = rmapshaper::ms_innerlines(counties),
           fill = NA,
           color = "white",
           linewidth = 0.1) +
   geom_sf(data = counties |>
-            dplyr::group_by(state) |>
+            dplyr::group_by(STATEFP) |>
             dplyr::summarise() |>
             rmapshaper::ms_innerlines(),
           fill = NA,
           color = "white",
           linewidth = 0.2) +
-  khroma::scale_fill_YlOrBr(discrete = TRUE,
-                            name = "Monthly\nPayments") +
-  labs(title = "Reanalyzed LFP Drought Factor",
-       subtitle = "Native Pasture — 2021 — NDMC-reported USDM county aggregation") +
+  # Use the same color scale used by the LFP
+  # https://www.fsa.usda.gov/documents/native-pasture-2024-lfp-01-23-25
+  scale_fill_manual(
+    values = c("1" = "#E0E436",
+               "2" = "#DF9114",
+               "3" = "#DD2313",
+               "4" = "#850014",
+               "5" = "#3B003C"),
+    drop = FALSE,
+    name = "Drought\nFactor") +
+  labs(title = "Derived LFP Drought Factor",
+       subtitle = "Native Pasture — 2026 — Census 2020 USDM county aggregation") +
   theme_void()
 ```
 
