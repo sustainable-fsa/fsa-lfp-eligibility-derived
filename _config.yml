@@ -1,0 +1,11 @@
+title: FSA LFP Eligibility, Derived
+description:
+  County-level Livestock Forage Disaster Program eligibility recomputed from the US Drought Monitor
+  and FSA's published normal grazing periods under four county-aggregation conventions, 2008–present.
+author: R. Kyle Bocinsky
+url: "https://sustainable-fsa.com/fsa-lfp-eligibility-derived/" # Your GitHub Pages URL
+baseurl: "/fsa-lfp-eligibility-derived"
+
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
