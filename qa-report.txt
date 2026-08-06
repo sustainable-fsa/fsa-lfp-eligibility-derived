@@ -6,7 +6,7 @@ county keys are carried because an LFP determination needs both: FSA sets the
 normal grazing period per FSA county, and the USDM is aggregated per Census
 county. Neither key is reduced away — see "Resolving the fan-out" below.
 
-Records published: 450637
+Records published: 450928
 County pairs: 2978
 Census counties: 2968
 FSA counties: 2896
@@ -84,7 +84,7 @@ Census counties administered as several FSA counties: 9
   39095,2
   51640,2
 
-Determinations where the Census counties disagree: 204 of 996
+Determinations where the Census counties disagree: 192 of 996
   Collapsing to FSA county grain changes the drought factor for these.
   source,Program Year,Pasture Type,FSA County,Lowest,Highest
   usdm-counties,2011,Long Season Small Grains,12025,1,2
@@ -118,14 +118,12 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties,2026,Forage Sorghum,34027,1,2
   usdm-counties,2026,Forage Sorghum,51031,1,4
   usdm-counties,2026,Forage Sorghum,51089,3,4
-  usdm-counties,2026,Forage Sorghum,51163,3,4
   usdm-counties,2026,Forage Sorghum,51165,1,4
   usdm-counties,2026,Full Season Improved Pasture,16059,2,4
   usdm-counties,2026,Full Season Improved Pasture,34027,1,2
   usdm-counties,2026,Full Season Improved Pasture,36103,1,2
   usdm-counties,2026,Full Season Improved Pasture,51053,2,4
   usdm-counties,2026,Full Season Improved Pasture,51095,1,2
-  usdm-counties,2026,Full Season Improved Pasture,51163,3,4
   usdm-counties,2026,Full Season Improved Pasture,51165,3,4
   usdm-counties,2026,Full Season Improved Pasture,51175,3,4
   usdm-counties,2026,Long Season Small Grains,51003,2,3
@@ -134,7 +132,6 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties,2026,Native Pasture,36103,1,2
   usdm-counties,2026,Native Pasture,51053,2,4
   usdm-counties,2026,Native Pasture,51095,1,2
-  usdm-counties,2026,Native Pasture,51163,3,4
   usdm-counties,2026,Native Pasture,51165,3,4
   usdm-counties,2026,Native Pasture,51175,3,4
   usdm-counties-census-2020,2011,Long Season Small Grains,12025,1,2
@@ -172,14 +169,12 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-census-2020,2026,Forage Sorghum,34027,1,2
   usdm-counties-census-2020,2026,Forage Sorghum,51031,1,4
   usdm-counties-census-2020,2026,Forage Sorghum,51089,3,4
-  usdm-counties-census-2020,2026,Forage Sorghum,51163,3,4
   usdm-counties-census-2020,2026,Forage Sorghum,51165,1,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,16059,2,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,34027,1,2
   usdm-counties-census-2020,2026,Full Season Improved Pasture,36103,1,2
   usdm-counties-census-2020,2026,Full Season Improved Pasture,51053,2,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,51095,1,2
-  usdm-counties-census-2020,2026,Full Season Improved Pasture,51163,3,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,51165,3,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,51175,3,4
   usdm-counties-census-2020,2026,Long Season Small Grains,51003,2,3
@@ -188,7 +183,6 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-census-2020,2026,Native Pasture,36103,1,2
   usdm-counties-census-2020,2026,Native Pasture,51053,2,4
   usdm-counties-census-2020,2026,Native Pasture,51095,1,2
-  usdm-counties-census-2020,2026,Native Pasture,51163,3,4
   usdm-counties-census-2020,2026,Native Pasture,51165,3,4
   usdm-counties-census-2020,2026,Native Pasture,51175,3,4
   usdm-counties-fsa-lfp,2011,Long Season Small Grains,12025,1,2
@@ -222,14 +216,12 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-fsa-lfp,2026,Forage Sorghum,34027,1,2
   usdm-counties-fsa-lfp,2026,Forage Sorghum,51031,1,4
   usdm-counties-fsa-lfp,2026,Forage Sorghum,51089,3,4
-  usdm-counties-fsa-lfp,2026,Forage Sorghum,51163,3,4
   usdm-counties-fsa-lfp,2026,Forage Sorghum,51165,1,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,16059,2,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,34027,1,2
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,36103,1,2
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,51053,2,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,51095,1,2
-  usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,51163,3,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,51165,3,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,51175,3,4
   usdm-counties-fsa-lfp,2026,Long Season Small Grains,51003,2,3
@@ -238,7 +230,6 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-fsa-lfp,2026,Native Pasture,36103,1,2
   usdm-counties-fsa-lfp,2026,Native Pasture,51053,2,4
   usdm-counties-fsa-lfp,2026,Native Pasture,51095,1,2
-  usdm-counties-fsa-lfp,2026,Native Pasture,51163,3,4
   usdm-counties-fsa-lfp,2026,Native Pasture,51165,3,4
   usdm-counties-fsa-lfp,2026,Native Pasture,51175,3,4
   usdm-counties-reported,2011,Long Season Small Grains,12025,1,2
@@ -272,14 +263,12 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-reported,2026,Forage Sorghum,34027,1,2
   usdm-counties-reported,2026,Forage Sorghum,51031,1,4
   usdm-counties-reported,2026,Forage Sorghum,51089,3,4
-  usdm-counties-reported,2026,Forage Sorghum,51163,3,4
   usdm-counties-reported,2026,Forage Sorghum,51165,1,4
   usdm-counties-reported,2026,Full Season Improved Pasture,16059,2,4
   usdm-counties-reported,2026,Full Season Improved Pasture,34027,1,2
   usdm-counties-reported,2026,Full Season Improved Pasture,36103,1,2
   usdm-counties-reported,2026,Full Season Improved Pasture,51053,2,4
   usdm-counties-reported,2026,Full Season Improved Pasture,51095,1,2
-  usdm-counties-reported,2026,Full Season Improved Pasture,51163,3,4
   usdm-counties-reported,2026,Full Season Improved Pasture,51165,3,4
   usdm-counties-reported,2026,Full Season Improved Pasture,51175,3,4
   usdm-counties-reported,2026,Long Season Small Grains,51003,2,3
@@ -288,7 +277,6 @@ Determinations where the Census counties disagree: 204 of 996
   usdm-counties-reported,2026,Native Pasture,36103,1,2
   usdm-counties-reported,2026,Native Pasture,51053,2,4
   usdm-counties-reported,2026,Native Pasture,51095,1,2
-  usdm-counties-reported,2026,Native Pasture,51163,3,4
   usdm-counties-reported,2026,Native Pasture,51165,3,4
   usdm-counties-reported,2026,Native Pasture,51175,3,4
 
