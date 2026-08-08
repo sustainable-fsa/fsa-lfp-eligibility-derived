@@ -8,6 +8,12 @@ on:
     # sustainable-fsa/usdm-counties-census-2020
     - cron: '20 22 * * 4'
   workflow_dispatch:
+    inputs:
+      force:
+        description: >-
+          Run even when the freshness precheck sees nothing new upstream.
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['**.R', '.github/workflows/**']
@@ -25,7 +31,89 @@ defaults:
     shell: bash -l {0}
 
 jobs:
+  # Decide whether there is anything to do before the macOS runner and the
+  # geospatial toolchain spin up. This archive joins all four USDM county
+  # aggregations, so a week is workable only once *every* one of them has
+  # published it — the same "posted by all four" condition the R script applies
+  # per week, hoisted ahead of the S3 pull. The in-script gate remains the local
+  # authority once `update` starts.
+  #
+  # The gate fails OPEN: it skips only on a definite answer (a 404 in some
+  # upstream, or the week already present here). A probe that itself fails
+  # leaves `proceed` true, so a network blip costs a redundant run rather than
+  # silently stalling the archive.
+  precheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - id: gate
+        env:
+          BASE: https://data.sustainable-fsa.com
+          EVENT: ${{ github.event_name }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -uo pipefail
+
+          # Code changes and an explicit force always run; only the scheduled
+          # and dispatched cascade paths are gated.
+          if [ "$EVENT" = push ] || [ "$FORCE" = true ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Newest USDM Tuesday at least two days old — mirrors usdm_get_dates().
+          wk=
+          for i in $(seq 2 15); do
+            d=$(date -u -d "$i days ago" +%F)
+            if [ "$(date -u -d "$d" +%u)" = 2 ]; then wk="$d"; break; fi
+          done
+
+          probe() {
+            curl -sS -o /dev/null -w '%{http_code}' --max-time 30 --retry 3 \
+              -I "$1" 2>/dev/null | tail -c 3
+          }
+
+          missing=0
+          unknown=0
+          for a in usdm-counties usdm-counties-fsa-lfp usdm-counties-reported \
+                   usdm-counties-census-2020; do
+            c=$(probe "$BASE/$a/data/usdm/USDM_$wk.parquet")
+            echo "  $a: $c"
+            case "$c" in
+              200) ;;
+              404) missing=$((missing + 1)) ;;
+              *)   unknown=$((unknown + 1)) ;;
+            esac
+          done
+
+          mine=$(probe "$BASE/fsa-lfp-eligibility-derived/data/usdm/USDM_$wk.parquet")
+          echo "week=$wk missing=$missing unknown=$unknown mine=$mine"
+
+          # A skip on a dispatched run is worth flagging: whatever dispatched us
+          # should already have published the week.
+          lvl=notice
+          if [ "$EVENT" = workflow_dispatch ]; then lvl=warning; fi
+
+          if [ "$unknown" -gt 0 ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          elif [ "$missing" -gt 0 ]; then
+            echo "::${lvl}::$wk is not yet posted by all four upstream archives; skipping."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          elif [ "$mine" = 200 ]; then
+            echo "::notice::$wk is already present in this archive; skipping."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
   update:
+    needs: precheck
+    # `always()` so a precheck that errors outright does not skip the archive:
+    # only an explicit `false` gates the run. The precheck is an optimisation,
+    # never a dependency.
+    if: always() && needs.precheck.outputs.proceed != 'false'
     runs-on: macos-latest
     timeout-minutes: 350
     env:
