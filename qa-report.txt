@@ -6,7 +6,7 @@ county keys are carried because an LFP determination needs both: FSA sets the
 normal grazing period per FSA county, and the USDM is aggregated per Census
 county. Neither key is reduced away — see "Resolving the fan-out" below.
 
-Records published: 450928
+Records published: 452114
 County pairs: 2978
 Census counties: 2968
 FSA counties: 2896
