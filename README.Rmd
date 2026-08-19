@@ -42,6 +42,8 @@ of eligibility to that choice can be measured.
   factor it earns
 - [`fsa-lfp-eligibility-derived.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.parquet)
   — the same records as Parquet
+- [`fsa-lfp-eligibility-derived.json`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.json)
+  — the same records restructured for browsers (see *Output Data*)
 - [`usdm.parquet`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/usdm.parquet)
   — the weekly county USDM record this archive reads, all four aggregations
   side by side
@@ -66,8 +68,8 @@ are mirrored to S3 and served via CloudFront at
 or [`_manifest.txt`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/_manifest.txt)
 for a flat index).
 
-The derived records are mirrored in **both** places: the CSV and Parquet are
-committed to this repository as well as published to S3, so the archive is
+The derived records are mirrored in **both** places: the CSV, Parquet, and JSON
+are committed to this repository as well as published to S3, so the archive is
 readable from a git checkout alone and its history is inspectable commit by
 commit. The weekly USDM inputs under `data/usdm/` and the combined
 `usdm.parquet` are far larger and live on S3 only.
@@ -153,8 +155,9 @@ The processing script
     everything that came before it, so the archive reads as the eligibility
     history actually accrued over the grazing season.
 8.  **Validates** the result and writes a QA report.
-9.  **Exports** `fsa-lfp-eligibility-derived.csv` and
-    `fsa-lfp-eligibility-derived.parquet`, and publishes to S3.
+9.  **Exports** `fsa-lfp-eligibility-derived.csv`,
+    `fsa-lfp-eligibility-derived.parquet`, and the browser-optimized
+    `fsa-lfp-eligibility-derived.json`, and publishes to S3.
 
 ## 📤 Output Data
 
@@ -198,6 +201,50 @@ cap nor the capped figure, because both follow from the grazing period alone —
 take the dates from
 [`fsa-normal-grazing-period`](https://sustainable-fsa.com/fsa-normal-grazing-period/)
 and apply whatever cap your analysis calls for.
+
+### `fsa-lfp-eligibility-derived.json`
+
+[`fsa-lfp-eligibility-derived.json`](https://data.sustainable-fsa.com/fsa-lfp-eligibility-derived/fsa-lfp-eligibility-derived.json)
+holds the same records as the CSV and Parquet — derived from the
+identical validated table in the same run — restructured for direct use in a
+browser. It is what the eligibility dashboard loads, not an archive-of-record
+format; for analysis, use the CSV or Parquet. It differs in structure, not
+content:
+
+- **Column-oriented**: one array per field with one entry per record, rather than
+  one object per record, sorted on the integer index columns so the file gzips
+  from ~11.7 MB to roughly 350 KB over the wire.
+- **Dictionary-coded strings**: the 15 pasture types, 2,896 FSA county codes,
+  2,968 Census FIPS codes, 7 qualifying drought events, and 4 USDM county
+  aggregations each appear once in a lookup array; the record arrays hold integer
+  indices into them.
+- **Compact dates**: each `Qualifying Date` is a day-of-year (`qy`) plus a year
+  offset from the program year (`qo`), not an ISO string. A grazing season that
+  opens in the calendar year before its program year carries qualifying dates
+  there too — 12% of the events here — so the offset is what makes the day number
+  unambiguous.
+
+The payload is keyed on the **FSA county code**, with the Census FIPS code
+carried as a parallel per-record dictionary — the same two keys the tabular files
+carry, for the same reason (see *Two county keys* below). It also carries the
+`source` dimension, so every record names which of the four USDM
+county-aggregation conventions produced it and all four reanalyses are readable
+from the one file. There are no nulls anywhere: every field is populated for
+every record, which the run asserts before writing.
+
+There are no payment columns. `Drought Factor` is
+[not the payable amount](#fsa-lfp-eligibility-derivedcsv-and-parquet), and
+neither the *Maximum Eligible Payment Months* cap nor the capped figure is in
+this archive in any format.
+
+The payload is self-describing via its `schema` field
+(`fsa-lfp-eligibility/1`), a frozen contract with the dashboard: fields may be
+added, but existing ones are never renamed or reordered without bumping the
+schema. The layout is shared with
+[fsa-lfp-eligibility](https://sustainable-fsa.com/fsa-lfp-eligibility/) and
+[fsa-lfp-eligibility-web](https://sustainable-fsa.com/fsa-lfp-eligibility-web/),
+so the three archives can be compared directly; the `dataset` field says which
+one a payload came from.
 
 ### `usdm.parquet`
 

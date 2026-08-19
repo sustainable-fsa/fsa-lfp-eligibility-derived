@@ -139,13 +139,14 @@ jobs:
         run: Rscript fsa-lfp-eligibility-derived.R
 
       # Commit the reanalysis, the QA report and the rendered README back to git;
-      # the CSV and Parquet are mirrored here as well as on S3. The gate reads
-      # the CSV rather than the Parquet: Parquet output is not byte-reproducible,
-      # so it would register a change on every run. PNG byte-noise alone never
-      # triggers a commit either.
+      # the CSV, Parquet and JSON are mirrored here as well as on S3. The gate
+      # reads the CSV rather than the Parquet: Parquet output is not
+      # byte-reproducible, so it would register a change on every run. The JSON
+      # is byte-reproducible, so it is gated directly. PNG byte-noise alone
+      # never triggers a commit either.
       - name: Commit refreshed archive
         run: |
-          if git diff --quiet -- fsa-lfp-eligibility-derived.csv README.md qa-report.txt; then
+          if git diff --quiet -- fsa-lfp-eligibility-derived.csv fsa-lfp-eligibility-derived.json README.md qa-report.txt; then
             echo "Reanalysis, QA report and README unchanged; skipping commit."
             exit 0
           fi
@@ -153,6 +154,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add fsa-lfp-eligibility-derived.csv \
                   fsa-lfp-eligibility-derived.parquet \
+                  fsa-lfp-eligibility-derived.json \
                   qa-report.txt README.md example-1.png
           git commit -m 'Update archive'
           if ! git pull --rebase --autostash origin main; then

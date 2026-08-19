@@ -638,6 +638,82 @@ arrow::write_parquet(lfp_eligibility_calculated,
                      compression_level = 13,
                      use_dictionary = TRUE)
 
+# Browser-optimized JSON mirror of the same records, shared layout across the
+# three LFP archives ("fsa-lfp-eligibility/1") so the eligibility dashboard can
+# compare them directly. Column-oriented, dictionary-coded, dates as
+# day-of-year plus a year offset from the program year. Frozen contract:
+# add fields; never rename or reorder existing ones without bumping the schema.
+web <-
+  lfp_eligibility_calculated %>%
+  dplyr::mutate(dplyr::across(dplyr::where(is.factor), as.character))
+
+web_types    <- sort(unique(web$`Pasture Type`), method = "radix")
+web_counties <- sort(unique(web$`FSA County`), method = "radix")
+web_fips     <- sort(unique(web$FIPS), method = "radix")
+web_events   <- sort(unique(web$`Qualifying Drought Event`), method = "radix")
+web_sources  <- sort(unique(web$source), method = "radix")
+web_year0    <- min(web$`Program Year`)
+
+web <-
+  web %>%
+  dplyr::transmute(
+    type   = match(`Pasture Type`, web_types) - 1L,
+    county = match(`FSA County`, web_counties) - 1L,
+    fips   = match(FIPS, web_fips) - 1L,
+    year   = `Program Year` - web_year0,
+    source = match(source, web_sources) - 1L,
+    event  = match(`Qualifying Drought Event`, web_events) - 1L,
+    date   = `Qualifying Date`,
+    qy     = as.integer(lubridate::yday(date)),
+    qo     = as.integer(lubridate::year(date)) - `Program Year`,
+    df     = `Drought Factor`
+  ) %>%
+  # Integer index columns only: byte-stable in any locale. The trailing value
+  # columns make the order total even for otherwise-tied rows, and `source`
+  # sorts last so the four aggregation conventions' mostly-identical records
+  # land adjacent, which is where most of the gzip saving comes from.
+  dplyr::arrange(type, county, fips, year, event, qy, qo, df, source)
+
+# (program year + offset, day-of-year) must reconstruct every date exactly, and
+# nulls must land exactly where the source has NA. There are none here — every
+# published field is asserted non-missing above — but the sibling archives run
+# the same check, so it stays.
+stopifnot(
+  identical(is.na(web$qy), is.na(web$date)),
+  identical(is.na(web$qo), is.na(web$date)),
+  identical(
+    (lubridate::make_date(web$year + web_year0 + web$qo, 1L, 1L) + web$qy - 1L)[!is.na(web$date)],
+    web$date[!is.na(web$date)]
+  )
+)
+
+jsonlite::write_json(
+  list(
+    schema     = jsonlite::unbox("fsa-lfp-eligibility/1"),
+    dataset    = jsonlite::unbox("fsa-lfp-eligibility-derived"),
+    license    = jsonlite::unbox("CC0-1.0"),
+    year0      = jsonlite::unbox(web_year0),
+    years      = range(web$year + web_year0),
+    types      = web_types,
+    counties   = web_counties,
+    fips_codes = web_fips,
+    events     = web_events,
+    sources    = web_sources,
+    n          = jsonlite::unbox(nrow(web)),
+    type       = web$type,
+    county     = web$county,
+    fips       = web$fips,
+    year       = web$year,
+    event      = web$event,
+    qy         = web$qy,
+    qo         = web$qo,
+    df         = web$df,
+    source     = web$source
+  ),
+  "fsa-lfp-eligibility-derived.json",
+  auto_unbox = FALSE, digits = NA, na = "null"
+)
+
 ## ---- Directory listing infrastructure --------------------------------
 generate_tree_flat <- function(
     data_dir = "data",
@@ -681,6 +757,10 @@ s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-derived.parquet")
        "fsa-lfp-eligibility-derived.parquet",
        content_type = "application/vnd.apache.parquet",
        cache_control = "max-age=3600")
+s3_put(s3_bucket_name, paste0(s3_prefix, "/fsa-lfp-eligibility-derived.json"),
+       "fsa-lfp-eligibility-derived.json",
+       content_type = "application/json",
+       cache_control = "max-age=3600")
 s3_put(s3_bucket_name, paste0(s3_prefix, "/usdm.parquet"),
        "usdm.parquet",
        content_type = "application/vnd.apache.parquet",
@@ -696,6 +776,7 @@ s3_verify(s3_bucket_name, paste0(s3_prefix, "/data"), "data",
 s3_write_manifest(s3_bucket_name, s3_prefix)
 cf_invalidate(c(paste0("/", s3_prefix, "/fsa-lfp-eligibility-derived.csv"),
                 paste0("/", s3_prefix, "/fsa-lfp-eligibility-derived.parquet"),
+                paste0("/", s3_prefix, "/fsa-lfp-eligibility-derived.json"),
                 paste0("/", s3_prefix, "/usdm.parquet"),
                 paste0("/", s3_prefix, "/qa-report.txt"),
                 paste0("/", s3_prefix, "/manifest.json"),
