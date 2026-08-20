@@ -6,7 +6,7 @@ county keys are carried because an LFP determination needs both: FSA sets the
 normal grazing period per FSA county, and the USDM is aggregated per Census
 county. Neither key is reduced away — see "Resolving the fan-out" below.
 
-Records published: 452114
+Records published: 453190
 County pairs: 2978
 Census counties: 2968
 FSA counties: 2896
@@ -116,7 +116,7 @@ Determinations where the Census counties disagree: 192 of 996
   usdm-counties,2025,Native Pasture,16059,1,4
   usdm-counties,2026,Annual Crabgrass,34027,1,2
   usdm-counties,2026,Forage Sorghum,34027,1,2
-  usdm-counties,2026,Forage Sorghum,51031,1,4
+  usdm-counties,2026,Forage Sorghum,51031,2,4
   usdm-counties,2026,Forage Sorghum,51089,3,4
   usdm-counties,2026,Forage Sorghum,51165,1,4
   usdm-counties,2026,Full Season Improved Pasture,16059,2,4
@@ -167,7 +167,7 @@ Determinations where the Census counties disagree: 192 of 996
   usdm-counties-census-2020,2025,Native Pasture,16059,1,4
   usdm-counties-census-2020,2026,Annual Crabgrass,34027,1,2
   usdm-counties-census-2020,2026,Forage Sorghum,34027,1,2
-  usdm-counties-census-2020,2026,Forage Sorghum,51031,1,4
+  usdm-counties-census-2020,2026,Forage Sorghum,51031,2,4
   usdm-counties-census-2020,2026,Forage Sorghum,51089,3,4
   usdm-counties-census-2020,2026,Forage Sorghum,51165,1,4
   usdm-counties-census-2020,2026,Full Season Improved Pasture,16059,2,4
@@ -214,7 +214,7 @@ Determinations where the Census counties disagree: 192 of 996
   usdm-counties-fsa-lfp,2025,Native Pasture,16059,1,4
   usdm-counties-fsa-lfp,2026,Annual Crabgrass,34027,1,2
   usdm-counties-fsa-lfp,2026,Forage Sorghum,34027,1,2
-  usdm-counties-fsa-lfp,2026,Forage Sorghum,51031,1,4
+  usdm-counties-fsa-lfp,2026,Forage Sorghum,51031,2,4
   usdm-counties-fsa-lfp,2026,Forage Sorghum,51089,3,4
   usdm-counties-fsa-lfp,2026,Forage Sorghum,51165,1,4
   usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,16059,2,4
@@ -261,7 +261,7 @@ Determinations where the Census counties disagree: 192 of 996
   usdm-counties-reported,2025,Native Pasture,16059,1,4
   usdm-counties-reported,2026,Annual Crabgrass,34027,1,2
   usdm-counties-reported,2026,Forage Sorghum,34027,1,2
-  usdm-counties-reported,2026,Forage Sorghum,51031,1,4
+  usdm-counties-reported,2026,Forage Sorghum,51031,2,4
   usdm-counties-reported,2026,Forage Sorghum,51089,3,4
   usdm-counties-reported,2026,Forage Sorghum,51165,1,4
   usdm-counties-reported,2026,Full Season Improved Pasture,16059,2,4
@@ -280,7 +280,7 @@ Determinations where the Census counties disagree: 192 of 996
   usdm-counties-reported,2026,Native Pasture,51165,3,4
   usdm-counties-reported,2026,Native Pasture,51175,3,4
 
-Determinations where the FSA counties disagree: 4 of 400
+Determinations where the FSA counties disagree: 4 of 416
   Collapsing to Census county grain changes the drought factor for these.
   source,Program Year,Pasture Type,FIPS,Lowest,Highest
   usdm-counties,2012,Native Pasture,32023,1,4
