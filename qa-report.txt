@@ -6,10 +6,10 @@ county keys are carried because an LFP determination needs both: FSA sets the
 normal grazing period per FSA county, and the USDM is aggregated per Census
 county. Neither key is reduced away — see "Resolving the fan-out" below.
 
-Records published: 457419
-County pairs: 2979
-Census counties: 2969
-FSA counties: 2897
+Records published: 459220
+County pairs: 2983
+Census counties: 2973
+FSA counties: 2901
 Program years: 2008-2026
 Pasture types: 15
 USDM county aggregations: 4
@@ -84,7 +84,7 @@ Census counties administered as several FSA counties: 9
   39095,2
   51640,2
 
-Determinations where the Census counties disagree: 196 of 996
+Determinations where the Census counties disagree: 196 of 1000
   Collapsing to FSA county grain changes the drought factor for these.
   source,Program Year,Pasture Type,FSA County,Lowest,Highest
   usdm-counties,2011,Long Season Small Grains,12025,1,2
