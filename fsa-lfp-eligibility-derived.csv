@@ -6695,10 +6695,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01083,01083,usdm-counties,2025,Full Season Improved Mixed Pasture,D4a,2024-12-01,4
 01083,01083,usdm-counties,2025,Long Season Small Grains,D4a,2024-12-01,4
 01083,01083,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 01083,01083,usdm-counties,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01083,01083,usdm-counties,2026,Forage Sorghum,D3a,2026-10-27,3
 01083,01083,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01083,01083,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-census-2020,2008,Improved Pasture,D3a,2008-04-01,2
 01083,01083,usdm-counties-census-2020,2008,Small Grains,D4a,2007-12-01,3
 01083,01083,usdm-counties-census-2020,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -6725,10 +6729,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01083,01083,usdm-counties-census-2020,2025,Full Season Improved Mixed Pasture,D4a,2024-12-01,4
 01083,01083,usdm-counties-census-2020,2025,Long Season Small Grains,D4a,2024-12-01,4
 01083,01083,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 01083,01083,usdm-counties-census-2020,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01083,01083,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-27,3
 01083,01083,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01083,01083,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-fsa-lfp,2008,Improved Pasture,D3a,2008-04-01,2
 01083,01083,usdm-counties-fsa-lfp,2008,Small Grains,D4a,2007-12-01,3
 01083,01083,usdm-counties-fsa-lfp,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -6755,10 +6763,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01083,01083,usdm-counties-fsa-lfp,2025,Full Season Improved Mixed Pasture,D4a,2024-12-01,4
 01083,01083,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D4a,2024-12-01,4
 01083,01083,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 01083,01083,usdm-counties-fsa-lfp,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01083,01083,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-27,3
 01083,01083,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01083,01083,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-reported,2008,Improved Pasture,D3a,2008-04-01,2
 01083,01083,usdm-counties-reported,2008,Small Grains,D4a,2007-12-01,3
 01083,01083,usdm-counties-reported,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -6785,10 +6797,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01083,01083,usdm-counties-reported,2025,Full Season Improved Mixed Pasture,D4a,2024-12-01,4
 01083,01083,usdm-counties-reported,2025,Long Season Small Grains,D4a,2024-12-01,4
 01083,01083,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 01083,01083,usdm-counties-reported,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01083,01083,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-27,3
 01083,01083,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01083,01083,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01083,01083,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-11,1
+01083,01083,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 01085,01085,usdm-counties,2008,Improved Pasture,D3a,2008-03-15,2
 01085,01085,usdm-counties,2008,Small Grains,D4a,2007-11-15,3
 01085,01085,usdm-counties,2010,Improved Pasture,D2,2010-11-15,1
@@ -7204,10 +7220,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01089,01089,usdm-counties,2025,Long Season Small Grains,D3a,2024-12-01,3
 01089,01089,usdm-counties,2025,Long Season Small Grains,D3b,2024-12-28,4
 01089,01089,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 01089,01089,usdm-counties,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01089,01089,usdm-counties,2026,Forage Sorghum,D3a,2026-10-27,3
 01089,01089,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01089,01089,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-05,2
 01089,01089,usdm-counties-census-2020,2008,Improved Pasture,D3a,2008-04-01,2
 01089,01089,usdm-counties-census-2020,2008,Improved Pasture,D3b,2008-04-28,3
@@ -7235,10 +7255,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01089,01089,usdm-counties-census-2020,2025,Long Season Small Grains,D3a,2024-12-01,3
 01089,01089,usdm-counties-census-2020,2025,Long Season Small Grains,D3b,2024-12-28,4
 01089,01089,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 01089,01089,usdm-counties-census-2020,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01089,01089,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-27,3
 01089,01089,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01089,01089,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-05,2
 01089,01089,usdm-counties-fsa-lfp,2008,Improved Pasture,D3a,2008-04-01,2
 01089,01089,usdm-counties-fsa-lfp,2008,Improved Pasture,D3b,2008-04-28,3
@@ -7266,10 +7290,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01089,01089,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3a,2024-12-01,3
 01089,01089,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3b,2024-12-28,4
 01089,01089,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 01089,01089,usdm-counties-fsa-lfp,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01089,01089,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-27,3
 01089,01089,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01089,01089,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-05,2
 01089,01089,usdm-counties-reported,2008,Improved Pasture,D3a,2008-04-01,2
 01089,01089,usdm-counties-reported,2008,Improved Pasture,D3b,2008-04-28,3
@@ -7297,10 +7325,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 01089,01089,usdm-counties-reported,2025,Long Season Small Grains,D3a,2024-12-01,3
 01089,01089,usdm-counties-reported,2025,Long Season Small Grains,D3b,2024-12-28,4
 01089,01089,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 01089,01089,usdm-counties-reported,2026,Forage Sorghum,D2a_2026,2026-10-26,1
+01089,01089,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-27,3
 01089,01089,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-11,1
 01089,01089,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 01089,01089,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-11,1
+01089,01089,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 01091,01091,usdm-counties,2008,Small Grains,D3a,2007-11-15,2
 01091,01091,usdm-counties,2008,Small Grains,D3b,2007-12-12,3
 01091,01091,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-15,3
@@ -15896,6 +15928,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05029,05029,usdm-counties,2026,Annual Ryegrass,D3a,2026-01-20,3
 05029,05029,usdm-counties,2026,Annual Ryegrass,D3b,2026-02-16,4
 05029,05029,usdm-counties,2026,Forage Sorghum,D4a,2026-04-01,4
+05029,05029,usdm-counties,2026,Forage Sorghum,D4b,2026-10-27,5
 05029,05029,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05029,05029,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05029,05029,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -15935,6 +15968,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05029,05029,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-01-20,3
 05029,05029,usdm-counties-census-2020,2026,Annual Ryegrass,D3b,2026-02-16,4
 05029,05029,usdm-counties-census-2020,2026,Forage Sorghum,D4a,2026-04-01,4
+05029,05029,usdm-counties-census-2020,2026,Forage Sorghum,D4b,2026-10-27,5
 05029,05029,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05029,05029,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05029,05029,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -15974,6 +16008,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05029,05029,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-01-20,3
 05029,05029,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3b,2026-02-16,4
 05029,05029,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4a,2026-04-01,4
+05029,05029,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4b,2026-10-27,5
 05029,05029,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05029,05029,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05029,05029,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -16013,6 +16048,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05029,05029,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-01-20,3
 05029,05029,usdm-counties-reported,2026,Annual Ryegrass,D3b,2026-02-16,4
 05029,05029,usdm-counties-reported,2026,Forage Sorghum,D4a,2026-04-01,4
+05029,05029,usdm-counties-reported,2026,Forage Sorghum,D4b,2026-10-27,5
 05029,05029,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05029,05029,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05029,05029,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -21473,10 +21509,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05085,05085,usdm-counties,2026,Forage Sorghum,D3b,2026-04-28,4
 05085,05085,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05085,05085,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05085,05085,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties,2026,Long Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties,2026,Long Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties,2026,Native Pasture,D3a,2026-03-15,3
 05085,05085,usdm-counties,2026,Native Pasture,D3b,2026-04-11,4
+05085,05085,usdm-counties,2026,Native Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties,2026,Short Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties,2026,Short Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-census-2020,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -21521,10 +21559,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05085,05085,usdm-counties-census-2020,2026,Forage Sorghum,D3b,2026-04-28,4
 05085,05085,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05085,05085,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05085,05085,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-census-2020,2026,Long Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-03-15,3
 05085,05085,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-04-11,4
+05085,05085,usdm-counties-census-2020,2026,Native Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-census-2020,2026,Short Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-census-2020,2026,Short Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-fsa-lfp,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -21569,10 +21609,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05085,05085,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3b,2026-04-28,4
 05085,05085,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05085,05085,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05085,05085,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-03-15,3
 05085,05085,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-04-11,4
+05085,05085,usdm-counties-fsa-lfp,2026,Native Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-reported,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -21617,10 +21659,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05085,05085,usdm-counties-reported,2026,Forage Sorghum,D3b,2026-04-28,4
 05085,05085,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05085,05085,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05085,05085,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-reported,2026,Long Season Small Grains,D3b,2026-02-16,4
 05085,05085,usdm-counties-reported,2026,Native Pasture,D3a,2026-03-15,3
 05085,05085,usdm-counties-reported,2026,Native Pasture,D3b,2026-04-11,4
+05085,05085,usdm-counties-reported,2026,Native Pasture,D4b,2026-11-02,5
 05085,05085,usdm-counties-reported,2026,Short Season Small Grains,D3a,2026-01-20,3
 05085,05085,usdm-counties-reported,2026,Short Season Small Grains,D3b,2026-02-16,4
 05087,05087,usdm-counties,2011,Forage Sorghum,D2,2011-10-31,1
@@ -22430,11 +22474,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05095,05095,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-03-04,2
 05095,05095,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties,2026,Long Season Small Grains,D3a,2026-03-24,3
 05095,05095,usdm-counties,2026,Native Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties,2026,Native Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties,2026,Native Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties,2026,Short Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties,2026,Short Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-census-2020,2011,Long Season Small Grains,D2,2010-11-25,1
@@ -22480,11 +22526,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05095,05095,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-03-04,2
 05095,05095,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-03-24,3
 05095,05095,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-census-2020,2026,Native Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-census-2020,2026,Short Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-census-2020,2026,Short Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-fsa-lfp,2011,Long Season Small Grains,D2,2010-11-25,1
@@ -22530,11 +22578,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05095,05095,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-03-04,2
 05095,05095,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-03-24,3
 05095,05095,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-fsa-lfp,2026,Native Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-reported,2011,Long Season Small Grains,D2,2010-11-25,1
@@ -22580,11 +22630,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05095,05095,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-03-04,2
 05095,05095,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-03-02,2
 05095,05095,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-03-24,3
 05095,05095,usdm-counties-reported,2026,Native Pasture,D3a,2026-03-24,3
 05095,05095,usdm-counties-reported,2026,Native Pasture,D3b,2026-04-20,4
+05095,05095,usdm-counties-reported,2026,Native Pasture,D4b,2026-11-02,5
 05095,05095,usdm-counties-reported,2026,Short Season Small Grains,D2a_2026,2026-02-09,1
 05095,05095,usdm-counties-reported,2026,Short Season Small Grains,D2b_2026,2026-03-02,2
 05097,05097,usdm-counties,2011,Forage Sorghum,D3a,2011-08-09,2
@@ -24645,10 +24697,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05117,05117,usdm-counties,2026,Forage Sorghum,D3b,2026-04-28,4
 05117,05117,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05117,05117,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05117,05117,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties,2026,Long Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties,2026,Long Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties,2026,Native Pasture,D3a,2026-03-15,3
 05117,05117,usdm-counties,2026,Native Pasture,D3b,2026-04-11,4
+05117,05117,usdm-counties,2026,Native Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties,2026,Short Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties,2026,Short Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-census-2020,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -24692,10 +24746,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05117,05117,usdm-counties-census-2020,2026,Forage Sorghum,D3b,2026-04-28,4
 05117,05117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05117,05117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05117,05117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-census-2020,2026,Long Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-03-15,3
 05117,05117,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-04-11,4
+05117,05117,usdm-counties-census-2020,2026,Native Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-census-2020,2026,Short Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-census-2020,2026,Short Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-fsa-lfp,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -24739,10 +24795,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05117,05117,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3b,2026-04-28,4
 05117,05117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05117,05117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05117,05117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-03-15,3
 05117,05117,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-04-11,4
+05117,05117,usdm-counties-fsa-lfp,2026,Native Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-reported,2011,Long Season Small Grains,D2,2010-12-06,1
@@ -24786,10 +24844,12 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05117,05117,usdm-counties-reported,2026,Forage Sorghum,D3b,2026-04-28,4
 05117,05117,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05117,05117,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-02-16,4
+05117,05117,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-reported,2026,Long Season Small Grains,D3b,2026-02-16,4
 05117,05117,usdm-counties-reported,2026,Native Pasture,D3a,2026-03-15,3
 05117,05117,usdm-counties-reported,2026,Native Pasture,D3b,2026-04-11,4
+05117,05117,usdm-counties-reported,2026,Native Pasture,D4b,2026-11-02,5
 05117,05117,usdm-counties-reported,2026,Short Season Small Grains,D3a,2026-01-20,3
 05117,05117,usdm-counties-reported,2026,Short Season Small Grains,D3b,2026-02-16,4
 05119,05119,usdm-counties,2011,Long Season Small Grains,D2,2010-12-13,1
@@ -24831,6 +24891,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05119,05119,usdm-counties,2026,Annual Ryegrass,D3a,2026-01-20,3
 05119,05119,usdm-counties,2026,Annual Ryegrass,D3b,2026-02-16,4
 05119,05119,usdm-counties,2026,Forage Sorghum,D4a,2026-04-01,4
+05119,05119,usdm-counties,2026,Forage Sorghum,D4b,2026-10-27,5
 05119,05119,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05119,05119,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05119,05119,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -24880,6 +24941,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05119,05119,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-01-20,3
 05119,05119,usdm-counties-census-2020,2026,Annual Ryegrass,D3b,2026-02-16,4
 05119,05119,usdm-counties-census-2020,2026,Forage Sorghum,D4a,2026-04-01,4
+05119,05119,usdm-counties-census-2020,2026,Forage Sorghum,D4b,2026-10-27,5
 05119,05119,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05119,05119,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05119,05119,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -24929,6 +24991,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05119,05119,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-01-20,3
 05119,05119,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3b,2026-02-16,4
 05119,05119,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4a,2026-04-01,4
+05119,05119,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4b,2026-10-27,5
 05119,05119,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05119,05119,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05119,05119,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -24978,6 +25041,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05119,05119,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-01-20,3
 05119,05119,usdm-counties-reported,2026,Annual Ryegrass,D3b,2026-02-16,4
 05119,05119,usdm-counties-reported,2026,Forage Sorghum,D4a,2026-04-01,4
+05119,05119,usdm-counties-reported,2026,Forage Sorghum,D4b,2026-10-27,5
 05119,05119,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05119,05119,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05119,05119,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -25384,6 +25448,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05125,05125,usdm-counties,2026,Annual Ryegrass,D3a,2026-01-20,3
 05125,05125,usdm-counties,2026,Annual Ryegrass,D3b,2026-02-16,4
 05125,05125,usdm-counties,2026,Forage Sorghum,D4a,2026-04-01,4
+05125,05125,usdm-counties,2026,Forage Sorghum,D4b,2026-10-27,5
 05125,05125,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05125,05125,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05125,05125,usdm-counties,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -25430,6 +25495,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05125,05125,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-01-20,3
 05125,05125,usdm-counties-census-2020,2026,Annual Ryegrass,D3b,2026-02-16,4
 05125,05125,usdm-counties-census-2020,2026,Forage Sorghum,D4a,2026-04-01,4
+05125,05125,usdm-counties-census-2020,2026,Forage Sorghum,D4b,2026-10-27,5
 05125,05125,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05125,05125,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05125,05125,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -25476,6 +25542,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05125,05125,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-01-20,3
 05125,05125,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3b,2026-02-16,4
 05125,05125,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4a,2026-04-01,4
+05125,05125,usdm-counties-fsa-lfp,2026,Forage Sorghum,D4b,2026-10-27,5
 05125,05125,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05125,05125,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05125,05125,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -25522,6 +25589,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 05125,05125,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-01-20,3
 05125,05125,usdm-counties-reported,2026,Annual Ryegrass,D3b,2026-02-16,4
 05125,05125,usdm-counties-reported,2026,Forage Sorghum,D4a,2026-04-01,4
+05125,05125,usdm-counties-reported,2026,Forage Sorghum,D4b,2026-10-27,5
 05125,05125,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-01-20,3
 05125,05125,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-02-16,4
 05125,05125,usdm-counties-reported,2026,Full Season Improved Pasture,D4b,2026-04-27,5
@@ -152782,14 +152850,17 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22011,22011,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties,2026,Native Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties,2026,Native Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties,2026,Native Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties,2026,Native Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-census-2020,2010,Improved Pasture,D3a,2010-10-05,2
 22011,22011,usdm-counties-census-2020,2010,Improved Pasture,D3b,2010-11-01,3
 22011,22011,usdm-counties-census-2020,2010,Native Pasture,D3a,2010-10-05,2
@@ -152830,14 +152901,17 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-census-2020,2026,Native Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-fsa-lfp,2010,Improved Pasture,D3a,2010-10-05,2
 22011,22011,usdm-counties-fsa-lfp,2010,Improved Pasture,D3b,2010-11-01,3
 22011,22011,usdm-counties-fsa-lfp,2010,Native Pasture,D3a,2010-10-05,2
@@ -152878,14 +152952,17 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-fsa-lfp,2026,Native Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-reported,2010,Improved Pasture,D3a,2010-10-05,2
 22011,22011,usdm-counties-reported,2010,Improved Pasture,D3b,2010-11-01,3
 22011,22011,usdm-counties-reported,2010,Native Pasture,D3a,2010-10-05,2
@@ -152926,14 +153003,17 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22011,22011,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-reported,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22011,22011,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-03-30,1
 22011,22011,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-04-20,2
 22011,22011,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-20,3
+22011,22011,usdm-counties-reported,2026,Native Pasture,D4a,2026-10-27,4
 22013,22013,usdm-counties,2010,Improved Pasture,D3a,2010-06-29,2
 22013,22013,usdm-counties,2010,Improved Pasture,D3b,2010-07-26,3
 22013,22013,usdm-counties,2010,Native Pasture,D3a,2010-06-29,2
@@ -153646,13 +153726,16 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22019,22019,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties,2026,Native Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties,2026,Native Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties,2026,Native Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties,2026,Native Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-census-2020,2010,Improved Pasture,D3a,2010-10-12,2
 22019,22019,usdm-counties-census-2020,2010,Improved Pasture,D3b,2010-11-08,3
 22019,22019,usdm-counties-census-2020,2010,Native Pasture,D3a,2010-10-12,2
@@ -153689,13 +153772,16 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-census-2020,2026,Native Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-fsa-lfp,2010,Improved Pasture,D3a,2010-10-12,2
 22019,22019,usdm-counties-fsa-lfp,2010,Improved Pasture,D3b,2010-11-08,3
 22019,22019,usdm-counties-fsa-lfp,2010,Native Pasture,D3a,2010-10-12,2
@@ -153732,13 +153818,16 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-fsa-lfp,2026,Native Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-reported,2010,Improved Pasture,D3a,2010-10-12,2
 22019,22019,usdm-counties-reported,2010,Improved Pasture,D3b,2010-11-08,3
 22019,22019,usdm-counties-reported,2010,Native Pasture,D3a,2010-10-12,2
@@ -153775,13 +153864,16 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22019,22019,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-reported,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22019,22019,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-04-20,1
 22019,22019,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-05-11,2
 22019,22019,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-20,3
+22019,22019,usdm-counties-reported,2026,Native Pasture,D4a,2026-10-27,4
 22021,22021,usdm-counties,2010,Improved Pasture,D3a,2010-06-29,2
 22021,22021,usdm-counties,2010,Improved Pasture,D3b,2010-07-26,3
 22021,22021,usdm-counties,2010,Native Pasture,D3a,2010-06-29,2
@@ -156801,11 +156893,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22053,22053,usdm-counties,2026,Annual Ryegrass,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties,2026,Native Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties,2026,Native Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties,2026,Native Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-census-2020,2010,Improved Pasture,D3a,2010-10-12,2
 22053,22053,usdm-counties-census-2020,2010,Improved Pasture,D3b,2010-11-08,3
 22053,22053,usdm-counties-census-2020,2010,Native Pasture,D3a,2010-10-12,2
@@ -156841,11 +156936,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22053,22053,usdm-counties-census-2020,2026,Annual Ryegrass,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-census-2020,2026,Native Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-fsa-lfp,2010,Improved Pasture,D3a,2010-10-12,2
 22053,22053,usdm-counties-fsa-lfp,2010,Improved Pasture,D3b,2010-11-08,3
 22053,22053,usdm-counties-fsa-lfp,2010,Native Pasture,D3a,2010-10-12,2
@@ -156881,11 +156979,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22053,22053,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-fsa-lfp,2026,Native Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-reported,2010,Improved Pasture,D3a,2010-10-12,2
 22053,22053,usdm-counties-reported,2010,Improved Pasture,D3b,2010-11-08,3
 22053,22053,usdm-counties-reported,2010,Native Pasture,D3a,2010-10-12,2
@@ -156921,11 +157022,14 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22053,22053,usdm-counties-reported,2026,Annual Ryegrass,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-reported,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 22053,22053,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-04-27,1
 22053,22053,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-20,3
+22053,22053,usdm-counties-reported,2026,Native Pasture,D4a,2026-10-27,4
 22055,22055,usdm-counties,2011,Improved Pasture,D3a,2011-05-24,2
 22055,22055,usdm-counties,2011,Improved Pasture,D4a,2011-06-14,3
 22055,22055,usdm-counties,2011,Native Pasture,D3a,2011-05-24,2
@@ -160742,10 +160846,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22097,22097,usdm-counties,2026,Annual Ryegrass,D3a,2026-02-17,3
 22097,22097,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties,2026,Long Season Small Grains,D3a,2026-02-17,3
 22097,22097,usdm-counties,2026,Native Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-census-2020,2011,Improved Pasture,D3a,2011-05-24,2
 22097,22097,usdm-counties-census-2020,2011,Improved Pasture,D4a,2011-06-07,3
 22097,22097,usdm-counties-census-2020,2011,Long Season Small Grains,D2,2011-04-25,1
@@ -160779,10 +160886,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22097,22097,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-02-17,3
 22097,22097,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-02-17,3
 22097,22097,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-fsa-lfp,2011,Improved Pasture,D3a,2011-05-24,2
 22097,22097,usdm-counties-fsa-lfp,2011,Improved Pasture,D4a,2011-06-07,3
 22097,22097,usdm-counties-fsa-lfp,2011,Long Season Small Grains,D2,2011-04-25,1
@@ -160816,10 +160926,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22097,22097,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-02-17,3
 22097,22097,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-02-17,3
 22097,22097,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-reported,2011,Improved Pasture,D3a,2011-05-24,2
 22097,22097,usdm-counties-reported,2011,Improved Pasture,D4a,2011-06-07,3
 22097,22097,usdm-counties-reported,2011,Long Season Small Grains,D2,2011-04-25,1
@@ -160853,10 +160966,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 22097,22097,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-02-17,3
 22097,22097,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 22097,22097,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-02-16,1
 22097,22097,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-02-17,3
 22097,22097,usdm-counties-reported,2026,Native Pasture,D3a,2026-02-17,3
+22097,22097,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 22099,22099,usdm-counties,2011,Improved Pasture,D3a,2011-05-03,2
 22099,22099,usdm-counties,2011,Improved Pasture,D3b,2011-06-13,3
 22099,22099,usdm-counties,2011,Native Pasture,D3a,2011-05-03,2
@@ -176575,9 +176691,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28017,28017,usdm-counties,2024,Long Season Small Grains,D4a,2023-12-01,4
 28017,28017,usdm-counties,2024,Long Season Small Grains,D4b,2023-12-28,5
 28017,28017,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 28017,28017,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-census-2020,2016,Annual Crabgrass,D2,2016-08-29,1
 28017,28017,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-10-11,3
 28017,28017,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -176608,9 +176728,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28017,28017,usdm-counties-census-2020,2024,Long Season Small Grains,D4a,2023-12-01,4
 28017,28017,usdm-counties-census-2020,2024,Long Season Small Grains,D4b,2023-12-28,5
 28017,28017,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 28017,28017,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D2,2016-08-29,1
 28017,28017,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-10-11,3
 28017,28017,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -176646,9 +176770,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28017,28017,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4a,2023-12-01,4
 28017,28017,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4b,2023-12-28,5
 28017,28017,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 28017,28017,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-reported,2016,Annual Crabgrass,D2,2016-08-29,1
 28017,28017,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-10-11,3
 28017,28017,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -176684,9 +176812,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28017,28017,usdm-counties-reported,2024,Long Season Small Grains,D4a,2023-12-01,4
 28017,28017,usdm-counties-reported,2024,Long Season Small Grains,D4b,2023-12-28,5
 28017,28017,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 28017,28017,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28017,28017,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-18,1
+28017,28017,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28019,28019,usdm-counties,2015,Annual Crabgrass,D3a,2015-10-13,3
 28019,28019,usdm-counties,2015,Native Pasture,D3a,2015-10-13,3
 28019,28019,usdm-counties,2015,Warm Season Improved Pasture,D3a,2015-10-13,3
@@ -177160,9 +177292,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28025,28025,usdm-counties,2024,Long Season Small Grains,D3a,2023-12-01,3
 28025,28025,usdm-counties,2024,Long Season Small Grains,D3b,2023-12-28,4
 28025,28025,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 28025,28025,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-census-2020,2016,Annual Crabgrass,D2,2016-09-19,1
 28025,28025,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-10-11,3
 28025,28025,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -177190,9 +177326,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28025,28025,usdm-counties-census-2020,2024,Long Season Small Grains,D3a,2023-12-01,3
 28025,28025,usdm-counties-census-2020,2024,Long Season Small Grains,D3b,2023-12-28,4
 28025,28025,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 28025,28025,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D2,2016-08-29,1
 28025,28025,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-10-11,3
 28025,28025,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -177220,9 +177360,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28025,28025,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3a,2023-12-01,3
 28025,28025,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3b,2023-12-28,4
 28025,28025,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 28025,28025,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-reported,2016,Annual Crabgrass,D2,2016-09-19,1
 28025,28025,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-10-11,3
 28025,28025,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -177250,9 +177394,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28025,28025,usdm-counties-reported,2024,Long Season Small Grains,D3a,2023-12-01,3
 28025,28025,usdm-counties-reported,2024,Long Season Small Grains,D3b,2023-12-28,4
 28025,28025,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 28025,28025,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28025,28025,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-18,1
+28025,28025,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28027,28027,usdm-counties,2010,Improved Pasture,D2,2010-09-20,1
 28027,28027,usdm-counties,2010,Native Pasture,D2,2010-09-20,1
 28027,28027,usdm-counties,2011,Long Season Small Grains,D2,2011-02-21,1
@@ -177407,6 +177555,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28027,28027,usdm-counties-fsa-lfp,2025,Native Pasture,D2,2025-10-20,1
 28027,28027,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-03-03,3
 28027,28027,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3b,2026-03-30,4
+28027,28027,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D4b,2026-11-02,5
 28027,28027,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2a_2026,2026-02-09,1
 28027,28027,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2b_2026,2026-03-02,2
 28027,28027,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-03-03,3
@@ -177416,14 +177565,17 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-03-02,2
 28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-03-03,3
 28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3b,2026-03-30,4
+28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4b,2026-11-02,5
 28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-03-03,3
 28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-03-30,4
+28027,28027,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4b,2026-11-02,5
 28027,28027,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-02-09,1
 28027,28027,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-03-02,2
 28027,28027,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-03-03,3
 28027,28027,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3b,2026-03-30,4
 28027,28027,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-03-03,3
 28027,28027,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-03-30,4
+28027,28027,usdm-counties-fsa-lfp,2026,Native Pasture,D4b,2026-11-02,5
 28027,28027,usdm-counties-reported,2010,Improved Pasture,D2,2010-09-20,1
 28027,28027,usdm-counties-reported,2010,Native Pasture,D2,2010-09-20,1
 28027,28027,usdm-counties-reported,2011,Long Season Small Grains,D2,2011-02-21,1
@@ -177799,19 +177951,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28033,28033,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-20,3
+28033,28033,usdm-counties,2026,Annual Crabgrass,D4a,2026-10-27,4
 28033,28033,usdm-counties,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Native Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties,2026,Native Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties,2026,Native Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties,2026,Native Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-census-2020,2012,Annual Crabgrass,D3a,2012-07-10,3
 28033,28033,usdm-counties-census-2020,2012,Annual Crabgrass,D3b,2012-08-06,4
 28033,28033,usdm-counties-census-2020,2012,Forage Sorghum,D3a,2012-07-10,3
@@ -177838,19 +177994,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28033,28033,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-20,3
+28033,28033,usdm-counties-census-2020,2026,Annual Crabgrass,D4a,2026-10-27,4
 28033,28033,usdm-counties-census-2020,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-census-2020,2026,Native Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-fsa-lfp,2012,Annual Crabgrass,D3a,2012-07-10,3
 28033,28033,usdm-counties-fsa-lfp,2012,Annual Crabgrass,D3b,2012-08-06,4
 28033,28033,usdm-counties-fsa-lfp,2012,Forage Sorghum,D3a,2012-07-10,3
@@ -177877,19 +178037,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28033,28033,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-20,3
+28033,28033,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D4a,2026-10-27,4
 28033,28033,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-fsa-lfp,2026,Native Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-reported,2012,Annual Crabgrass,D3a,2012-07-10,3
 28033,28033,usdm-counties-reported,2012,Annual Crabgrass,D3b,2012-08-06,4
 28033,28033,usdm-counties-reported,2012,Forage Sorghum,D3a,2012-07-10,3
@@ -177916,19 +178080,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28033,28033,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-20,3
+28033,28033,usdm-counties-reported,2026,Annual Crabgrass,D4a,2026-10-27,4
 28033,28033,usdm-counties-reported,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-reported,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28033,28033,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-03-30,1
 28033,28033,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-04-20,2
 28033,28033,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-20,3
+28033,28033,usdm-counties-reported,2026,Native Pasture,D4a,2026-10-27,4
 28035,28035,usdm-counties,2011,Forage Sorghum,D3a,2011-06-07,2
 28035,28035,usdm-counties,2011,Forage Sorghum,D4a,2011-06-21,3
 28035,28035,usdm-counties,2011,Improved Pasture,D3a,2011-06-07,2
@@ -180930,6 +181098,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties,2026,Annual Crabgrass,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties,2026,Annual Crabgrass,D3a,2026-05-12,3
+28071,28071,usdm-counties,2026,Annual Crabgrass,D3b,2026-11-02,4
 28071,28071,usdm-counties,2026,Annual Ryegrass,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties,2026,Annual Ryegrass,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties,2026,Annual Ryegrass,D3a,2026-05-12,3
@@ -180937,15 +181106,18 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-23,1
 28071,28071,usdm-counties,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-13,2
 28071,28071,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties,2026,Long Season Small Grains,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties,2026,Long Season Small Grains,D3a,2026-05-12,3
 28071,28071,usdm-counties,2026,Native Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties,2026,Native Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties,2026,Native Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-census-2020,2012,Annual Crabgrass,D2,2012-08-27,1
 28071,28071,usdm-counties-census-2020,2012,Improved Pasture,D2,2012-08-27,1
 28071,28071,usdm-counties-census-2020,2012,Native Pasture,D2,2012-08-27,1
@@ -180988,6 +181160,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-census-2020,2026,Annual Crabgrass,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-05-12,3
+28071,28071,usdm-counties-census-2020,2026,Annual Crabgrass,D3b,2026-11-02,4
 28071,28071,usdm-counties-census-2020,2026,Annual Ryegrass,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-census-2020,2026,Annual Ryegrass,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-05-12,3
@@ -180995,15 +181168,18 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-23,1
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-13,2
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-05-12,3
 28071,28071,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-fsa-lfp,2012,Annual Crabgrass,D2,2012-08-27,1
 28071,28071,usdm-counties-fsa-lfp,2012,Improved Pasture,D2,2012-08-27,1
 28071,28071,usdm-counties-fsa-lfp,2012,Native Pasture,D2,2012-08-27,1
@@ -181046,6 +181222,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-05-12,3
+28071,28071,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3b,2026-11-02,4
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-05-12,3
@@ -181053,15 +181230,18 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-23,1
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-13,2
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-05-12,3
 28071,28071,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-reported,2012,Annual Crabgrass,D2,2012-08-27,1
 28071,28071,usdm-counties-reported,2012,Improved Pasture,D2,2012-08-27,1
 28071,28071,usdm-counties-reported,2012,Native Pasture,D2,2012-08-27,1
@@ -181104,6 +181284,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-reported,2026,Annual Crabgrass,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-05-12,3
+28071,28071,usdm-counties-reported,2026,Annual Crabgrass,D3b,2026-11-02,4
 28071,28071,usdm-counties-reported,2026,Annual Ryegrass,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-reported,2026,Annual Ryegrass,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-05-12,3
@@ -181111,15 +181292,18 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28071,28071,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-23,1
 28071,28071,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-13,2
 28071,28071,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28071,28071,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2025-12-28,1
 28071,28071,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-01-18,2
 28071,28071,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-05-12,3
 28071,28071,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-03-28,1
 28071,28071,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-04-18,2
 28071,28071,usdm-counties-reported,2026,Native Pasture,D3a,2026-05-12,3
+28071,28071,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 28073,28073,usdm-counties,2011,Forage Sorghum,D4a,2011-06-21,3
 28073,28073,usdm-counties,2011,Improved Pasture,D4a,2011-06-21,3
 28073,28073,usdm-counties,2011,Long Season Small Grains,D2,2010-12-26,1
@@ -181628,6 +181812,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28081,28081,usdm-counties,2024,Annual Ryegrass,D4b,2023-12-28,5
 28081,28081,usdm-counties,2024,Long Season Small Grains,D4a,2023-12-01,4
 28081,28081,usdm-counties,2024,Long Season Small Grains,D4b,2023-12-28,5
+28081,28081,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
+28081,28081,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28081,28081,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-07-26,3
 28081,28081,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-10-17,4
 28081,28081,usdm-counties-census-2020,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -181660,6 +181848,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28081,28081,usdm-counties-census-2020,2024,Annual Ryegrass,D4b,2023-12-28,5
 28081,28081,usdm-counties-census-2020,2024,Long Season Small Grains,D4a,2023-12-01,4
 28081,28081,usdm-counties-census-2020,2024,Long Season Small Grains,D4b,2023-12-28,5
+28081,28081,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
+28081,28081,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28081,28081,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-07-26,3
 28081,28081,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-10-17,4
 28081,28081,usdm-counties-fsa-lfp,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -181692,6 +181884,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28081,28081,usdm-counties-fsa-lfp,2024,Annual Ryegrass,D4b,2023-12-28,5
 28081,28081,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4a,2023-12-01,4
 28081,28081,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4b,2023-12-28,5
+28081,28081,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
+28081,28081,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28081,28081,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-07-26,3
 28081,28081,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-10-17,4
 28081,28081,usdm-counties-reported,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -181724,6 +181920,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28081,28081,usdm-counties-reported,2024,Annual Ryegrass,D4b,2023-12-28,5
 28081,28081,usdm-counties-reported,2024,Long Season Small Grains,D4a,2023-12-01,4
 28081,28081,usdm-counties-reported,2024,Long Season Small Grains,D4b,2023-12-28,5
+28081,28081,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
+28081,28081,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28081,28081,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28083,28083,usdm-counties,2010,Improved Pasture,D3a,2010-10-26,2
 28083,28083,usdm-counties,2010,Native Pasture,D3a,2010-10-26,2
 28083,28083,usdm-counties,2011,Long Season Small Grains,D3a,2010-11-01,2
@@ -182183,11 +182383,15 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28087,28087,usdm-counties,2025,Full Season Improved Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties,2025,Native Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties,2026,Annual Crabgrass,D3a,2026-04-21,3
+28087,28087,usdm-counties,2026,Annual Crabgrass,D3b,2026-11-02,4
 28087,28087,usdm-counties,2026,Annual Ryegrass,D3a,2026-04-21,3
 28087,28087,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties,2026,Long Season Small Grains,D3a,2026-04-21,3
 28087,28087,usdm-counties,2026,Native Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-census-2020,2016,Annual Crabgrass,D2,2016-08-29,1
 28087,28087,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-10-11,3
 28087,28087,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -182221,11 +182425,15 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28087,28087,usdm-counties-census-2020,2025,Full Season Improved Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-census-2020,2025,Native Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-04-21,3
+28087,28087,usdm-counties-census-2020,2026,Annual Crabgrass,D3b,2026-11-02,4
 28087,28087,usdm-counties-census-2020,2026,Annual Ryegrass,D3a,2026-04-21,3
 28087,28087,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-04-21,3
 28087,28087,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D2,2016-08-29,1
 28087,28087,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-10-11,3
 28087,28087,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -182259,11 +182467,15 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28087,28087,usdm-counties-fsa-lfp,2025,Full Season Improved Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-fsa-lfp,2025,Native Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-04-21,3
+28087,28087,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3b,2026-11-02,4
 28087,28087,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D3a,2026-04-21,3
 28087,28087,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-04-21,3
 28087,28087,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-reported,2016,Annual Crabgrass,D2,2016-08-29,1
 28087,28087,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-10-11,3
 28087,28087,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-11-07,4
@@ -182297,11 +182509,15 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28087,28087,usdm-counties-reported,2025,Full Season Improved Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-reported,2025,Native Pasture,D3a,2025-10-07,3
 28087,28087,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-04-21,3
+28087,28087,usdm-counties-reported,2026,Annual Crabgrass,D3b,2026-11-02,4
 28087,28087,usdm-counties-reported,2026,Annual Ryegrass,D3a,2026-04-21,3
 28087,28087,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 28087,28087,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-04-21,3
 28087,28087,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-21,3
+28087,28087,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 28089,28089,usdm-counties,2015,Annual Crabgrass,D3a,2015-09-15,3
 28089,28089,usdm-counties,2015,Annual Crabgrass,D3b,2015-10-12,4
 28089,28089,usdm-counties,2015,Native Pasture,D3a,2015-09-15,3
@@ -182730,6 +182946,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28095,28095,usdm-counties,2024,Annual Ryegrass,D4b,2023-12-28,5
 28095,28095,usdm-counties,2024,Long Season Small Grains,D4a,2023-12-01,4
 28095,28095,usdm-counties,2024,Long Season Small Grains,D4b,2023-12-28,5
+28095,28095,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
+28095,28095,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28095,28095,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-07-26,3
 28095,28095,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-10-17,4
 28095,28095,usdm-counties-census-2020,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -182762,6 +182982,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28095,28095,usdm-counties-census-2020,2024,Annual Ryegrass,D4b,2023-12-28,5
 28095,28095,usdm-counties-census-2020,2024,Long Season Small Grains,D4a,2023-12-01,4
 28095,28095,usdm-counties-census-2020,2024,Long Season Small Grains,D4b,2023-12-28,5
+28095,28095,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
+28095,28095,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28095,28095,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-07-26,3
 28095,28095,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-10-17,4
 28095,28095,usdm-counties-fsa-lfp,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -182794,6 +183018,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28095,28095,usdm-counties-fsa-lfp,2024,Annual Ryegrass,D4b,2023-12-28,5
 28095,28095,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4a,2023-12-01,4
 28095,28095,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4b,2023-12-28,5
+28095,28095,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
+28095,28095,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28095,28095,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-07-26,3
 28095,28095,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-10-17,4
 28095,28095,usdm-counties-reported,2016,Forage Sorghum,D3a,2016-07-26,3
@@ -182826,6 +183054,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28095,28095,usdm-counties-reported,2024,Annual Ryegrass,D4b,2023-12-28,5
 28095,28095,usdm-counties-reported,2024,Long Season Small Grains,D4a,2023-12-01,4
 28095,28095,usdm-counties-reported,2024,Long Season Small Grains,D4b,2023-12-28,5
+28095,28095,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
+28095,28095,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
+28095,28095,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28097,28097,usdm-counties,2015,Annual Crabgrass,D3a,2015-10-13,3
 28097,28097,usdm-counties,2015,Native Pasture,D3a,2015-10-13,3
 28097,28097,usdm-counties,2015,Warm Season Improved Pasture,D3a,2015-10-13,3
@@ -184256,9 +184488,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28115,28115,usdm-counties,2024,Long Season Small Grains,D4a,2023-12-01,4
 28115,28115,usdm-counties,2024,Long Season Small Grains,D4b,2023-12-28,5
 28115,28115,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 28115,28115,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-10-11,3
 28115,28115,usdm-counties-census-2020,2016,Annual Crabgrass,D3b,2016-11-07,4
 28115,28115,usdm-counties-census-2020,2016,Native Pasture,D3a,2016-10-11,3
@@ -184289,9 +184525,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28115,28115,usdm-counties-census-2020,2024,Long Season Small Grains,D4a,2023-12-01,4
 28115,28115,usdm-counties-census-2020,2024,Long Season Small Grains,D4b,2023-12-28,5
 28115,28115,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 28115,28115,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-10-11,3
 28115,28115,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3b,2016-11-07,4
 28115,28115,usdm-counties-fsa-lfp,2016,Native Pasture,D3a,2016-10-11,3
@@ -184322,9 +184562,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28115,28115,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4a,2023-12-01,4
 28115,28115,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4b,2023-12-28,5
 28115,28115,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 28115,28115,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-10-11,3
 28115,28115,usdm-counties-reported,2016,Annual Crabgrass,D3b,2016-11-07,4
 28115,28115,usdm-counties-reported,2016,Native Pasture,D3a,2016-10-11,3
@@ -184355,9 +184599,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28115,28115,usdm-counties-reported,2024,Long Season Small Grains,D4a,2023-12-01,4
 28115,28115,usdm-counties-reported,2024,Long Season Small Grains,D4b,2023-12-28,5
 28115,28115,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 28115,28115,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28115,28115,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-18,1
+28115,28115,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28117,28117,usdm-counties,2016,Annual Crabgrass,D2,2016-08-29,1
 28117,28117,usdm-counties,2016,Annual Crabgrass,D3a,2016-11-15,3
 28117,28117,usdm-counties,2016,Native Pasture,D2,2016-08-29,1
@@ -186676,19 +186924,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28143,28143,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-13,3
+28143,28143,usdm-counties,2026,Annual Crabgrass,D4a,2026-10-27,4
 28143,28143,usdm-counties,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Native Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties,2026,Native Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties,2026,Native Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties,2026,Native Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-census-2020,2010,Improved Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-census-2020,2010,Native Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-census-2020,2012,Annual Crabgrass,D3a,2012-07-10,3
@@ -186717,19 +186969,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28143,28143,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-13,3
+28143,28143,usdm-counties-census-2020,2026,Annual Crabgrass,D4a,2026-10-27,4
 28143,28143,usdm-counties-census-2020,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-census-2020,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-census-2020,2026,Native Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-fsa-lfp,2010,Improved Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-fsa-lfp,2010,Native Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-fsa-lfp,2012,Annual Crabgrass,D3a,2012-07-10,3
@@ -186758,19 +187014,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28143,28143,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-13,3
+28143,28143,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D4a,2026-10-27,4
 28143,28143,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-fsa-lfp,2026,Native Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-reported,2010,Improved Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-reported,2010,Native Pasture,D2,2010-09-27,1
 28143,28143,usdm-counties-reported,2012,Annual Crabgrass,D3a,2012-07-10,3
@@ -186799,19 +187059,23 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28143,28143,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Annual Crabgrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-13,3
+28143,28143,usdm-counties-reported,2026,Annual Crabgrass,D4a,2026-10-27,4
 28143,28143,usdm-counties-reported,2026,Annual Ryegrass,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Annual Ryegrass,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-reported,2026,Full Season Improved Pasture,D4a,2026-10-27,4
 28143,28143,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-03-30,1
 28143,28143,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-04-20,2
 28143,28143,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-13,3
+28143,28143,usdm-counties-reported,2026,Native Pasture,D4a,2026-10-27,4
 28145,28145,usdm-counties,2016,Annual Crabgrass,D3a,2016-11-15,3
 28145,28145,usdm-counties,2016,Native Pasture,D3a,2016-11-15,3
 28145,28145,usdm-counties,2016,Warm Season Improved Pasture,D3a,2016-11-15,3
@@ -186836,9 +187100,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28145,28145,usdm-counties,2024,Long Season Small Grains,D4a,2023-12-01,4
 28145,28145,usdm-counties,2024,Long Season Small Grains,D4b,2023-12-28,5
 28145,28145,usdm-counties,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties,2026,Annual Crabgrass,D3a,2026-10-27,3
 28145,28145,usdm-counties,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties,2026,Native Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-census-2020,2016,Annual Crabgrass,D3a,2016-11-15,3
 28145,28145,usdm-counties-census-2020,2016,Native Pasture,D3a,2016-11-15,3
 28145,28145,usdm-counties-census-2020,2016,Warm Season Improved Pasture,D3a,2016-11-15,3
@@ -186863,9 +187131,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28145,28145,usdm-counties-census-2020,2024,Long Season Small Grains,D4a,2023-12-01,4
 28145,28145,usdm-counties-census-2020,2024,Long Season Small Grains,D4b,2023-12-28,5
 28145,28145,usdm-counties-census-2020,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-census-2020,2026,Annual Crabgrass,D3a,2026-10-27,3
 28145,28145,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-census-2020,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-fsa-lfp,2016,Annual Crabgrass,D3a,2016-11-15,3
 28145,28145,usdm-counties-fsa-lfp,2016,Native Pasture,D3a,2016-11-15,3
 28145,28145,usdm-counties-fsa-lfp,2016,Warm Season Improved Pasture,D3a,2016-11-15,3
@@ -186892,9 +187164,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28145,28145,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4a,2023-12-12,4
 28145,28145,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D4b,2024-01-08,5
 28145,28145,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-fsa-lfp,2026,Annual Crabgrass,D3a,2026-10-27,3
 28145,28145,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-fsa-lfp,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-reported,2016,Annual Crabgrass,D3a,2016-11-15,3
 28145,28145,usdm-counties-reported,2016,Native Pasture,D3a,2016-11-15,3
 28145,28145,usdm-counties-reported,2016,Warm Season Improved Pasture,D3a,2016-11-15,3
@@ -186921,9 +187197,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 28145,28145,usdm-counties-reported,2024,Long Season Small Grains,D4a,2023-12-12,4
 28145,28145,usdm-counties-reported,2024,Long Season Small Grains,D4b,2024-01-08,5
 28145,28145,usdm-counties-reported,2026,Annual Crabgrass,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-reported,2026,Annual Crabgrass,D3a,2026-10-27,3
 28145,28145,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-reported,2026,Full Season Improved Mixed Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 28145,28145,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-18,1
+28145,28145,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-27,3
 28147,28147,usdm-counties,2011,Forage Sorghum,D3a,2011-06-21,2
 28147,28147,usdm-counties,2011,Forage Sorghum,D3b,2011-07-18,3
 28147,28147,usdm-counties,2011,Improved Pasture,D3a,2011-06-21,2
@@ -190156,11 +190436,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 29035,29035,usdm-counties,2025,Full Season Improved Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties,2025,Native Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties,2026,Long Season Small Grains,D2a_2026,2025-11-28,1
 29035,29035,usdm-counties,2026,Long Season Small Grains,D2b_2026,2025-12-19,2
 29035,29035,usdm-counties,2026,Long Season Small Grains,D3a,2026-02-17,3
 29035,29035,usdm-counties,2026,Long Season Small Grains,D3b,2026-03-16,4
 29035,29035,usdm-counties,2026,Native Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties,2026,Short Season Small Grains,D3a,2026-04-14,3
 29035,29035,usdm-counties-census-2020,2012,Forage Sorghum,D3a,2012-06-19,3
 29035,29035,usdm-counties-census-2020,2012,Forage Sorghum,D3b,2012-07-16,4
@@ -190177,11 +190459,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 29035,29035,usdm-counties-census-2020,2025,Full Season Improved Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-census-2020,2025,Native Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2025-11-28,1
 29035,29035,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2025-12-19,2
 29035,29035,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2026-02-17,3
 29035,29035,usdm-counties-census-2020,2026,Long Season Small Grains,D3b,2026-03-16,4
 29035,29035,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-census-2020,2026,Short Season Small Grains,D3a,2026-04-14,3
 29035,29035,usdm-counties-fsa-lfp,2012,Forage Sorghum,D3a,2012-06-19,3
 29035,29035,usdm-counties-fsa-lfp,2012,Forage Sorghum,D3b,2012-07-16,4
@@ -190198,11 +190482,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 29035,29035,usdm-counties-fsa-lfp,2025,Full Season Improved Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-fsa-lfp,2025,Native Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2025-11-28,1
 29035,29035,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2025-12-19,2
 29035,29035,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2026-02-17,3
 29035,29035,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3b,2026-03-16,4
 29035,29035,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3a,2026-04-14,3
 29035,29035,usdm-counties-reported,2012,Forage Sorghum,D3a,2012-06-19,3
 29035,29035,usdm-counties-reported,2012,Forage Sorghum,D3b,2012-07-16,4
@@ -190219,11 +190505,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 29035,29035,usdm-counties-reported,2025,Full Season Improved Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-reported,2025,Native Pasture,D2,2025-11-03,1
 29035,29035,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2025-11-28,1
 29035,29035,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2025-12-19,2
 29035,29035,usdm-counties-reported,2026,Long Season Small Grains,D3a,2026-02-17,3
 29035,29035,usdm-counties-reported,2026,Long Season Small Grains,D3b,2026-03-16,4
 29035,29035,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-14,3
+29035,29035,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 29035,29035,usdm-counties-reported,2026,Short Season Small Grains,D3a,2026-04-14,3
 29037,29037,usdm-counties,2012,Forage Sorghum,D3a,2012-07-17,3
 29037,29037,usdm-counties,2012,Forage Sorghum,D4a,2012-08-07,4
@@ -308654,6 +308942,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47015,47015,usdm-counties,2024,Long Season Small Grains,D3b,2023-12-12,4
 47015,47015,usdm-counties,2025,Long Season Small Grains,D2,2025-01-13,1
 47015,47015,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+47015,47015,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47015,47015,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47015,47015,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
 47015,47015,usdm-counties-census-2020,2008,Native Pasture,D2,2008-06-24,1
@@ -308667,6 +308956,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47015,47015,usdm-counties-census-2020,2024,Long Season Small Grains,D3b,2023-12-12,4
 47015,47015,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-13,1
 47015,47015,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+47015,47015,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47015,47015,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47015,47015,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
 47015,47015,usdm-counties-fsa-lfp,2008,Native Pasture,D2,2008-06-24,1
@@ -308680,6 +308970,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47015,47015,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3b,2023-12-12,4
 47015,47015,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-13,1
 47015,47015,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+47015,47015,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47015,47015,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47015,47015,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
 47015,47015,usdm-counties-reported,2008,Native Pasture,D2,2008-06-24,1
@@ -308693,6 +308984,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47015,47015,usdm-counties-reported,2024,Long Season Small Grains,D3b,2023-12-12,4
 47015,47015,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-13,1
 47015,47015,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-18,1
+47015,47015,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47017,47017,usdm-counties,2011,Long Season Small Grains,D3a,2010-12-07,2
 47017,47017,usdm-counties,2012,Forage Sorghum,D3a,2012-06-26,3
 47017,47017,usdm-counties,2012,Forage Sorghum,D3b,2012-07-23,4
@@ -309062,6 +309354,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47031,47031,usdm-counties,2025,Long Season Small Grains,D3b,2024-12-12,4
 47031,47031,usdm-counties,2026,Forage Sorghum,D2a_2026,2026-10-12,1
 47031,47031,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47031,47031,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47031,47031,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47031,47031,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
 47031,47031,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309083,6 +309376,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47031,47031,usdm-counties-census-2020,2025,Long Season Small Grains,D3b,2024-12-12,4
 47031,47031,usdm-counties-census-2020,2026,Forage Sorghum,D2a_2026,2026-10-12,1
 47031,47031,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47031,47031,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47031,47031,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47031,47031,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
 47031,47031,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309104,6 +309398,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47031,47031,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3b,2024-12-12,4
 47031,47031,usdm-counties-fsa-lfp,2026,Forage Sorghum,D2a_2026,2026-10-12,1
 47031,47031,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47031,47031,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47031,47031,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47031,47031,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
 47031,47031,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309124,6 +309419,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47031,47031,usdm-counties-reported,2025,Long Season Small Grains,D3a,2024-11-15,3
 47031,47031,usdm-counties-reported,2025,Long Season Small Grains,D3b,2024-12-12,4
 47031,47031,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47031,47031,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47033,47033,usdm-counties,2010,Improved Pasture,D3a,2010-10-19,2
 47033,47033,usdm-counties,2011,Long Season Small Grains,D3a,2010-11-15,2
 47033,47033,usdm-counties,2012,Forage Sorghum,D3a,2012-07-03,3
@@ -309405,6 +309701,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47041,47041,usdm-counties,2024,Long Season Small Grains,D3b,2024-01-09,4
 47041,47041,usdm-counties,2025,Long Season Small Grains,D2,2025-01-27,1
 47041,47041,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47041,47041,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47041,47041,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47041,47041,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
 47041,47041,usdm-counties-census-2020,2008,Native Pasture,D2,2008-08-04,1
@@ -309418,6 +309715,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47041,47041,usdm-counties-census-2020,2024,Long Season Small Grains,D3b,2024-01-09,4
 47041,47041,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-27,1
 47041,47041,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47041,47041,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47041,47041,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47041,47041,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
 47041,47041,usdm-counties-fsa-lfp,2008,Native Pasture,D2,2008-08-04,1
@@ -309431,6 +309729,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47041,47041,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3b,2024-01-09,4
 47041,47041,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-27,1
 47041,47041,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47041,47041,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47041,47041,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47041,47041,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
 47041,47041,usdm-counties-reported,2008,Native Pasture,D2,2008-08-04,1
@@ -309444,6 +309743,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47041,47041,usdm-counties-reported,2024,Long Season Small Grains,D3b,2024-01-09,4
 47041,47041,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-27,1
 47041,47041,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47041,47041,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47043,47043,usdm-counties,2012,Forage Sorghum,D2,2012-08-20,1
 47043,47043,usdm-counties,2012,Improved Pasture,D2,2012-08-20,1
 47043,47043,usdm-counties,2012,Native Pasture,D2,2012-08-20,1
@@ -309728,6 +310028,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47051,47051,usdm-counties,2025,Long Season Small Grains,D3a,2024-12-17,3
 47051,47051,usdm-counties,2025,Long Season Small Grains,D3b,2025-01-13,4
 47051,47051,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47051,47051,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47051,47051,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47051,47051,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
 47051,47051,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309752,6 +310053,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47051,47051,usdm-counties-census-2020,2025,Long Season Small Grains,D3a,2024-12-17,3
 47051,47051,usdm-counties-census-2020,2025,Long Season Small Grains,D3b,2025-01-13,4
 47051,47051,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47051,47051,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47051,47051,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47051,47051,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
 47051,47051,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309776,6 +310078,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47051,47051,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3a,2024-12-17,3
 47051,47051,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3b,2025-01-13,4
 47051,47051,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47051,47051,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47051,47051,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47051,47051,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
 47051,47051,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
@@ -309800,6 +310103,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47051,47051,usdm-counties-reported,2025,Long Season Small Grains,D3a,2024-12-17,3
 47051,47051,usdm-counties-reported,2025,Long Season Small Grains,D3b,2025-01-13,4
 47051,47051,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47051,47051,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47053,47053,usdm-counties,2010,Improved Pasture,D3a,2010-10-19,2
 47053,47053,usdm-counties,2011,Long Season Small Grains,D3a,2010-11-15,2
 47053,47053,usdm-counties,2011,Long Season Small Grains,D3b,2010-12-12,3
@@ -309900,6 +310204,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47055,47055,usdm-counties,2025,Long Season Small Grains,D4a,2024-11-19,4
 47055,47055,usdm-counties,2025,Long Season Small Grains,D4b,2024-12-16,5
 47055,47055,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47055,47055,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47055,47055,usdm-counties-census-2020,2008,Improved Pasture,D3a,2008-03-17,2
 47055,47055,usdm-counties-census-2020,2008,Small Grains,D4a,2007-11-15,3
 47055,47055,usdm-counties-census-2020,2016,Full Season Improved Pasture,D2,2016-08-08,1
@@ -309920,6 +310225,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47055,47055,usdm-counties-census-2020,2025,Long Season Small Grains,D4a,2024-11-19,4
 47055,47055,usdm-counties-census-2020,2025,Long Season Small Grains,D4b,2024-12-16,5
 47055,47055,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47055,47055,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47055,47055,usdm-counties-fsa-lfp,2008,Improved Pasture,D3a,2008-03-17,2
 47055,47055,usdm-counties-fsa-lfp,2008,Small Grains,D4a,2007-11-15,3
 47055,47055,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D2,2016-08-08,1
@@ -309940,6 +310246,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47055,47055,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D4a,2024-11-19,4
 47055,47055,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D4b,2024-12-16,5
 47055,47055,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47055,47055,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47055,47055,usdm-counties-reported,2008,Improved Pasture,D3a,2008-03-17,2
 47055,47055,usdm-counties-reported,2008,Small Grains,D4a,2007-11-15,3
 47055,47055,usdm-counties-reported,2016,Full Season Improved Pasture,D2,2016-08-08,1
@@ -309960,6 +310267,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47055,47055,usdm-counties-reported,2025,Long Season Small Grains,D4a,2024-11-19,4
 47055,47055,usdm-counties-reported,2025,Long Season Small Grains,D4b,2024-12-16,5
 47055,47055,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47055,47055,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47057,47057,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
 47057,47057,usdm-counties,2008,Forage Sorghum,D3b,2008-09-15,3
 47057,47057,usdm-counties,2008,Improved Pasture,D3a,2008-08-19,2
@@ -310072,6 +310380,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47061,47061,usdm-counties,2025,Long Season Small Grains,D2,2025-01-27,1
 47061,47061,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47061,47061,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47061,47061,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47061,47061,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-27,1
 47061,47061,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47061,47061,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -310093,6 +310402,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47061,47061,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-27,1
 47061,47061,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47061,47061,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47061,47061,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47061,47061,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-27,1
 47061,47061,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47061,47061,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -310114,6 +310424,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47061,47061,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-27,1
 47061,47061,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47061,47061,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47061,47061,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47061,47061,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-27,1
 47061,47061,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47061,47061,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -310134,6 +310445,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47061,47061,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-27,1
 47061,47061,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47061,47061,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47061,47061,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47061,47061,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-27,1
 47063,47063,usdm-counties,2008,Forage Sorghum,D2,2008-08-10,1
 47063,47063,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -310341,6 +310653,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47069,47069,usdm-counties,2025,Forage Sorghum,D3a,2025-09-23,3
 47069,47069,usdm-counties,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47069,47069,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47069,47069,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47069,47069,usdm-counties,2026,Native Pasture,D3a,2026-04-30,3
 47069,47069,usdm-counties-census-2020,2012,Forage Sorghum,D2,2012-08-27,1
 47069,47069,usdm-counties-census-2020,2012,Improved Pasture,D2,2012-08-27,1
@@ -310352,6 +310665,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47069,47069,usdm-counties-census-2020,2025,Forage Sorghum,D3a,2025-09-23,3
 47069,47069,usdm-counties-census-2020,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47069,47069,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47069,47069,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47069,47069,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-30,3
 47069,47069,usdm-counties-fsa-lfp,2012,Forage Sorghum,D2,2012-08-27,1
 47069,47069,usdm-counties-fsa-lfp,2012,Improved Pasture,D2,2012-08-27,1
@@ -310363,6 +310677,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47069,47069,usdm-counties-fsa-lfp,2025,Forage Sorghum,D3a,2025-09-23,3
 47069,47069,usdm-counties-fsa-lfp,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47069,47069,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47069,47069,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47069,47069,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-30,3
 47069,47069,usdm-counties-reported,2012,Forage Sorghum,D2,2012-08-27,1
 47069,47069,usdm-counties-reported,2012,Improved Pasture,D2,2012-08-27,1
@@ -310374,6 +310689,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47069,47069,usdm-counties-reported,2025,Forage Sorghum,D3a,2025-09-23,3
 47069,47069,usdm-counties-reported,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47069,47069,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47069,47069,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47069,47069,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-30,3
 47071,47071,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47071,47071,usdm-counties,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311298,6 +311614,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47099,47099,usdm-counties,2025,Long Season Small Grains,D3a,2024-11-15,3
 47099,47099,usdm-counties,2025,Long Season Small Grains,D3b,2024-12-12,4
 47099,47099,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47099,47099,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47099,47099,usdm-counties-census-2020,2008,Improved Pasture,D2,2008-05-11,1
 47099,47099,usdm-counties-census-2020,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47099,47099,usdm-counties-census-2020,2016,Full Season Improved Pasture,D3b,2016-11-21,4
@@ -311313,6 +311630,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47099,47099,usdm-counties-census-2020,2025,Long Season Small Grains,D3a,2024-11-15,3
 47099,47099,usdm-counties-census-2020,2025,Long Season Small Grains,D3b,2024-12-12,4
 47099,47099,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47099,47099,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47099,47099,usdm-counties-fsa-lfp,2008,Improved Pasture,D2,2008-05-11,1
 47099,47099,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47099,47099,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D3b,2016-11-21,4
@@ -311328,6 +311646,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47099,47099,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3a,2024-11-15,3
 47099,47099,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D3b,2024-12-12,4
 47099,47099,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47099,47099,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47099,47099,usdm-counties-reported,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47099,47099,usdm-counties-reported,2016,Full Season Improved Pasture,D3b,2016-11-21,4
 47099,47099,usdm-counties-reported,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311342,6 +311661,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47099,47099,usdm-counties-reported,2025,Long Season Small Grains,D3a,2024-11-15,3
 47099,47099,usdm-counties-reported,2025,Long Season Small Grains,D3b,2024-12-12,4
 47099,47099,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47099,47099,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47101,47101,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47101,47101,usdm-counties,2017,Long Season Small Grains,D3a,2016-11-15,3
 47101,47101,usdm-counties,2023,Full Season Improved Pasture,D3a,2023-10-31,3
@@ -311352,6 +311672,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47101,47101,usdm-counties,2024,Long Season Small Grains,D3b,2023-12-12,4
 47101,47101,usdm-counties,2024,Native Pasture,D3a,2024-08-27,3
 47101,47101,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47101,47101,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47101,47101,usdm-counties,2026,Native Pasture,D3a,2026-04-30,3
 47101,47101,usdm-counties-census-2020,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47101,47101,usdm-counties-census-2020,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311363,6 +311684,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47101,47101,usdm-counties-census-2020,2024,Long Season Small Grains,D3b,2023-12-12,4
 47101,47101,usdm-counties-census-2020,2024,Native Pasture,D3a,2024-08-27,3
 47101,47101,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47101,47101,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47101,47101,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-30,3
 47101,47101,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47101,47101,usdm-counties-fsa-lfp,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311374,6 +311696,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47101,47101,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3b,2023-12-12,4
 47101,47101,usdm-counties-fsa-lfp,2024,Native Pasture,D3a,2024-08-27,3
 47101,47101,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47101,47101,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47101,47101,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-30,3
 47101,47101,usdm-counties-reported,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47101,47101,usdm-counties-reported,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311385,6 +311708,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47101,47101,usdm-counties-reported,2024,Long Season Small Grains,D3b,2023-12-12,4
 47101,47101,usdm-counties-reported,2024,Native Pasture,D3a,2024-08-27,3
 47101,47101,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47101,47101,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47101,47101,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-30,3
 47103,47103,usdm-counties,2008,Forage Sorghum,D2,2008-08-10,1
 47103,47103,usdm-counties,2008,Improved Pasture,D4a,2008-03-17,3
@@ -311407,6 +311731,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47103,47103,usdm-counties,2025,Long Season Small Grains,D4a,2024-11-19,4
 47103,47103,usdm-counties,2025,Long Season Small Grains,D4b,2024-12-16,5
 47103,47103,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47103,47103,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47103,47103,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47103,47103,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
 47103,47103,usdm-counties-census-2020,2008,Native Pasture,D2,2008-06-24,1
@@ -311428,6 +311753,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47103,47103,usdm-counties-census-2020,2025,Long Season Small Grains,D4a,2024-11-19,4
 47103,47103,usdm-counties-census-2020,2025,Long Season Small Grains,D4b,2024-12-16,5
 47103,47103,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47103,47103,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47103,47103,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47103,47103,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
 47103,47103,usdm-counties-fsa-lfp,2008,Native Pasture,D2,2008-06-24,1
@@ -311449,6 +311775,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47103,47103,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D4a,2024-11-19,4
 47103,47103,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D4b,2024-12-16,5
 47103,47103,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47103,47103,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47103,47103,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47103,47103,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
 47103,47103,usdm-counties-reported,2008,Native Pasture,D2,2008-06-24,1
@@ -311470,6 +311797,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47103,47103,usdm-counties-reported,2025,Long Season Small Grains,D4a,2024-11-19,4
 47103,47103,usdm-counties-reported,2025,Long Season Small Grains,D4b,2024-12-16,5
 47103,47103,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47103,47103,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47105,47105,usdm-counties,2008,Forage Sorghum,D2,2008-08-10,1
 47105,47105,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
 47105,47105,usdm-counties,2008,Forage Sorghum,D3b,2008-09-15,3
@@ -311794,6 +312122,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47113,47113,usdm-counties,2025,Forage Sorghum,D3a,2025-09-23,3
 47113,47113,usdm-counties,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47113,47113,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47113,47113,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47113,47113,usdm-counties,2026,Native Pasture,D3a,2026-04-30,3
 47113,47113,usdm-counties-census-2020,2012,Forage Sorghum,D2,2012-08-13,1
 47113,47113,usdm-counties-census-2020,2012,Improved Pasture,D2,2012-08-13,1
@@ -311805,6 +312134,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47113,47113,usdm-counties-census-2020,2025,Forage Sorghum,D3a,2025-09-23,3
 47113,47113,usdm-counties-census-2020,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47113,47113,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47113,47113,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47113,47113,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-30,3
 47113,47113,usdm-counties-fsa-lfp,2012,Forage Sorghum,D2,2012-08-13,1
 47113,47113,usdm-counties-fsa-lfp,2012,Improved Pasture,D2,2012-08-13,1
@@ -311816,6 +312146,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47113,47113,usdm-counties-fsa-lfp,2025,Forage Sorghum,D3a,2025-09-23,3
 47113,47113,usdm-counties-fsa-lfp,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47113,47113,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47113,47113,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47113,47113,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-30,3
 47113,47113,usdm-counties-reported,2012,Forage Sorghum,D2,2012-08-13,1
 47113,47113,usdm-counties-reported,2012,Improved Pasture,D2,2012-08-13,1
@@ -311827,6 +312158,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47113,47113,usdm-counties-reported,2025,Forage Sorghum,D3a,2025-09-23,3
 47113,47113,usdm-counties-reported,2025,Full Season Improved Pasture,D3a,2025-09-23,3
 47113,47113,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47113,47113,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47113,47113,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-30,3
 47115,47115,usdm-counties,2008,Forage Sorghum,D2,2008-08-10,1
 47115,47115,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -311943,6 +312275,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47117,47117,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 47117,47117,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47117,47117,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47117,47117,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47117,47117,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
 47117,47117,usdm-counties-census-2020,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47117,47117,usdm-counties-census-2020,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311958,6 +312291,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47117,47117,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 47117,47117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47117,47117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47117,47117,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47117,47117,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
 47117,47117,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47117,47117,usdm-counties-fsa-lfp,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311973,6 +312307,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47117,47117,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 47117,47117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47117,47117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47117,47117,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47117,47117,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
 47117,47117,usdm-counties-reported,2016,Full Season Improved Pasture,D3a,2016-10-25,3
 47117,47117,usdm-counties-reported,2017,Long Season Small Grains,D3a,2016-11-15,3
@@ -311988,6 +312323,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47117,47117,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 47117,47117,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47117,47117,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47117,47117,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47119,47119,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-15,3
 47119,47119,usdm-counties,2017,Long Season Small Grains,D3a,2016-11-15,3
 47119,47119,usdm-counties,2023,Full Season Improved Pasture,D3a,2023-10-31,3
@@ -313245,6 +313581,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47149,47149,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 47149,47149,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47149,47149,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47149,47149,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47149,47149,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-25,1
 47149,47149,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
 47149,47149,usdm-counties-census-2020,2008,Native Pasture,D2,2008-08-25,1
@@ -313260,6 +313597,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47149,47149,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 47149,47149,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47149,47149,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47149,47149,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47149,47149,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-25,1
 47149,47149,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
 47149,47149,usdm-counties-fsa-lfp,2008,Native Pasture,D2,2008-08-25,1
@@ -313275,6 +313613,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47149,47149,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 47149,47149,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47149,47149,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47149,47149,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47149,47149,usdm-counties-reported,2008,Forage Sorghum,D2,2008-09-01,1
 47149,47149,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
 47149,47149,usdm-counties-reported,2008,Native Pasture,D2,2008-09-01,1
@@ -313290,6 +313629,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47149,47149,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 47149,47149,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47149,47149,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+47149,47149,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47151,47151,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
 47151,47151,usdm-counties,2008,Improved Pasture,D3a,2008-08-19,2
 47151,47151,usdm-counties,2008,Native Pasture,D3a,2008-08-19,2
@@ -313853,18 +314193,22 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47169,47169,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-22,3
 47169,47169,usdm-counties,2017,Long Season Small Grains,D3a,2016-11-22,3
 47169,47169,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47169,47169,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47169,47169,usdm-counties,2026,Native Pasture,D3a,2026-04-30,3
 47169,47169,usdm-counties-census-2020,2016,Full Season Improved Pasture,D3a,2016-11-22,3
 47169,47169,usdm-counties-census-2020,2017,Long Season Small Grains,D3a,2016-11-22,3
 47169,47169,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47169,47169,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47169,47169,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-04-30,3
 47169,47169,usdm-counties-fsa-lfp,2016,Full Season Improved Pasture,D3a,2016-11-22,3
 47169,47169,usdm-counties-fsa-lfp,2017,Long Season Small Grains,D3a,2016-11-22,3
 47169,47169,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47169,47169,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47169,47169,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-04-30,3
 47169,47169,usdm-counties-reported,2016,Full Season Improved Pasture,D3a,2016-11-22,3
 47169,47169,usdm-counties-reported,2017,Long Season Small Grains,D3a,2016-11-22,3
 47169,47169,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-04-21,3
+47169,47169,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 47169,47169,usdm-counties-reported,2026,Native Pasture,D3a,2026-04-30,3
 47171,47171,usdm-counties,2008,Forage Sorghum,D3a,2008-06-16,2
 47171,47171,usdm-counties,2008,Forage Sorghum,D3b,2008-07-13,3
@@ -313966,6 +314310,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47175,47175,usdm-counties,2025,Long Season Small Grains,D2,2025-01-09,1
 47175,47175,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47175,47175,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47175,47175,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47175,47175,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-27,1
 47175,47175,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47175,47175,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -313983,6 +314328,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47175,47175,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-09,1
 47175,47175,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47175,47175,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47175,47175,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47175,47175,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-27,1
 47175,47175,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47175,47175,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314000,6 +314346,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47175,47175,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-09,1
 47175,47175,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47175,47175,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47175,47175,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47175,47175,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-27,1
 47175,47175,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47175,47175,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314017,6 +314364,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47175,47175,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-09,1
 47175,47175,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47175,47175,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47175,47175,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47175,47175,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-27,1
 47177,47177,usdm-counties,2008,Forage Sorghum,D2,2008-08-10,1
 47177,47177,usdm-counties,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314033,6 +314381,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47177,47177,usdm-counties,2024,Long Season Small Grains,D3b,2023-12-12,4
 47177,47177,usdm-counties,2025,Long Season Small Grains,D2,2025-01-27,1
 47177,47177,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47177,47177,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47177,47177,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47177,47177,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
 47177,47177,usdm-counties-census-2020,2008,Improved Pasture,D4a,2008-03-17,3
@@ -314048,6 +314397,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47177,47177,usdm-counties-census-2020,2024,Long Season Small Grains,D3b,2023-12-12,4
 47177,47177,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-27,1
 47177,47177,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47177,47177,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47177,47177,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47177,47177,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
 47177,47177,usdm-counties-fsa-lfp,2008,Improved Pasture,D4a,2008-03-17,3
@@ -314063,6 +314413,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47177,47177,usdm-counties-fsa-lfp,2024,Long Season Small Grains,D3b,2023-12-12,4
 47177,47177,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-27,1
 47177,47177,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47177,47177,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47177,47177,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47177,47177,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
 47177,47177,usdm-counties-reported,2008,Improved Pasture,D4a,2008-03-17,3
@@ -314078,6 +314429,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47177,47177,usdm-counties-reported,2024,Long Season Small Grains,D3b,2023-12-12,4
 47177,47177,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-27,1
 47177,47177,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
+47177,47177,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47179,47179,usdm-counties,2008,Forage Sorghum,D3a,2008-07-08,2
 47179,47179,usdm-counties,2008,Forage Sorghum,D3b,2008-08-04,3
 47179,47179,usdm-counties,2008,Improved Pasture,D3a,2008-07-08,2
@@ -314298,6 +314650,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47185,47185,usdm-counties,2025,Long Season Small Grains,D2,2025-01-09,1
 47185,47185,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47185,47185,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47185,47185,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47185,47185,usdm-counties,2026,Native Pasture,D2a_2026,2026-05-27,1
 47185,47185,usdm-counties-census-2020,2008,Forage Sorghum,D2,2008-08-10,1
 47185,47185,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314315,6 +314668,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47185,47185,usdm-counties-census-2020,2025,Long Season Small Grains,D2,2025-01-09,1
 47185,47185,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47185,47185,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47185,47185,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47185,47185,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-05-27,1
 47185,47185,usdm-counties-fsa-lfp,2008,Forage Sorghum,D2,2008-08-10,1
 47185,47185,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314332,6 +314686,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47185,47185,usdm-counties-fsa-lfp,2025,Long Season Small Grains,D2,2025-01-09,1
 47185,47185,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47185,47185,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47185,47185,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47185,47185,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-05-27,1
 47185,47185,usdm-counties-reported,2008,Forage Sorghum,D2,2008-08-10,1
 47185,47185,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-19,2
@@ -314349,6 +314704,7 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 47185,47185,usdm-counties-reported,2025,Long Season Small Grains,D2,2025-01-09,1
 47185,47185,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-05-11,1
 47185,47185,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-06-01,2
+47185,47185,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-27,3
 47185,47185,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-05-27,1
 47187,47187,usdm-counties,2008,Improved Pasture,D3a,2008-03-17,2
 47187,47187,usdm-counties,2016,Full Season Improved Pasture,D3a,2016-11-22,3
@@ -329710,7 +330066,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48059,48059,usdm-counties,2023,Short Season Spring Small Grains,D3b,2022-12-12,4
 48059,48059,usdm-counties,2026,Forage Sorghum,D3a,2026-09-29,3
 48059,48059,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties,2026,Native Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-census-2020,2009,Forage Sorghum,D2,2009-08-25,1
 48059,48059,usdm-counties-census-2020,2009,Improved Pasture,D2,2009-03-09,1
 48059,48059,usdm-counties-census-2020,2009,Improved Pasture,D3a,2009-05-19,2
@@ -329810,7 +330168,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48059,48059,usdm-counties-census-2020,2023,Short Season Spring Small Grains,D3b,2022-12-12,4
 48059,48059,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-09-29,3
 48059,48059,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-fsa-lfp,2009,Forage Sorghum,D2,2009-08-25,1
 48059,48059,usdm-counties-fsa-lfp,2009,Improved Pasture,D2,2009-03-09,1
 48059,48059,usdm-counties-fsa-lfp,2009,Improved Pasture,D3a,2009-05-05,2
@@ -329911,7 +330271,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48059,48059,usdm-counties-fsa-lfp,2023,Short Season Spring Small Grains,D3b,2022-12-12,4
 48059,48059,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-09-29,3
 48059,48059,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-reported,2009,Forage Sorghum,D2,2009-08-25,1
 48059,48059,usdm-counties-reported,2009,Improved Pasture,D2,2009-03-09,1
 48059,48059,usdm-counties-reported,2009,Improved Pasture,D3a,2009-05-19,2
@@ -330011,7 +330373,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48059,48059,usdm-counties-reported,2023,Short Season Spring Small Grains,D3b,2022-12-12,4
 48059,48059,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-09-29,3
 48059,48059,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48059,48059,usdm-counties-reported,2026,Native Pasture,D3a,2026-09-29,3
+48059,48059,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48061,48061,usdm-counties,2008,Forage Sorghum,D3a,2008-05-01,2
 48061,48061,usdm-counties,2008,Improved Pasture,D3a,2008-04-15,2
 48061,48061,usdm-counties,2008,Improved Pasture,D3b,2008-06-30,3
@@ -334511,7 +334875,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48081,48081,usdm-counties,2023,Short Season Spring Small Grains,D3b,2023-02-27,4
 48081,48081,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 48081,48081,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties,2026,Native Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-census-2020,2009,Improved Pasture,D2,2009-03-09,1
 48081,48081,usdm-counties-census-2020,2009,Improved Pasture,D3a,2009-03-10,2
 48081,48081,usdm-counties-census-2020,2009,Improved Pasture,D3b,2009-04-06,3
@@ -334616,7 +334982,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48081,48081,usdm-counties-census-2020,2023,Short Season Spring Small Grains,D3b,2023-02-27,4
 48081,48081,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 48081,48081,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-fsa-lfp,2009,Improved Pasture,D2,2009-03-09,1
 48081,48081,usdm-counties-fsa-lfp,2009,Improved Pasture,D3a,2009-03-10,2
 48081,48081,usdm-counties-fsa-lfp,2009,Improved Pasture,D3b,2009-04-06,3
@@ -334721,7 +335089,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48081,48081,usdm-counties-fsa-lfp,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48081,48081,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 48081,48081,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-reported,2009,Improved Pasture,D2,2009-03-09,1
 48081,48081,usdm-counties-reported,2009,Improved Pasture,D3a,2009-03-10,2
 48081,48081,usdm-counties-reported,2009,Improved Pasture,D3b,2009-04-06,3
@@ -334818,7 +335188,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48081,48081,usdm-counties-reported,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48081,48081,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 48081,48081,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48081,48081,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-06,3
+48081,48081,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties,2009,Improved Pasture,D3a,2009-01-13,2
 48083,48083,usdm-counties,2009,Improved Pasture,D3b,2009-02-09,3
 48083,48083,usdm-counties,2009,Native Pasture,D3a,2009-01-13,2
@@ -334931,8 +335303,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48083,48083,usdm-counties,2025,Short Season Spring Small Grains,D3b,2025-04-28,4
 48083,48083,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 48083,48083,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties,2026,Long Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties,2026,Native Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties,2026,Short Season Fall/Winter Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties,2026,Short Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties,2026,Short Season Spring Small Grains,D3a,2025-11-18,3
@@ -335048,8 +335422,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48083,48083,usdm-counties-census-2020,2025,Short Season Spring Small Grains,D3b,2025-04-28,4
 48083,48083,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 48083,48083,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-census-2020,2026,Long Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-census-2020,2026,Short Season Fall/Winter Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-census-2020,2026,Short Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-census-2020,2026,Short Season Spring Small Grains,D3a,2025-11-18,3
@@ -335165,8 +335541,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48083,48083,usdm-counties-fsa-lfp,2025,Short Season Spring Small Grains,D3b,2025-04-28,4
 48083,48083,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 48083,48083,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-fsa-lfp,2026,Short Season Fall/Winter Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-fsa-lfp,2026,Short Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-fsa-lfp,2026,Short Season Spring Small Grains,D3a,2025-11-18,3
@@ -335282,8 +335660,10 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48083,48083,usdm-counties-reported,2025,Short Season Spring Small Grains,D3b,2025-04-28,4
 48083,48083,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 48083,48083,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-reported,2026,Long Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-06,3
+48083,48083,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48083,48083,usdm-counties-reported,2026,Short Season Fall/Winter Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-reported,2026,Short Season Small Grains,D3a,2025-11-18,3
 48083,48083,usdm-counties-reported,2026,Short Season Spring Small Grains,D3a,2025-11-18,3
@@ -340384,9 +340764,11 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48105,48105,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 48105,48105,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties,2026,Native Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties,2026,Native Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-census-2020,2008,Forage Sorghum,D3a,2008-08-12,2
 48105,48105,usdm-counties-census-2020,2008,Improved Pasture,D3a,2008-06-10,2
@@ -340533,9 +340915,11 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48105,48105,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 48105,48105,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-census-2020,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-fsa-lfp,2008,Forage Sorghum,D3a,2008-08-12,2
 48105,48105,usdm-counties-fsa-lfp,2008,Improved Pasture,D3a,2008-06-10,2
@@ -340682,9 +341066,11 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48105,48105,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 48105,48105,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-fsa-lfp,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-reported,2008,Forage Sorghum,D3a,2008-08-12,2
 48105,48105,usdm-counties-reported,2008,Improved Pasture,D3a,2008-06-10,2
@@ -340831,9 +341217,11 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48105,48105,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 48105,48105,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-04-27,1
 48105,48105,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-06,3
+48105,48105,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48105,48105,usdm-counties-reported,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48107,48107,usdm-counties,2011,Forage Sorghum,D4a,2011-07-01,3
 48107,48107,usdm-counties,2011,Improved Pasture,D3a,2011-05-03,2
@@ -401953,11 +402341,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48353,48353,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties,2026,Long Season Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties,2026,Native Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties,2026,Native Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties,2026,Native Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties,2026,Short Season Spring Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-census-2020,2009,Improved Pasture,D2,2009-03-09,1
@@ -402066,11 +402456,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48353,48353,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-census-2020,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-census-2020,2026,Long Season Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-census-2020,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-census-2020,2026,Short Season Spring Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-fsa-lfp,2009,Improved Pasture,D2,2009-03-09,1
@@ -402179,11 +402571,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48353,48353,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-fsa-lfp,2026,Long Season Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-fsa-lfp,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-fsa-lfp,2026,Short Season Spring Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-reported,2009,Improved Pasture,D2,2009-03-09,1
@@ -402292,11 +402686,13 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48353,48353,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-reported,2026,Long Season Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-reported,2026,Long Season Small Grains,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-05-18,2
 48353,48353,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-06,3
+48353,48353,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48353,48353,usdm-counties-reported,2026,Short Season Spring Small Grains,D2a_2026,2026-04-27,1
 48353,48353,usdm-counties-reported,2026,Short Season Spring Small Grains,D2b_2026,2026-05-18,2
 48355,48355,usdm-counties,2008,Forage Sorghum,D3a,2008-06-17,2
@@ -412537,7 +412933,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48399,48399,usdm-counties,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48399,48399,usdm-counties,2026,Forage Sorghum,D3a,2026-10-06,3
 48399,48399,usdm-counties,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties,2026,Native Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties,2026,Native Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-census-2020,2009,Improved Pasture,D3a,2009-01-13,2
 48399,48399,usdm-counties-census-2020,2009,Improved Pasture,D3b,2009-02-09,3
 48399,48399,usdm-counties-census-2020,2009,Native Pasture,D3a,2009-01-13,2
@@ -412644,7 +413042,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48399,48399,usdm-counties-census-2020,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48399,48399,usdm-counties-census-2020,2026,Forage Sorghum,D3a,2026-10-06,3
 48399,48399,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-census-2020,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-census-2020,2026,Native Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-census-2020,2026,Native Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-fsa-lfp,2009,Improved Pasture,D3a,2009-01-13,2
 48399,48399,usdm-counties-fsa-lfp,2009,Improved Pasture,D3b,2009-02-09,3
 48399,48399,usdm-counties-fsa-lfp,2009,Native Pasture,D3a,2009-01-13,2
@@ -412751,7 +413151,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48399,48399,usdm-counties-fsa-lfp,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48399,48399,usdm-counties-fsa-lfp,2026,Forage Sorghum,D3a,2026-10-06,3
 48399,48399,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-fsa-lfp,2026,Native Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-fsa-lfp,2026,Native Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-reported,2009,Improved Pasture,D3a,2009-01-13,2
 48399,48399,usdm-counties-reported,2009,Improved Pasture,D3b,2009-02-09,3
 48399,48399,usdm-counties-reported,2009,Native Pasture,D3a,2009-01-13,2
@@ -412858,7 +413260,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 48399,48399,usdm-counties-reported,2023,Short Season Spring Small Grains,D3b,2023-04-17,4
 48399,48399,usdm-counties-reported,2026,Forage Sorghum,D3a,2026-10-06,3
 48399,48399,usdm-counties-reported,2026,Full Season Improved Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-reported,2026,Full Season Improved Pasture,D3b,2026-11-02,4
 48399,48399,usdm-counties-reported,2026,Native Pasture,D3a,2026-10-06,3
+48399,48399,usdm-counties-reported,2026,Native Pasture,D3b,2026-11-02,4
 48401,48401,usdm-counties,2011,Forage Sorghum,D3a,2011-07-01,2
 48401,48401,usdm-counties,2011,Forage Sorghum,D4a,2011-07-05,3
 48401,48401,usdm-counties,2011,Improved Pasture,D3a,2011-01-04,2
@@ -449645,7 +450049,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 53061,53061,usdm-counties,2025,Native Pasture,D3a,2025-07-29,3
 53061,53061,usdm-counties,2025,Native Pasture,D3b,2025-08-25,4
 53061,53061,usdm-counties,2026,Full Season Improved Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties,2026,Full Season Improved Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties,2026,Native Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties,2026,Native Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-census-2020,2015,Full Season Improved Pasture,D3a,2015-07-28,3
 53061,53061,usdm-counties-census-2020,2015,Full Season Improved Pasture,D3b,2015-08-24,4
 53061,53061,usdm-counties-census-2020,2019,Full Season Improved Pasture,D2,2019-08-12,1
@@ -449659,7 +450065,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 53061,53061,usdm-counties-census-2020,2025,Native Pasture,D3a,2025-07-29,3
 53061,53061,usdm-counties-census-2020,2025,Native Pasture,D3b,2025-08-25,4
 53061,53061,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-census-2020,2026,Full Season Improved Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-census-2020,2026,Native Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-census-2020,2026,Native Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-fsa-lfp,2015,Full Season Improved Pasture,D3a,2015-07-28,3
 53061,53061,usdm-counties-fsa-lfp,2015,Full Season Improved Pasture,D3b,2015-08-24,4
 53061,53061,usdm-counties-fsa-lfp,2019,Full Season Improved Pasture,D2,2019-08-12,1
@@ -449673,7 +450081,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 53061,53061,usdm-counties-fsa-lfp,2025,Native Pasture,D3a,2025-07-29,3
 53061,53061,usdm-counties-fsa-lfp,2025,Native Pasture,D3b,2025-08-25,4
 53061,53061,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-fsa-lfp,2026,Full Season Improved Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-fsa-lfp,2026,Native Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-fsa-lfp,2026,Native Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-reported,2015,Full Season Improved Pasture,D3a,2015-07-28,3
 53061,53061,usdm-counties-reported,2015,Full Season Improved Pasture,D3b,2015-08-24,4
 53061,53061,usdm-counties-reported,2019,Full Season Improved Pasture,D2,2019-08-12,1
@@ -449687,7 +450097,9 @@ FIPS,FSA County,source,Program Year,Pasture Type,Qualifying Drought Event,Qualif
 53061,53061,usdm-counties-reported,2025,Native Pasture,D3a,2025-07-29,3
 53061,53061,usdm-counties-reported,2025,Native Pasture,D3b,2025-08-25,4
 53061,53061,usdm-counties-reported,2026,Full Season Improved Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-reported,2026,Full Season Improved Pasture,D2b_2026,2026-11-02,2
 53061,53061,usdm-counties-reported,2026,Native Pasture,D2a_2026,2026-10-12,1
+53061,53061,usdm-counties-reported,2026,Native Pasture,D2b_2026,2026-11-02,2
 53063,53063,usdm-counties,2015,Full Season Improved Pasture,D2,2015-07-13,1
 53063,53063,usdm-counties,2015,Full Season Improved Pasture,D3a,2015-07-28,3
 53063,53063,usdm-counties,2015,Full Season Improved Pasture,D3b,2015-08-24,4
